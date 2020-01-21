@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scroll Carousel</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="scrollcarousel.js"></script>
+	<link rel="stylesheet" type="text/css" href="scrollcarousel.css">
+	<script type="text/javascript">
+	 $(document).ready(function() {
+	 	$("#scrollcarousel").scrollcarousel({
+	 		pause : 1000,
+	 		quantity : 4,
+	 		sizes : {
+	 			'900' : 3,
+	 			'500' : 1
+	 		}
+	 	});
+	 });
+</script>
+<style>
+    #scrollcarousel{
+        width: 800px;
+    }
+</style>
+</head>
+<body>
+    <div id='scrollcarousel'>
+		<div class='left_scroll'>Izquierda</div>
+		<div class="scrollcarousel_inner">
+			<ul>
+				<li style="background-color: #FF0000;"><div>contenclasso 1<br> 453sdsfsdfsd</div></li>
+				<li style="background-color: #FFff00;"><div>contenido 2</div></li>
+				<li style="background-color: #FF0ff0;"><div>contenido 3</div></li>
+				<li style="background-color: #FF0000;"><div>contenido 4</div></li>
+				<li style="background-color: #FFff00;"><div>contenido 5</div></li>
+				<li style="background-color: #FF00ff;"><div>contenido 6</div></li>
+                <li style="background-color: #FF00ff;"><div>contenido 7</div></li>
+                <li style="background-color: #FF0000;"><div>contenclasso 1<br> 453sdsfsdfsd</div></li>
+				<li style="background-color: #FFff00;"><div>contenido 2</div></li>
+				<li style="background-color: #FF0ff0;"><div>contenido 3</div></li>
+				<li style="background-color: #FF0000;"><div>contenido 4</div></li>
+				<li style="background-color: #FFff00;"><div>contenido 5</div></li>
+				<li style="background-color: #FF00ff;"><div>contenido 6</div></li>
+                <li style="background-color: #FF00ff;"><div>contenido 7</div></li>
+                <li style="background-color: #FF0000;"><div>contenclasso 1<br> 453sdsfsdfsd</div></li>
+				<li style="background-color: #FFff00;"><div>contenido 2</div></li>
+				<li style="background-color: #FF0ff0;"><div>contenido 3</div></li>
+				<li style="background-color: #FF0000;"><div>contenido 4</div></li>
+				<li style="background-color: #FFff00;"><div>contenido 5</div></li>
+				<li style="background-color: #FF00ff;"><div>contenido 6</div></li>
+                <li style="background-color: #FF00ff;"><div>contenido 7</div></li>
+                <li style="background-color: #FF0000;"><div>contenclasso 1<br> 453sdsfsdfsd</div></li>
+				<li style="background-color: #FFff00;"><div>contenido 2</div></li>
+				<li style="background-color: #FF0ff0;"><div>contenido 3</div></li>
+				<li style="background-color: #FF0000;"><div>contenido 4</div></li>
+				<li style="background-color: #FFff00;"><div>contenido 5</div></li>
+				<li style="background-color: #FF00ff;"><div>contenido 6</div></li>
+				<li style="background-color: #FF00ff;"><div>contenido 7</div></li>
+			</ul>
+		</div>
+		<div class='right_scroll'>Derecha</div>
+	</div>
+</body>
+</html>

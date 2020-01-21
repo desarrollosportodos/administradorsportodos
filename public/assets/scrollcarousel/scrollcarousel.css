@@ -1,0 +1,27 @@
+.scrollcarousel_inner{
+	position: relative; 
+	width: 101%; 
+	overflow: hidden; 
+	margin:0; 
+	text-align: left; 
+}
+.scrollcarousel_inner ul {
+	position:relative;
+	left:0px; /* important (this should be negative number of list items width(including margin) */
+	list-style-type: none; /* removing the default styling for unordered list items */
+	margin: 0px;
+	padding: 0px;
+}
+.scrollcarousel_inner ul li{
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	position:relative;
+	overflow:hidden;
+}
+
+.disable{
+    color: #eeeeee;
+}
