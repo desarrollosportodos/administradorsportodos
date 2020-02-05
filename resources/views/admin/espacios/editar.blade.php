@@ -18,8 +18,8 @@ Editar Recursos o Espacios
     </div>
 </div>
 
-<form action="{{ route('gestion-recursos-actualizar',[ 'id' => $data['id'] ]) }}" method="POST" enctype="multipart/form-data" >
-    @include('admin.recursos.form')
+<form action="{{ route('espacios-actualizar',[ 'id' => $data['espacio']['id'] ]) }}" method="POST" enctype="multipart/form-data" >
+    @include('admin.espacios.form')
     <div class="text-right">
         <button type="submit" class="btn btn-success">Guardar</button>
     </div>

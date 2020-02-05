@@ -34,13 +34,14 @@ class EspaciosController extends Controller
    {
       $deportes = $this->getDeportes();
       $paises = $this->getPaises();
-      return view('admin.espacios.crear', compact('deportes','paises'));
+      $servicios = $this->getServicios();
+      return view('admin.espacios.crear', compact('deportes','paises','servicios'));
    }
 
    public function crear(Request $request)
    {
       $data = $request->all();
-      $data['red'] = 49;
+      $data['redsocial'] = 49;
       if($request->file("imagen")){
          $data['imagen'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
       }
@@ -53,18 +54,18 @@ class EspaciosController extends Controller
       curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
       curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
       curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+      curl_setopt($ch, CURLOPT_POSTFIELDS,  http_build_query($post));
       $result = curl_exec($ch);
-      
-      return redirect('administrador/espacios/gestion')->with("mensaje","Tu tipo de Recurso ha sido creado con exito.");
+      return redirect('administrador/espacios')->with("mensaje","Tu tipo de Recurso ha sido creado con exito.");
    }
 
    public function editar($id)
    {
       $data = $this->getId($id); 
-      $tipos = $this->getTipos();
-      return view('admin.espacios.editar', compact('tipos','data'));
+      $deportes = $this->getDeportes();
+      $paises = $this->getPaises();
+      $servicios = $this->getServicios();
+      return view('admin.espacios.editar', compact('deportes','data','paises','servicios'));
    }
 
    public function actualizar(Request $request,$id)
@@ -90,12 +91,12 @@ class EspaciosController extends Controller
       curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
       curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
       $result = curl_exec($ch);
-      return redirect('administrador/espacios/gestion')->with("mensaje","Tu Recurso ha sido Actualizado con exito.");
+      return redirect('administrador/espacios')->with("mensaje","Tu Recurso ha sido Actualizado con exito.");
    }
 
    public function eliminar(Request $request,$id){
       $elemento = $this->getId($id); 
-      if($elemento['imagen']){
+      if(isset($elemento['imagen']) ){
          $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['imagen']);
          Storage::disk('public')->delete($image);
       }
@@ -112,7 +113,7 @@ class EspaciosController extends Controller
       curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
       curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
       $result = curl_exec($ch);
-      return redirect('administrador/espacios/gestion')->with("mensaje","Tu Recurso ha sido Eliminado con exito.");
+      return redirect('administrador/espacios')->with("mensaje","Tu Recurso ha sido Eliminado con exito.");
    }
 
    public function getId($id){
@@ -153,6 +154,28 @@ class EspaciosController extends Controller
         $deportes = (object)$data;
         return $deportes;
    }
+
+   public function getServicios()
+   {
+      $login = 'desarrollo01@togroow.com';
+        $password = '123456';
+        $url = 'http://servicios.togroow.local/espaciosservicios';
+        $ch = curl_init();
+        $post = [];
+        $post['redsocial'] = '49';
+        curl_setopt($ch, CURLOPT_URL,$url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        $result = curl_exec($ch);
+        curl_close($ch);  
+        $data = json_decode($result,JSON_UNESCAPED_UNICODE);
+        $servicios = (object)$data;
+        return $servicios;
+   }
+
    public function getPaises()
    {
       $login = 'desarrollo01@togroow.com';
@@ -173,6 +196,8 @@ class EspaciosController extends Controller
         $paises = (object)$data;
         return $paises;
    }
+
+   
 
 
 }

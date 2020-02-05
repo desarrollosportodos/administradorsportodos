@@ -53,12 +53,11 @@
                     </a>
                     <ul>
                         <li><a href="{{ route("deportes") }}">Deportes</a></li>
+                        <li><a href="{{ route("deporteposicion") }}">Posiciones Deportes</a></li>
                         <li><a href="{{ route("espaciosservicios") }}">Servicios Espacios</a></li>
-                    </ul>
-                    
+                        <li><a href="{{ route("espaciostipos") }}">Tipos Espacios</a></li>
+                    </ul>    
                 </li>
-                
-            
                 <li>
                     <a>
                         <i class="metismenu-icon pe-7s-users"></i>

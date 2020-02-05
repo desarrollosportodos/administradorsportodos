@@ -29,8 +29,7 @@ Recursos o Espacios
                 <tr>
                     <th></th>
                     <th>Nombre</th>
-                    <th>Pais</th>
-                    <th>Deportes</th>
+
                     <th width="100"></th>
                 </tr>
             </thead>
@@ -43,17 +42,12 @@ Recursos o Espacios
                             {{$numero+1}}
                         </th>
                         <td>
-                           
+                           {{ $item['nombre'] }}
                         </td>
-                        <td>
-                            
-                        </td>
-                        <td>
-                          
-                        </td>
+                
                         <td class="text-center">
                             <div class="content-form">
-                                <a href="{{ route('gestion-recursos-editar',[ 'id' => $item['id'] ]) }}" class="btn btn-sm btn-info "><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('espacios-editar',[ 'id' => $item['id'] ]) }}" class="btn btn-sm btn-info "><i class="fas fa-edit"></i></a>
                                 <span data-toggle="modal" data-target="#modaleleiminar{{ $item['id']}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></span>
                             </div>
                         </td>
@@ -83,7 +77,7 @@ Recursos o Espacios
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <form action="{{ route('gestion-recursos-eliminar',[ 'id' => $item['id'] ]) }}"  method="POST">
+                    <form action="{{ route('espacios-eliminar',[ 'id' => $item['id'] ]) }}"  method="POST">
                         @csrf
                         <button type="submit" class="btn btn-danger">Eliminar</button>
                     </form>
