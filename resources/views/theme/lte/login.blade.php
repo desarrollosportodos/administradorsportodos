@@ -15,7 +15,13 @@
     <body class="login-fondo">
         <div class="box-login">
             <img src="{{ asset("assets/admin/images/logogrande.png") }}" alt="">
-            <form action="/administrador/login2">
+            @if (session("mensaje"))
+                <div class="alert alert-danger " >
+                    {{ session("mensaje") }}
+                </div>
+            @endif
+            <form action="/administrador/login2" method="post">
+                @csrf
                 <div class="form-group">
                     <i class="fa fa-user"></i>
                     <input type="text" name="user" class="form-control usuario" placeholder="Usuario">

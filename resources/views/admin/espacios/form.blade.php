@@ -123,22 +123,22 @@
             let dropdown = $('#ciudad');
             dropdown.empty();
             $.each(res, function (key, entry) {
-                dropdown.append($('<option></option>').attr('value', entry.id).text(entry.ciudad));
+                dropdown.append($('<option></option>').attr('value', entry.id).text(entry.nombre));
             });
+            $("#ciudad").trigger("change");
        });
-       console.log(pais);
     });
     $("#ciudad").on("change", function () {
        var ciudad  = $(this).val();
+       console.log(ciudad);
+
        $.get("/administrador/zonas?ciudad="+ciudad,function(res){
             let dropdown = $('#zona');
             dropdown.empty();
             if(JSON.stringify(res) == '{}' ){
-                console.log("sin zona");
                 dropdown.append($('<option></option>').attr('value',"0").text("No Aplica")); 
             } else{
                 var value = $("#ciudad").data("value");
-                conosle.log(value);
                 $.each(res, function (key, entry) {
                     dropdown.append($('<option></option>').attr('value', entry.id).text(entry.nombre));
                 });
@@ -147,7 +147,8 @@
        });
     });
 
-    $("#pais").trigger("change")
+    $("#pais").trigger("change");
+    
     
 </script>
 @endsection

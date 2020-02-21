@@ -5,26 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Servicios\Sportodos;
 
 class EspaciosController extends Controller
 {
    public function index()
    {
-      $login = 'desarrollo01@togroow.com';
-      $password = '123456';
-      $url = 'http://servicios.togroow.local/espacios';
-      $ch = curl_init();
       $post = [];
       $post['redsocial'] = '49';
-      curl_setopt($ch, CURLOPT_URL,$url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-      $result = curl_exec($ch);
-      curl_close($ch);  
-      $data = json_decode($result,JSON_UNESCAPED_UNICODE);
+      $data = Sportodos::request("espacios",$post);
       $listado = (object)$data;
       $deportes = $this->getDeportes();
       return view('admin.espacios.home', compact('listado','deporte'));
@@ -45,17 +34,8 @@ class EspaciosController extends Controller
       if($request->file("imagen")){
          $data['imagen'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
       }
-      $login = 'desarrollo01@togroow.com';
-      $password = '123456';
-      $url = 'http://servicios.togroow.local/espacios/crear';
-      $ch = curl_init();
       $post = $data;
-      curl_setopt($ch, CURLOPT_URL,$url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-      curl_setopt($ch, CURLOPT_POSTFIELDS,  http_build_query($post));
-      $result = curl_exec($ch);
+      $data = Sportodos::request("espacios/crear",$post);
       return redirect('administrador/espacios')->with("mensaje","Tu tipo de Recurso ha sido creado con exito.");
    }
 
@@ -79,18 +59,7 @@ class EspaciosController extends Controller
          }
          $data['imagen'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
       }
-      $login = 'desarrollo01@togroow.com';
-      $password = '123456';
-      $url = 'http://servicios.togroow.local/espacios/editar/'.$id;
-      $ch = curl_init();
-      $post = $data;
-      curl_setopt($ch, CURLOPT_URL,$url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-      $result = curl_exec($ch);
+      Sportodos::request("espacios/editar",$data);
       return redirect('administrador/espacios')->with("mensaje","Tu Recurso ha sido Actualizado con exito.");
    }
 
@@ -101,98 +70,42 @@ class EspaciosController extends Controller
          Storage::disk('public')->delete($image);
       }
       $data = $request->all();
-      $login = 'desarrollo01@togroow.com';
-      $password = '123456';
-      $url = 'http://servicios.togroow.local/espacios/eliminar/'.$id;
-      $ch = curl_init();
-      $post = $data;
-      curl_setopt($ch, CURLOPT_URL,$url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-      $result = curl_exec($ch);
+
+      Sportodos::request("espacios/eliminar",$data);
       return redirect('administrador/espacios')->with("mensaje","Tu Recurso ha sido Eliminado con exito.");
    }
 
    public function getId($id){
-      $login = 'desarrollo01@togroow.com';
-      $password = '123456';
-      $url = 'http://servicios.togroow.local/espacios/detalle/'.$id;
-      $ch = curl_init();
       $post = [];
-      curl_setopt($ch, CURLOPT_URL,$url);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-      curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-      curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-      $result = curl_exec($ch);
-      $data = json_decode($result, JSON_UNESCAPED_UNICODE);
+      $data = Sportodos::request("espacios/detalle/".$id,$post);
       return $data;
    }
 
 
    public function getDeportes()
    {
-      $login = 'desarrollo01@togroow.com';
-        $password = '123456';
-        $url = 'http://servicios.togroow.local/deportes';
-        $ch = curl_init();
         $post = [];
         $post['redsocial'] = '49';
-        curl_setopt($ch, CURLOPT_URL,$url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        $result = curl_exec($ch);
-        curl_close($ch);  
-        $data = json_decode($result,JSON_UNESCAPED_UNICODE);
+        $data = Sportodos::request("deportes",$post);
         $deportes = (object)$data;
         return $deportes;
    }
 
    public function getServicios()
    {
-      $login = 'desarrollo01@togroow.com';
-        $password = '123456';
-        $url = 'http://servicios.togroow.local/espaciosservicios';
-        $ch = curl_init();
+
         $post = [];
         $post['redsocial'] = '49';
-        curl_setopt($ch, CURLOPT_URL,$url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        $result = curl_exec($ch);
-        curl_close($ch);  
-        $data = json_decode($result,JSON_UNESCAPED_UNICODE);
+        $data = Sportodos::request("espaciosservicios",$post);
         $servicios = (object)$data;
         return $servicios;
    }
 
    public function getPaises()
    {
-      $login = 'desarrollo01@togroow.com';
-        $password = '123456';
-        $url = 'http://servicios.togroow.local/lugares/paises';
-        $ch = curl_init();
         $post = [];
         $post['redsocial'] = '49';
-        curl_setopt($ch, CURLOPT_URL,$url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        $result = curl_exec($ch);
-        curl_close($ch);  
-        $data = json_decode($result,JSON_UNESCAPED_UNICODE);
+        $data = Sportodos::request("espacios/lugares/paises",$post);
         $paises = (object)$data;
         return $paises;
    }

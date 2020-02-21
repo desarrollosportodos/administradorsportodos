@@ -24637,7 +24637,7 @@ a.fc-more:hover {
     left: 10px;
     top: 10px;
     font-size: 18px;
-    color:#F05B40;
+    color:#2FCD7F;
 }
 .box-login .form-control{
     padding-left: 40px;
@@ -24645,7 +24645,7 @@ a.fc-more:hover {
     background: #eeeeee;
 }
 .box-login .btn{
-    background: #F05B40;
+    background: #2FCD7F;
     color:#FFFFFF;
     text-transform: uppercase;
 }
@@ -24940,7 +24940,7 @@ body{
     padding:0!important; 
 }
 .app-theme-white .app-sidebar {
-    background: #f05b40;
+    background: #2FCD7F;
 }
 
 .check-group {
@@ -24964,5 +24964,5 @@ body{
 .check-group input:checked + span {
     display: block;
     background: #EEEEEE;
-    border-color: #F05B40;
+    border-color: #2FCD7F;
   }

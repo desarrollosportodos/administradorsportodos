@@ -15,7 +15,7 @@ Route::get('/', function () {
     Redirect::intended('/administrador');
 });
 Route::get('administrador/login', 'Admin\LoginController@index')->name('login');
-Route::get('administrador/login2', 'Admin\LoginController@login')->name('login2');
+Route::post('administrador/login2', 'Admin\LoginController@login')->name('login2');
 Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['admin'] ], function(){ 
     Route::get('logout', 'LoginController@logout')->name('logout');
     Route::get('', 'HomeController@index')->name('home-administracion');
