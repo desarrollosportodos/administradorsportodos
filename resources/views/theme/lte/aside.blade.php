@@ -23,26 +23,32 @@
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
                 <li>
+                    <a href="{{ route("home-administracion") }}">
+                        <i class="metismenu-icon fas fa-home"></i>
+                       Inicio
+                    </a>
+                </li>
+                <li>
                     <a href="">
-                        <i class="metismenu-icon pe-7s-display1"></i>
+                        <i class="metismenu-icon fas fa-sitemap"></i>
                         Estadisticas
                     </a>
                 </li>
                 <li>
                     <a>
-                        <i class="metismenu-icon pe-7s-note2"></i>
+                        <i class="metismenu-icon fas fa-clipboard"></i>
                         Tablas de Negocio
                     </a>
                 </li>
                 <li>
                     <a href="{{ route("espacios") }}">
-                        <i class="metismenu-icon pe-7s-note2"></i>
+                        <i class="metismenu-icon fas fa-map-signs"></i>
                         Espacios
                     </a>
                 </li>
                 <li>
                     <a>
-                        <i class="metismenu-icon pe-7s-box1"></i>
+                        <i class="metismenu-icon fas fa-cogs"></i>
                         Parametrizacion
                     </a>
                     <ul>
@@ -55,13 +61,13 @@
                 </li>
                 <li>
                     <a>
-                        <i class="metismenu-icon pe-7s-users"></i>
+                        <i class="metismenu-icon fas fa-address-book"></i>
                         Usuarios
                     </a>
                 </li>
                 <li>
                     <a>
-                        <i class="metismenu-icon pe-7s-rocket"></i>
+                        <i class="metismenu-icon fas fa-folder-open"></i>
                         Publicidad y contenidos
                     </a>
                 </li>
