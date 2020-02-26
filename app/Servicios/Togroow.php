@@ -5,7 +5,7 @@ class Togroow
 {
 
     public static function request($metodo,$data){
-        $url = "http://servicios.togroow.local/";
+        $url = "http://api.togroow.com/";
         $user ="desarrollo01@togroow.com";
         $password = "123456";
         $ch = curl_init();
