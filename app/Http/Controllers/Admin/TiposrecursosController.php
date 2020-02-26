@@ -10,7 +10,7 @@ class TiposrecursosController extends Controller
    public function index(){
          $login = 'desarrollo01@togroow.com';
         $password = '123456';
-        $url = 'http://servicios.togroow.local/tipoelementos';
+        $url = 'http://api.sportodos.com/tipoelementos';
         $ch = curl_init();
         $post = [];
         $post['redsocial'] = '49';
@@ -36,7 +36,7 @@ class TiposrecursosController extends Controller
       $data['red'] = 49;
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/tipoelementos/crear';
+      $url = 'http://api.sportodos.com/tipoelementos/crear';
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -53,7 +53,7 @@ class TiposrecursosController extends Controller
       $data = $request->all();
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/tipoelementos/editar/'.$id;
+      $url = 'http://api.sportodos.com/tipoelementos/editar/'.$id;
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -71,7 +71,7 @@ class TiposrecursosController extends Controller
       $data = $request->all();
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/tipoelementos/eliminar/'.$id;
+      $url = 'http://api.sportodos.com/tipoelementos/eliminar/'.$id;
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);

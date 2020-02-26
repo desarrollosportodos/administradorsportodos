@@ -12,7 +12,7 @@ class ClientesController extends Controller
     {
         $login = 'desarrollo01@togroow.com';
         $password = '123456';
-        $url = 'http://servicios.togroow.local/clientes';
+        $url = 'http://api.sportodos.com/clientes';
         $ch = curl_init();
         $post = [];
         $post['redsocial'] = '49';
@@ -40,7 +40,7 @@ class ClientesController extends Controller
 
         $login = 'desarrollo01@togroow.com';
         $password = '123456';
-        $url = 'http://servicios.togroow.local/clientes/nuevo';
+        $url = 'http://api.sportodos.com/clientes/nuevo';
         $ch = curl_init();
         $post = $request->all();
         curl_setopt($ch, CURLOPT_URL,$url);
@@ -57,7 +57,7 @@ class ClientesController extends Controller
     public function getCategorias($tipo = NULL){
         $login = 'desarrollo01@togroow.com';
         $password = '123456';
-        $url = 'http://servicios.togroow.local/categoriasnegocio';
+        $url = 'http://api.sportodos.com/categoriasnegocio';
         $ch = curl_init();
         $post = [];
         //$post['redsocial'] = '49';
@@ -77,7 +77,7 @@ class ClientesController extends Controller
     public function detalle($id){
         $login = 'desarrollo01@togroow.com';
         $password = '123456';
-        $url = 'http://servicios.togroow.local/clientes/detalle/'.$id;
+        $url = 'http://api.sportodos.com/clientes/detalle/'.$id;
         $ch = curl_init();
         $post = [];
         curl_setopt($ch, CURLOPT_URL,$url);

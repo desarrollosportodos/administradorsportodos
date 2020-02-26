@@ -10,7 +10,7 @@ class DeportesController extends Controller
    public function index(){
          $login = 'desarrollo01@togroow.com';
         $password = '123456';
-        $url = 'http://servicios.togroow.local/deportes';
+        $url = 'http://api.sportodos.com/deportes';
         $ch = curl_init();
         $post = [];
         $post['redsocial'] = '49';
@@ -35,7 +35,7 @@ class DeportesController extends Controller
       $data['red'] = 49;
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/deportes/crear';
+      $url = 'http://api.sportodos.com/deportes/crear';
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -53,7 +53,7 @@ class DeportesController extends Controller
       $data = $request->all();
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/deportes/editar/'.$id;
+      $url = 'http://api.sportodos.com/deportes/editar/'.$id;
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -71,7 +71,7 @@ class DeportesController extends Controller
       $data = $request->all();
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/deportes/eliminar/'.$id;
+      $url = 'http://api.sportodos.com/deportes/eliminar/'.$id;
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);

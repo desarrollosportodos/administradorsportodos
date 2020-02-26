@@ -32,7 +32,7 @@ class EspaciosController extends Controller
       $data = $request->all();
       $data['redsocial'] = 49;
       if($request->file("imagen")){
-         $data['imagen'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
+         $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
       }
       $post = $data;
       $data = Sportodos::request("espacios/crear",$post);
@@ -53,13 +53,13 @@ class EspaciosController extends Controller
       $elemento = $this->getId($id); 
       $data = $request->all();
       if($request->file("imagen")){
-         if($elemento['imagen']){
-            $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['imagen']);
+         if(isset($elemento['foto'])){
+            $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['foto']);
             Storage::disk('public')->delete($image);
          }
-         $data['imagen'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
+         $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
       }
-      Sportodos::request("espacios/editar",$data);
+      Sportodos::request("espacios/editar/".$id,$data);
       return redirect('administrador/espacios')->with("mensaje","Tu Recurso ha sido Actualizado con exito.");
    }
 

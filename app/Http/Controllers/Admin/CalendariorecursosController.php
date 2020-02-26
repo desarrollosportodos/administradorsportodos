@@ -18,7 +18,7 @@ class CalendariorecursosController extends Controller
       }
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/elementos/disponibilidad';
+      $url = 'http://api.sportodos.com/elementos/disponibilidad';
       $ch = curl_init();
       $post = [];
       $post['redsocial'] = '49';
@@ -42,7 +42,7 @@ class CalendariorecursosController extends Controller
       $array = [];
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/usuarios/listado';
+      $url = 'http://api.sportodos.com/usuarios/listado';
       $ch = curl_init();
       $post = [];
       $post['redsocial'] = '49';
@@ -77,7 +77,7 @@ class CalendariorecursosController extends Controller
       }
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/elementos/reservar';
+      $url = 'http://api.sportodos.com/elementos/reservar';
       $ch = curl_init();
       $post = http_build_query($array);
       curl_setopt($ch, CURLOPT_URL,$url);

@@ -10,7 +10,7 @@ class EspaciostipoController extends Controller
    public function index(){
          $login = 'desarrollo01@togroow.com';
         $password = '123456';
-        $url = 'http://servicios.togroow.local/espaciostipos';
+        $url = 'http://api.sportodos.com/espaciostipos';
         $ch = curl_init();
         $post = [];
         $post['redsocial'] = '49';
@@ -35,7 +35,7 @@ class EspaciostipoController extends Controller
       $data['red'] = 49;
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/espaciostipos/crear';
+      $url = 'http://api.sportodos.com/espaciostipos/crear';
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -52,7 +52,7 @@ class EspaciostipoController extends Controller
       $data = $request->all();
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/espaciostipos/editar/'.$id;
+      $url = 'http://api.sportodos.com/espaciostipos/editar/'.$id;
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -70,7 +70,7 @@ class EspaciostipoController extends Controller
       $data = $request->all();
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/espaciostipos/eliminar/'.$id;
+      $url = 'http://api.sportodos.com/espaciostipos/eliminar/'.$id;
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);

@@ -12,7 +12,7 @@ class RecursosController extends Controller
    {
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/elementos';
+      $url = 'http://api.sportodos.com/elementos';
       $ch = curl_init();
       $post = [];
       $post['redsocial'] = '49';
@@ -45,7 +45,7 @@ class RecursosController extends Controller
       }
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/elementos/crear';
+      $url = 'http://api.sportodos.com/elementos/crear';
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -79,7 +79,7 @@ class RecursosController extends Controller
       }
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/elementos/editar/'.$id;
+      $url = 'http://api.sportodos.com/elementos/editar/'.$id;
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -101,7 +101,7 @@ class RecursosController extends Controller
       $data = $request->all();
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/elementos/eliminar/'.$id;
+      $url = 'http://api.sportodos.com/elementos/eliminar/'.$id;
       $ch = curl_init();
       $post = $data;
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -117,7 +117,7 @@ class RecursosController extends Controller
    public function getId($id){
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/elementos/detalle/'.$id;
+      $url = 'http://api.sportodos.com/elementos/detalle/'.$id;
       $ch = curl_init();
       $post = [];
       curl_setopt($ch, CURLOPT_URL,$url);
@@ -136,7 +136,7 @@ class RecursosController extends Controller
    {
       $login = 'desarrollo01@togroow.com';
       $password = '123456';
-      $url = 'http://servicios.togroow.local/tipoelementos';
+      $url = 'http://api.sportodos.com/tipoelementos';
       $ch = curl_init();
       $post = [];
       $post['redsocial'] = '49';

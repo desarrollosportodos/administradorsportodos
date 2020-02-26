@@ -56,6 +56,7 @@
                         <li><a href="{{ route("deporteposicion") }}">Posiciones Deportes</a></li>
                         <li><a href="{{ route("espaciosservicios") }}">Servicios Espacios</a></li>
                         <li><a href="{{ route("espaciostipos") }}">Tipos Espacios</a></li>
+                        <li><a href="{{ route("deportebarrera") }}">Barreras Deportes</a></li>
                     </ul>    
                 </li>
                 <li>
