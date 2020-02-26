@@ -29,12 +29,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route("clientes") }}">
-                        <i class="metismenu-icon pe-7s-id"></i>
-                        Clientes
-                    </a>
-                </li>
-                <li>
                     <a>
                         <i class="metismenu-icon pe-7s-note2"></i>
                         Tablas de Negocio

@@ -10,8 +10,8 @@ Recursos o Espacios
                 <i class="pe-7s-box1 icon-gradient bg-night-fade">
                 </i>
             </div>
-            <div>Gestion de Espacios y Recursos
-                <div class="page-title-subheading">Aconticunación encontraras el listado de los recursos de tu empresa, podras gestionar y visualizar el detalle de cada uno de ellos.
+            <div>Gestion de Espacios Deportivos
+                <div class="page-title-subheading">Aconticunación encontraras el listado de los espacios deportivos, podras gestionar y visualizar el detalle de cada uno de ellos.
                 </div>
             </div>
         </div>
@@ -35,7 +35,6 @@ Recursos o Espacios
             </thead>
             <tbody>
                 @foreach ($listado as $numero => $item)
-                <form action="{{ route('tipos-recursos-actualizar',[ 'id' => $item['id'] ]) }}" method="POST">
                     @csrf
                     <tr>
                         <th>
@@ -52,7 +51,6 @@ Recursos o Espacios
                             </div>
                         </td>
                     </tr>
-                </form>
                 @endforeach
             </tbody>
         </table>

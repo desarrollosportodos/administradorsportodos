@@ -13,8 +13,7 @@ class EspaciosController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      $data = Sportodos::request("espacios",$post);
-      $listado = (object)$data;
+      $listado = Sportodos::request("espacios",$post);
       $deportes = $this->getDeportes();
       return view('admin.espacios.home', compact('listado','deporte'));
    }

@@ -20,28 +20,6 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::get('logout', 'LoginController@logout')->name('logout');
     Route::get('', 'HomeController@index')->name('home-administracion');
 
-    Route::get('clientes', 'ClientesController@index')->name('clientes');
-    Route::get('clientes/nuevo', 'ClientesController@nuevo')->name('nuevo-cliente');
-    Route::any('clientes/crear', 'ClientesController@nuevocliente')->name('crearcliente');
-    Route::any('clientes/detalle/{id}', 'ClientesController@detalle')->name('detallecliente');
-    Route::any('clientes/editar/{id}', 'ClientesController@editar')->name('editar-cliente');
-
-
-    Route::get('recursos/gestion', 'RecursosController@index')->name('gestion-recursos');
-    Route::get('recursos/gestion/nuevo', 'RecursosController@nuevo')->name('gestion-recursos-nuevo');
-    Route::post('recursos/gestion/crear', 'RecursosController@crear')->name('gestion-recursos-crear');
-    Route::get('recursos/gestion/editar/{id}', 'RecursosController@editar')->name('gestion-recursos-editar');
-    Route::post('recursos/gestion/actualizar/{id}', 'RecursosController@actualizar')->name('gestion-recursos-actualizar');
-    Route::post('recursos/gestion/eliminar/{id}', 'RecursosController@eliminar')->name('gestion-recursos-eliminar');
-
-    Route::get('recursos/tipos', 'TiposrecursosController@index')->name('tipos-recursos');
-    Route::get('recursos/tipos/nuevo', 'TiposrecursosController@nuevo')->name('tipos-recursos-nuevo');
-    Route::post('recursos/tipos/crear', 'TiposrecursosController@crear')->name('tipos-recursos-crear');
-    Route::post('recursos/tipos/actualizar/{id}', 'TiposrecursosController@actualizar')->name('tipos-recursos-actualizar');
-    Route::post('recursos/tipos/eliminar/{id}', 'TiposrecursosController@eliminar')->name('tipos-recursos-eliminar');
-
-    Route::get('recursos/gestion/salas', 'CalendariorecursosController@index')->name('calendario-recursos');
-    Route::post('recursos/gestion/salas/reservar/{id}', 'CalendariorecursosController@reservar')->name('calendario-reservas-recursos');
 
     Route::get('espacios', 'EspaciosController@index')->name('espacios');
     Route::get('espacios/nuevo', 'EspaciosController@nuevo')->name('espacios-nuevo');
