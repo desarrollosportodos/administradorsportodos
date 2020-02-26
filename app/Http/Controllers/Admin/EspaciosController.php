@@ -95,8 +95,7 @@ class EspaciosController extends Controller
 
         $post = [];
         $post['redsocial'] = '49';
-        $data = Sportodos::request("espaciosservicios",$post);
-        $servicios = (object)$data;
+        $servicios = Sportodos::request("espaciosservicios",$post);
         return $servicios;
    }
 
@@ -104,8 +103,8 @@ class EspaciosController extends Controller
    {
         $post = [];
         $post['redsocial'] = '49';
-        $data = Sportodos::request("espacios/lugares/paises",$post);
-        $paises = (object)$data;
+        $data = Sportodos::request("lugares/paises",$post);
+        $paises = $data;
         return $paises;
    }
 

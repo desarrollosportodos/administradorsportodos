@@ -87,7 +87,7 @@
                     @foreach ($servicios as $servicio)
                         <div class="col-sm-3">
                             <label for="servicio{{$servicio['id']}}" class="check-group">
-                                <input class="flat-red"  type="checkbox" name="servicios[]" id="servicio{{$servicio['id']}}" value="{{$servicio['id']}}" <?php if(in_array($servicio['id'],$data['servicios'])){ echo "checked"; } ?> />
+                                <input class="flat-red"  type="checkbox" name="servicios[]" id="servicio{{$servicio['id']}}" value="{{$servicio['id']}}" <?php if(isset($data['servicios']) && in_array($servicio['id'],$data['servicios'])){ echo "checked"; } ?> />
                                 <span>{{$servicio['nombre']}}</span>
                             </label>
                         </div>
@@ -100,7 +100,7 @@
                     @foreach ($deportes as $deporte)
                         <div class="col-sm-3">
                             <label for="deporte{{$deporte['id']}}" class="check-group">
-                                <input class="flat-red"  type="checkbox" name="deportes[]" id="deporte{{$deporte['id']}}" value="{{$deporte['id']}}" <?php if(in_array($deporte['id'],$data['deportes'])){ echo "checked"; } ?> />
+                                <input class="flat-red"  type="checkbox" name="deportes[]" id="deporte{{$deporte['id']}}" value="{{$deporte['id']}}" <?php if( isset($data['deportes']) && in_array($deporte['id'],$data['deportes'])){ echo "checked"; } ?> />
                                 <span>{{$deporte['nombre']}}</span>
                             </label>
                         </div>
