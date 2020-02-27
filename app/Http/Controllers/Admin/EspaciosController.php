@@ -15,7 +15,8 @@ class EspaciosController extends Controller
       $post['redsocial'] = '49';
       $listado = Sportodos::request("espacios",$post);
       $deportes = $this->getDeportes();
-      return view('admin.espacios.home', compact('listado','deporte'));
+      $asideactual = 3;
+      return view('admin.espacios.home', compact('listado','deporte','asideactual'));
    }
 
    public function nuevo()
@@ -23,7 +24,8 @@ class EspaciosController extends Controller
       $deportes = $this->getDeportes();
       $paises = $this->getPaises();
       $servicios = $this->getServicios();
-      return view('admin.espacios.crear', compact('deportes','paises','servicios'));
+      $asideactual = 3;
+      return view('admin.espacios.crear', compact('deportes','paises','servicios','asideactual'));
    }
 
    public function crear(Request $request)
@@ -44,7 +46,8 @@ class EspaciosController extends Controller
       $deportes = $this->getDeportes();
       $paises = $this->getPaises();
       $servicios = $this->getServicios();
-      return view('admin.espacios.editar', compact('deportes','data','paises','servicios'));
+      $asideactual = 3;
+      return view('admin.espacios.editar', compact('deportes','data','paises','servicios','asideactual'));
    }
 
    public function actualizar(Request $request,$id)

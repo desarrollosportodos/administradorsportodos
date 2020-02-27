@@ -22,26 +22,26 @@
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-                <li>
+                <li class="<?php if( isset($asideactual) && $asideactual == 1 ) { echo "mm-active";  }?> ">
                     <a href="{{ route("home-administracion") }}">
                         <i class="metismenu-icon pe-7s-home"></i>
                        Inicio
                     </a>
                 </li>
-                <li>
-                    <a href="">
+                <li  class="<?php if( isset($asideactual) && $asideactual == 2 ) { echo "mm-active";  }?> ">
+                    <a >
                         <i class="metismenu-icon pe-7s-display1"></i>
                         Estadisticas
                     </a>
                 </li>
-                <li>
+                <li class="<?php if( isset($asideactual) && $asideactual == 3 ) { echo "mm-active";  }?> ">
                     <a href="{{ route("espacios") }}">
                         <i class="metismenu-icon pe-7s-map-2"></i>
                         Espacios Deportivos
                     </a>
                 </li>
-                <li>
-                    <a>
+                <li  class="<?php if( isset($asideactual) && $asideactual == 4 ) { echo "mm-active";  }?> ">
+                    <a href="">
                         <i class="metismenu-icon pe-7s-box1"></i>
                         Parametrizacion
                     </a>
@@ -54,13 +54,13 @@
                         <li><a>Tablas de Sistema</a></li>
                     </ul>    
                 </li>
-                <li>
+                <li class="<?php if( isset($asideactual) && $asideactual == 5 ) { echo "mm-active";  }?> ">
                     <a>
                         <i class="metismenu-icon pe-7s-users"></i>
                         Usuarios
                     </a>
                 </li>
-                <li>
+                <li  class="<?php if( isset($asideactual) && $asideactual == 6 ) { echo "mm-active";  }?> ">
                     <a>
                         <i class="metismenu-icon pe-7s-rocket"></i>
                         Publicidad y contenidos

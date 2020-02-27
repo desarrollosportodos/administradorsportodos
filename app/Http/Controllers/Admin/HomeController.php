@@ -9,6 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('admin.home.home');
+        $asideactual = 1;
+        return view('admin.home.home',compact("asideactual"));
     }
 }

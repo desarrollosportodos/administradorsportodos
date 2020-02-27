@@ -20,7 +20,7 @@ Home
 
 <div class="row">
     <div class="col-sm-3">
-        <a class="card-button" href="">
+        <a class="card-button">
             <div class="row align-items-center">
                 <div class="col-sm-3">
                     <i class="metismenu-icon pe-7s-display1"></i>

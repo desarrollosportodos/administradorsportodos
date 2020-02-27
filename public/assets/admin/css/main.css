@@ -10652,7 +10652,9 @@ button,
 }
 
 .vertical-nav-menu li.mm-active>a {
-    font-weight: bold
+    font-weight: bold;
+    background:#3ac47d;
+    color:#12314D!important;
 }
 
 .vertical-nav-menu li.mm-active>a i.metismenu-state-icon {
@@ -10739,6 +10741,10 @@ button,
 .app-sidebar.sidebar-text-light .vertical-nav-menu li a {
     color: #3ac47d;
 }
+.app-sidebar.sidebar-text-light .vertical-nav-menu li a:not([href]):not([tabindex]){
+    color: #4a5e71;
+}
+
 
 .app-sidebar.sidebar-text-light .vertical-nav-menu li a i.metismenu-icon {
     opacity: .5
@@ -10752,6 +10758,12 @@ button,
     background: #3ac47d;
     color: #12314D;
 }
+.app-sidebar.sidebar-text-light .vertical-nav-menu li a:not([href]):not([tabindex]):hover {
+    background: transparent;
+    color: #4a5e71;
+    cursor: default;
+}
+
 
 .app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover i.metismenu-icon {
     opacity: .8
@@ -24999,6 +25011,7 @@ a.card-button:not([href]):not([tabindex]){
 a.card-button:not([href]):not([tabindex]):hover, a.card-button:not([href]):not([tabindex]):focus{
     background: #FFFFFF;
     color: #cccccc;
+    cursor: none;
 }
 a.card-button:not([href]):not([tabindex]) h2 , a.card-button:not([href]):not([tabindex]) i{
     color: #CCCCCC;

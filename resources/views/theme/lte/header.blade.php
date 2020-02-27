@@ -67,7 +67,7 @@
                                 <?php echo Session::get("usuario")->nombre; ?>
                             </div>
                             <div class="widget-subheading">
-                                Administrador Dot
+                                Administrador
                             </div>
                         </div>
                         <div class="widget-content-right header-user-info ml-3">

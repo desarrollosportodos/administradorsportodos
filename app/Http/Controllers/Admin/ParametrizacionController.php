@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ParametrizacionController extends Controller
 {
     public function index()
-    {
-        return view('admin.parametrizacion.index');
+    { 
+        $asideactual = 4;
+        return view('admin.parametrizacion.index',compact('asideactual'));
     }
 }
