@@ -24,31 +24,25 @@
             <ul class="vertical-nav-menu">
                 <li>
                     <a href="{{ route("home-administracion") }}">
-                        <i class="metismenu-icon fas fa-home"></i>
+                        <i class="metismenu-icon pe-7s-home"></i>
                        Inicio
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <i class="metismenu-icon fas fa-sitemap"></i>
+                        <i class="metismenu-icon pe-7s-display1"></i>
                         Estadisticas
                     </a>
                 </li>
                 <li>
-                    <a>
-                        <i class="metismenu-icon fas fa-clipboard"></i>
-                        Tablas de Negocio
-                    </a>
-                </li>
-                <li>
                     <a href="{{ route("espacios") }}">
-                        <i class="metismenu-icon fas fa-map-signs"></i>
-                        Espacios
+                        <i class="metismenu-icon pe-7s-map-2"></i>
+                        Espacios Deportivos
                     </a>
                 </li>
                 <li>
                     <a>
-                        <i class="metismenu-icon fas fa-cogs"></i>
+                        <i class="metismenu-icon pe-7s-box1"></i>
                         Parametrizacion
                     </a>
                     <ul>
@@ -57,17 +51,18 @@
                         <li><a href="{{ route("espaciosservicios") }}">Servicios Espacios</a></li>
                         <li><a href="{{ route("espaciostipos") }}">Tipos Espacios</a></li>
                         <li><a href="{{ route("deportebarrera") }}">Barreras Deportes</a></li>
+                        <li><a>Tablas de Sistema</a></li>
                     </ul>    
                 </li>
                 <li>
                     <a>
-                        <i class="metismenu-icon fas fa-address-book"></i>
+                        <i class="metismenu-icon pe-7s-users"></i>
                         Usuarios
                     </a>
                 </li>
                 <li>
                     <a>
-                        <i class="metismenu-icon fas fa-folder-open"></i>
+                        <i class="metismenu-icon pe-7s-rocket"></i>
                         Publicidad y contenidos
                     </a>
                 </li>

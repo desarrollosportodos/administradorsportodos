@@ -10737,7 +10737,7 @@ button,
 }
 
 .app-sidebar.sidebar-text-light .vertical-nav-menu li a {
-    color: rgba(255, 255, 255, 0.7)
+    color: #3ac47d;
 }
 
 .app-sidebar.sidebar-text-light .vertical-nav-menu li a i.metismenu-icon {
@@ -10749,8 +10749,8 @@ button,
 }
 
 .app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff
+    background: #3ac47d;
+    color: #12314D;
 }
 
 .app-sidebar.sidebar-text-light .vertical-nav-menu li a:hover i.metismenu-icon {
@@ -10814,7 +10814,7 @@ button,
 }
 
 .app-sidebar.sidebar-text-dark .vertical-nav-menu li a {
-    color: rgba(0, 0, 0, 0.6)
+    color: #2FCD7F;
 }
 
 .app-sidebar.sidebar-text-dark .vertical-nav-menu li a i.metismenu-icon {
@@ -10826,8 +10826,8 @@ button,
 }
 
 .app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover {
-    background: rgba(0, 0, 0, 0.15);
-    color: rgba(0, 0, 0, 0.7)
+    background: #2FCD7F;
+    color:#12314D;
 }
 
 .app-sidebar.sidebar-text-dark .vertical-nav-menu li a:hover i.metismenu-icon {
@@ -11111,11 +11111,11 @@ button,
 }
 
 .app-theme-white .app-sidebar {
-    background: #fff
+    background: #12314D;
 }
 
 .app-theme-white .app-page-title {
-    background: rgba(255, 255, 255, 0.45)
+    background: #FFFFFF;
 }
 
 .app-theme-white .app-footer .app-footer__inner,
@@ -11124,7 +11124,7 @@ button,
 }
 
 .app-theme-white.fixed-header .app-header__logo {
-    background: rgba(250, 251, 252, 0.1)
+    background: #12314D
 }
 
 .app-footer {
@@ -24939,9 +24939,6 @@ a.fc-more:hover {
 body{
     padding:0!important; 
 }
-.app-theme-white .app-sidebar {
-    background: #12314D;
-}
 
 .check-group {
     position: relative;
@@ -24966,3 +24963,43 @@ body{
     background: #EEEEEE;
     border-color: #2FCD7F;
   }
+
+.card-button{
+    background: #FFFFFF;
+    display: block;
+    padding: 10px;
+    border-radius: 0.5em;
+    margin:10px;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+color: #333333;
+}
+.card-button i{
+    font-size:50px;display: block;
+    text-align: center;
+    color:#3ac47d ;
+}
+.card-button h2{
+    font-size: 20px;
+    color: #3ac47d;
+}
+.card-button .descripcion{
+    font-size: 12px;
+    
+}
+.card-button:hover{
+    text-decoration: none;
+    background:#12314D ;
+    color:#fff;
+}
+a.card-button:not([href]):not([tabindex]){
+    background: #FFFFFF;
+    color: #cccccc;
+}
+a.card-button:not([href]):not([tabindex]):hover, a.card-button:not([href]):not([tabindex]):focus{
+    background: #FFFFFF;
+    color: #cccccc;
+}
+a.card-button:not([href]):not([tabindex]) h2 , a.card-button:not([href]):not([tabindex]) i{
+    color: #CCCCCC;
+}

@@ -18,7 +18,9 @@ Route::get('administrador/login', 'Admin\LoginController@index')->name('login');
 Route::post('administrador/login2', 'Admin\LoginController@login')->name('login2');
 Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['admin'] ], function(){ 
     Route::get('logout', 'LoginController@logout')->name('logout');
+
     Route::get('', 'HomeController@index')->name('home-administracion');
+    Route::get('parametrizacion', 'ParametrizacionController@index')->name('parametrizacion-administracion');
 
 
     Route::get('espacios', 'EspaciosController@index')->name('espacios');
