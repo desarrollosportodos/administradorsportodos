@@ -23,12 +23,22 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::get('parametrizacion', 'ParametrizacionController@index')->name('parametrizacion-administracion');
 
 
-    Route::get('espacios', 'EspaciosController@index')->name('espacios');
-    Route::get('espacios/nuevo', 'EspaciosController@nuevo')->name('espacios-nuevo');
-    Route::post('espacios/crear', 'EspaciosController@crear')->name('espacios-crear');
-    Route::get('espacios/editar/{id}', 'EspaciosController@editar')->name('espacios-editar');
-    Route::post('espacios/actualizar/{id}', 'EspaciosController@actualizar')->name('espacios-actualizar');
-    Route::post('espacios/eliminar/{id}', 'EspaciosController@eliminar')->name('espacios-eliminar');
+    Route::get('puntos', 'PuntosController@index')->name('puntos');
+    Route::get('puntos/listado', 'PuntosController@listado')->name('puntoslistado');
+    Route::get('puntos/listadocajas', 'PuntosController@listadocajas')->name('puntoslistadocajas');
+    Route::get('puntos/nuevo', 'PuntosController@nuevo')->name('puntos-nuevo');
+    Route::post('puntos/crear', 'PuntosController@crear')->name('puntos-crear');
+    Route::get('puntos/editar/{id}', 'PuntosController@editar')->name('puntos-editar');
+    Route::post('puntos/actualizar/{id}', 'PuntosController@actualizar')->name('puntos-actualizar');
+    Route::post('puntos/eliminar/{id}', 'PuntosController@eliminar')->name('puntos-eliminar');
+    Route::get('puntos/detalle/{id}', 'PuntosController@detalle')->name('puntos-detalle');
+
+
+    Route::get('espacio/nuevo', 'EspacioController@nuevo')->name('espacio-nuevo');
+    Route::post('espacio/crear', 'EspacioController@crear')->name('espacio-crear');
+    Route::get('espacio/editar/{id}', 'EspacioController@editar')->name('espacio-editar');
+    Route::post('espacio/actualizar/{id}', 'EspacioController@actualizar')->name('espacio-actualizar');
+    Route::get('espacio/detalle/{id}', 'EspacioController@detalle')->name('espacio-detalle');
 
     Route::get('deportes', 'DeportesController@index')->name('deportes');
     Route::get('deportes/nuevo', 'DeportesController@nuevo')->name('deportes-nuevo');
@@ -38,12 +48,12 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::post('deportes/eliminar/{id}', 'DeportesController@eliminar')->name('deportes-eliminar');
 
 
-    Route::get('espaciosservicios', 'EspaciosserviciosController@index')->name('espaciosservicios');
-    Route::get('espaciosservicios/nuevo', 'EspaciosserviciosController@nuevo')->name('espaciosservicios-nuevo');
-    Route::post('espaciosservicios/crear', 'EspaciosserviciosController@crear')->name('espaciosservicios-crear');
-    Route::get('espaciosservicios/editar/{id}', 'EspaciosserviciosController@editar')->name('espaciosservicios-editar');
-    Route::post('espaciosservicios/actualizar/{id}', 'EspaciosserviciosController@actualizar')->name('espaciosservicios-actualizar');
-    Route::post('espaciosservicios/eliminar/{id}', 'EspaciosserviciosController@eliminar')->name('espaciosservicios-eliminar');
+    Route::get('servicios', 'ServiciosController@index')->name('servicios');
+    Route::get('servicios/nuevo', 'ServiciosController@nuevo')->name('servicios-nuevo');
+    Route::post('servicios/crear', 'ServiciosController@crear')->name('servicios-crear');
+    Route::get('servicios/editar/{id}', 'ServiciosController@editar')->name('servicios-editar');
+    Route::post('servicios/actualizar/{id}', 'ServiciosController@actualizar')->name('servicios-actualizar');
+    Route::post('servicios/eliminar/{id}', 'ServiciosController@eliminar')->name('servicios-eliminar');
     
     Route::get('espaciostipos', 'EspaciostipoController@index')->name('espaciostipos');
     Route::get('espaciostipos/nuevo', 'EspaciostipoController@nuevo')->name('espaciostipos-nuevo');

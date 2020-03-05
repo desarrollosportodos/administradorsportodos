@@ -46,26 +46,13 @@ Home
         </a>
     </div>
     <div class="col-sm-3">
-        <a class="card-button" href="{{ route("espaciosservicios") }}">
+        <a class="card-button" href="{{ route("servicios") }}">
             <div class="row align-items-center">
                 <div class="col-sm-3">
                     <i class="metismenu-icon pe-7s-box1"></i>
                 </div>
                 <div class="col-sm-9">
-                    <h2> Servicios Espacios</h2>
-                    <div class="descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-sm-3">
-        <a class="card-button" href="{{ route("espaciostipos") }}">
-            <div class="row align-items-center">
-                <div class="col-sm-3">
-                    <i class="metismenu-icon pe-7s-box1"></i>
-                </div>
-                <div class="col-sm-9">
-                    <h2> Tipos Espacios</h2>
+                    <h2> Servicios</h2>
                     <div class="descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
                 </div>
             </div>

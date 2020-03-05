@@ -35,9 +35,9 @@
                     </a>
                 </li>
                 <li class="<?php if( isset($asideactual) && $asideactual == 3 ) { echo "mm-active";  }?> ">
-                    <a href="{{ route("espacios") }}">
+                    <a href="{{ route("puntos") }}">
                         <i class="metismenu-icon pe-7s-map-2"></i>
-                        Espacios Deportivos
+                        Puntos de Encuentro
                     </a>
                 </li>
                 <li  class="<?php if( isset($asideactual) && $asideactual == 4 ) { echo "mm-active";  }?> ">
@@ -48,8 +48,7 @@
                     <ul>
                         <li><a href="{{ route("deportes") }}">Deportes</a></li>
                         <li><a href="{{ route("deporteposicion") }}">Posiciones Deportes</a></li>
-                        <li><a href="{{ route("espaciosservicios") }}">Servicios Espacios</a></li>
-                        <li><a href="{{ route("espaciostipos") }}">Tipos Espacios</a></li>
+                        <li><a href="{{ route("servicios") }}">Servicios</a></li>
                         <li><a href="{{ route("deportebarrera") }}">Barreras Deportes</a></li>
                         <li><a>Tablas de Sistema</a></li>
                     </ul>    

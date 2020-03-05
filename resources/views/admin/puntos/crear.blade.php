@@ -1,6 +1,6 @@
 @extends("theme.lte.layout")
 @section('titulo')
-Editar Recursos o Espacios
+Crear punto de encuentro
 @endsection
 @section('contenido')
 <div class="app-page-title">
@@ -10,16 +10,16 @@ Editar Recursos o Espacios
                 <i class="pe-7s-box1 icon-gradient bg-night-fade">
                 </i>
             </div>
-            <div>Editar Espacio o Recurso
-                <div class="page-title-subheading">en este modulo podras editar un espacio de trabajo o un recurso del que tus clientes podran hacer uso.
+            <div>Crear Punto de encuentro
+                <div class="page-title-subheading">en este modulo podras crear un espacio de trabajo o un recurso del que tus clientes podran hacer uso.
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<form action="{{ route('espacios-actualizar',[ 'id' => $data['espacio']['id'] ]) }}" method="POST" enctype="multipart/form-data" >
-    @include('admin.espacios.form')
+<form action="{{ route('puntos-crear') }}" method="POST" enctype="multipart/form-data">
+    @include('admin.puntos.form')
     <div class="text-right">
         <button type="submit" class="btn btn-success">Guardar</button>
     </div>

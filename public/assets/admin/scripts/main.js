@@ -115,3 +115,28 @@ $("body").on("click",".elementocalendario",function(){
     $("#detalle-elemento"+id).show();
 
 });
+
+$("body").on("click", "a[data-target='#modalUrl']", function(ev) {
+    console.log("entro esta joda");
+    var target = $(this).attr("href");
+    console.log(target);
+    $.get(target,function(res){
+      $("#modalUrl .modal-content").html(res);
+    });
+    
+});
+
+tinymce.init({
+  selector:'.tiny',
+  language:"es",
+  resize: false,
+  menubar: false,
+  plugins: [
+      'advlist autolink lists link image charmap print preview anchor filemanager responsivefilemanager',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount'
+  ],
+  toolbar: 'formatselect | bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent| link unlink  image responsivefilemanager | removeformat',
+  filemanager_title:"Archivos Cargados" ,
+  external_filemanager_path:"/assets/tinymce/plugins/filemanager/"
+});

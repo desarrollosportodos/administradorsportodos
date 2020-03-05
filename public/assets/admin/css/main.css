@@ -25004,6 +25004,9 @@ color: #333333;
     background:#12314D ;
     color:#fff;
 }
+.card-button:active,.card-button:target{
+    background: #4e6e8d;
+}
 a.card-button:not([href]):not([tabindex]){
     background: #FFFFFF;
     color: #cccccc;
@@ -25015,4 +25018,200 @@ a.card-button:not([href]):not([tabindex]):hover, a.card-button:not([href]):not([
 }
 a.card-button:not([href]):not([tabindex]) h2 , a.card-button:not([href]):not([tabindex]) i{
     color: #CCCCCC;
+}
+
+.card-espacio{
+    background: #FFFFFF;
+    padding: 10px;
+    display: block;
+    border-radius: 0.5em;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+}
+.card-espacio img{
+    max-width: 100%;
+}
+.card-espacio h2{
+    font-weight: 700;
+    font-size: 16px;
+    color: #12314D;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.card-espacio .footer-card{
+    border-top: 1px solid #CCCCCC;
+    margin-top:5px;
+    padding-top: 5px;
+    text-align: right;
+}
+.deportes i{
+    font-size: 20px;
+    margin:4px;
+    color: #000;
+    text-shadow: 0 0 1px #000000;
+
+}
+
+.card-espacio .descripcion{
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.card-espacio hr{
+    margin-top:8px;
+    margin-bottom: 8px;
+}
+
+
+.calificaciones{
+
+}
+.calificaciones i{
+    font-size: 18px;
+}
+
+.titulo-principal{
+    font-size: 25px;
+    font-weight: 700;
+    color: #3ac47d;
+}
+.descripcion{
+    font-size: 16px;
+    font-weight: 300;
+}
+.descripcion strong{
+    font-weight: 700;
+}
+
+.btn-float-card{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    color: #3ac47d;
+    z-index: 9;
+}
+
+.nuevo-espacio{
+    background: #FFFFFF;
+    padding: 10px;
+    display: block;
+    border-radius: 0.2em;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    min-height: 200px;
+    padding-top: 60px;
+    font-size: 60px;
+    text-align: center;
+    color:#12314D;
+}
+.nuevo-espacio:hover{
+    color:#3ac47d;
+    background: #12314D;
+}
+
+.subtitulo {
+    color:#12314D;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.foto-detalle-espacio{
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.mapa-ubicacion{
+    background: #CCCCCC;
+    height: 200px;
+    width: 100%;
+    display: block;
+    border:1px solid #CCCCCC;
+    border-radius: 5px;
+}
+.form-map{
+    width: 100%;
+    display: block;
+    height: 235px;
+    background: #CCCCCC;
+    border:1px solid #CCCCCC;
+    border-radius: 5px;
+}
+
+
+.card-espaciodetalle{
+    background: #FFFFFF;
+    padding: 10px;
+    display: block;
+    border-radius: 0.5em;
+    border:1px solid #CCCCCC;
+    position: relative;
+ 
+}
+.card-espaciodetalle .imagen{
+    background: no-repeat center center;
+    width: 100%;
+    height: 150px;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.card-espaciodetalle h2{
+    font-weight: 700;
+    font-size: 14px;
+    color: #12314D;
+    text-transform: uppercase;
+    padding-right: 60px;
+    height: 34px;
+}
+
+.card-espaciodetalle .deportes{
+    height: 60px;
+    margin-top:10px;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 5px;
+}
+
+.
+
+.card-espaciodetalle .footer-card{
+    border-top: 1px solid #CCCCCC;
+    margin-top:5px;
+    padding-top: 5px;
+    text-align: right;
+}
+
+.card-espaciodetalle .descripcion{
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.card-espaciodetalle hr{
+    margin-top:8px;
+    margin-bottom: 8px;
+}
+.card-espaciodetalle .botones-espacio{
+    position: absolute;
+    right: 5px;
+    top:0;
+}
+.card-espaciodetalle .botones-espacio a{
+    display: inline-block;
+    font-size: 18px;
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+     color: #333333;
+    text-shadow: 0 0 1px #333333;
+}
+.card-espaciodetalle .botones-espacio a:hover{
+   color: #3ac47d;
+    text-shadow: 0 0 1px #3ac47d;
+}
+
+.foto-detalle-espacio{
+    max-width: 100%;
 }

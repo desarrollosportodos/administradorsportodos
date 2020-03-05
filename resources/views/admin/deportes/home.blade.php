@@ -35,6 +35,7 @@ Deportes
                 <tr>
                     <th>No.</th>
                     <th>Nombre</th>
+                    <td>Icono</td>
                     <th width="100"></th>
                 </tr>
             </thead>
@@ -49,6 +50,10 @@ Deportes
                         <td>
                             <div class="content-form">{{$item['nombre']}}</div>
                             <input type="text" name="nombre" value="{{$item['nombre']}}" class="form-control form-control-sm edit-form">
+                        </td>
+                        <td>
+                            <div class="content-form"> <i class="icon {{$item['icono']}}"></i></div>
+                            <input type="text" name="icono" value="{{$item['icono']}}" class="form-control form-control-sm edit-form">
                         </td>
                         <td class="text-center">
                             <div class="content-form">

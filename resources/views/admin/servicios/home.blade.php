@@ -1,6 +1,6 @@
 @extends("theme.lte.layout")
 @section('titulo')
-    Servicios de los Espacios
+    Servicios
 @endsection
 @section('contenido')
 <div class="app-page-title">
@@ -10,7 +10,7 @@
                 <i class="pe-7s-box1 icon-gradient bg-night-fade">
                 </i>
             </div>
-            <div>Servicios de los Espacios
+            <div>Servicios
                 <div class="page-title-subheading">
                 </div>
             </div>
@@ -24,8 +24,8 @@
 </div>
 
 <div class="new-internal" >
-    <form action="{{ route('espaciosservicios-crear') }}" method="POST">
-        @include('admin.espaciosservicios.form')
+    <form action="{{ route('servicios-crear') }}" method="POST">
+        @include('admin.servicios.form')
     </form>
 </div>
 <div class="card">
@@ -35,12 +35,13 @@
                 <tr>
                     <th>No.</th>
                     <th>Nombre</th>
+                    <th>Icono</th>
                     <th width="100"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($listado as $numero => $item)
-                <form action="{{ route('espaciosservicios-actualizar',[ 'id' => $item['id'] ]) }}" method="POST">
+                <form action="{{ route('servicios-actualizar',[ 'id' => $item['id'] ]) }}" method="POST">
                     @csrf
                     <tr>
                         <th>
@@ -49,6 +50,10 @@
                         <td>
                             <div class="content-form">{{$item['nombre']}}</div>
                             <input type="text" name="nombre" value="{{$item['nombre']}}" class="form-control form-control-sm edit-form">
+                        </td>
+                        <td>
+                            <div class="content-form"> <i class="icon {{$item['icono']}}"></i></div>
+                            <input type="text" name="icono" value="{{$item['icono']}}" class="form-control form-control-sm edit-form">
                         </td>
                         <td class="text-center">
                             <div class="content-form">
@@ -87,7 +92,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <form action="{{ route('espaciosservicios-eliminar',[ 'id' => $item['id'] ]) }}"  method="POST">
+                        <form action="{{ route('servicios-eliminar',[ 'id' => $item['id'] ]) }}"  method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger">Eliminar</button>
                         </form>

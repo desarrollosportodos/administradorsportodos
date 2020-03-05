@@ -7,16 +7,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Servicios\Sportodos;
 
-class EspaciosController extends Controller
+class PuntosController extends Controller
 {
    public function index()
    {
       $post = [];
       $post['redsocial'] = '49';
-      $listado = Sportodos::request("espacios",$post);
+      return view('admin.puntos.home', compact('listado','deporte','asideactual'));
+   }
+
+   public function listado()
+   {
+      $post = [];
+      $post['redsocial'] = '49';
+      $listado = Sportodos::request("puntos",$post);
       $deportes = $this->getDeportes();
-      $asideactual = 3;
-      return view('admin.espacios.home', compact('listado','deporte','asideactual'));
+      return view('admin.puntos.listado', compact('listado','deporte','asideactual'));
+   }
+   public function listadocajas()
+   {
+      $post = [];
+      $post['redsocial'] = '49';
+      $listado = Sportodos::request("puntos",$post);
+      $deportes = $this->getDeportes();
+
+      return view('admin.puntos.cajas', compact('listado','deporte','asideactual'));
    }
 
    public function nuevo()
@@ -25,7 +40,7 @@ class EspaciosController extends Controller
       $paises = $this->getPaises();
       $servicios = $this->getServicios();
       $asideactual = 3;
-      return view('admin.espacios.crear', compact('deportes','paises','servicios','asideactual'));
+      return view('admin.puntos.crear', compact('deportes','paises','servicios','asideactual'));
    }
 
    public function crear(Request $request)
@@ -36,8 +51,8 @@ class EspaciosController extends Controller
          $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
       }
       $post = $data;
-      $data = Sportodos::request("espacios/crear",$post);
-      return redirect('administrador/espacios')->with("mensaje","Tu tipo de Recurso ha sido creado con exito.");
+      $data = Sportodos::request("puntos/crear",$post);
+      return redirect('administrador/puntos')->with("mensaje","Tu tipo de Recurso ha sido creado con exito.");
    }
 
    public function editar($id)
@@ -47,7 +62,18 @@ class EspaciosController extends Controller
       $paises = $this->getPaises();
       $servicios = $this->getServicios();
       $asideactual = 3;
-      return view('admin.espacios.editar', compact('deportes','data','paises','servicios','asideactual'));
+      return view('admin.puntos.editar', compact('deportes','data','paises','servicios','asideactual'));
+   }
+
+   public function detalle($id)
+   {
+      $data = $this->getIdamplio($id); 
+      $deportes = $this->getDeportes();
+      $paises = $this->getPaises();
+      $servicios = $this->getServicios();
+      $asideactual = 3;
+      $espacios = $this->getEspacios($id);
+      return view('admin.puntos.detalle', compact('deportes','data','paises','servicios','asideactual','espacios'));
    }
 
    public function actualizar(Request $request,$id)
@@ -61,8 +87,8 @@ class EspaciosController extends Controller
          }
          $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
       }
-      Sportodos::request("espacios/editar/".$id,$data);
-      return redirect('administrador/espacios')->with("mensaje","Tu Recurso ha sido Actualizado con exito.");
+      Sportodos::request("puntos/editar/".$id,$data);
+      return redirect('administrador/puntos/detalle/'.$id)->with("mensaje","Tu Recurso ha sido Actualizado con exito.");
    }
 
    public function eliminar(Request $request,$id){
@@ -73,13 +99,18 @@ class EspaciosController extends Controller
       }
       $data = $request->all();
 
-      Sportodos::request("espacios/eliminar",$data);
-      return redirect('administrador/espacios')->with("mensaje","Tu Recurso ha sido Eliminado con exito.");
+      Sportodos::request("puntos/eliminar",$data);
+      return redirect('administrador/puntos')->with("mensaje","Tu Recurso ha sido Eliminado con exito.");
    }
 
    public function getId($id){
       $post = [];
-      $data = Sportodos::request("espacios/detalle/".$id,$post);
+      $data = Sportodos::request("puntos/detalle/".$id,$post);
+      return $data;
+   }
+   public function getIdamplio($id){
+      $post = [];
+      $data = Sportodos::request("puntos/detalleamplio/".$id,$post);
       return $data;
    }
 
@@ -98,8 +129,16 @@ class EspaciosController extends Controller
 
         $post = [];
         $post['redsocial'] = '49';
-        $servicios = Sportodos::request("espaciosservicios",$post);
+        $servicios = Sportodos::request("servicios",$post);
         return $servicios;
+   }
+
+   public function getEspacios($punto)
+   {
+        $post = [];
+        $post['punto'] = $punto;
+        $espacios = Sportodos::request("espacio",$post);
+        return $espacios;
    }
 
    public function getPaises()

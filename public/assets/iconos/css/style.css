@@ -1,0 +1,1716 @@
+/*--------------------------------
+
+sportodos Web Font
+Generated using nucleoapp.com
+
+-------------------------------- */
+@font-face {
+  font-family: 'sportodos';
+  src: url('../fonts/sportodos.eot');
+  src: url('../fonts/sportodos.eot') format('embedded-opentype'), url('../fonts/sportodos.woff2') format('woff2'), url('../fonts/sportodos.woff') format('woff'), url('../fonts/sportodos.ttf') format('truetype'), url('../fonts/sportodos.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*------------------------
+	base class definition
+-------------------------*/
+.icon {
+  display: inline-block;
+  font: normal normal normal 1em/1 'sportodos';
+  speak: none;
+  text-transform: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*------------------------
+  change icon size
+-------------------------*/
+/* relative units */
+.icon-sm {
+  font-size: 0.8em;
+}
+.icon-lg {
+  font-size: 1.2em;
+}
+/* absolute units */
+.icon-16 {
+  font-size: 16px;
+}
+.icon-32 {
+  font-size: 32px;
+}
+/*----------------------------------
+  add a square/circle background
+-----------------------------------*/
+.icon-bg-square,
+.icon-bg-circle {
+  padding: 0.35em;
+  background-color: #eee;
+}
+.icon-bg-circle {
+  border-radius: 50%;
+}
+/*------------------------------------
+  use icons as list item markers
+-------------------------------------*/
+.icon-ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+.icon-ul > li {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+.icon-ul > li > .icon {
+  margin-right: 0.4em;
+  line-height: inherit;
+}
+/*------------------------
+  spinning icons
+-------------------------*/
+.icon-is-spinning {
+  -webkit-animation: icon-spin 2s infinite linear;
+  -moz-animation: icon-spin 2s infinite linear;
+  animation: icon-spin 2s infinite linear;
+}
+@-webkit-keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes icon-spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*------------------------
+  rotated/flipped icons
+-------------------------*/
+.icon-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.icon-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.icon-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.icon-flip-y {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.icon-flip-x {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: scale(1, -1);
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+/*------------------------
+	icons
+-------------------------*/
+
+.icon-cockade::before {
+  content: "\ea02";
+}
+
+.icon-medal::before {
+  content: "\ea03";
+}
+
+.icon-shuttlecock::before {
+  content: "\ea04";
+}
+
+.icon-basketball::before {
+  content: "\ea05";
+}
+
+.icon-soccer-ball::before {
+  content: "\ea06";
+}
+
+.icon-baseball-pitch::before {
+  content: "\ea07";
+}
+
+.icon-baseball-bat::before {
+  content: "\ea08";
+}
+
+.icon-baseball::before {
+  content: "\ea09";
+}
+
+.icon-basketball-ring::before {
+  content: "\ea0a";
+}
+
+.icon-basketball-board::before {
+  content: "\ea0b";
+}
+
+.icon-racing-bike::before {
+  content: "\ea0c";
+}
+
+.icon-billiard-ball::before {
+  content: "\ea0d";
+}
+
+.icon-bike::before {
+  content: "\ea0e";
+}
+
+.icon-archery::before {
+  content: "\ea0f";
+}
+
+.icon-bowling-ball::before {
+  content: "\ea10";
+}
+
+.icon-boxing-glove::before {
+  content: "\ea11";
+}
+
+.icon-exercise-bike::before {
+  content: "\ea12";
+}
+
+.icon-cricket-bat::before {
+  content: "\ea13";
+}
+
+.icon-crown::before {
+  content: "\ea14";
+}
+
+.icon-dart::before {
+  content: "\ea15";
+}
+
+.icon-dumbbell::before {
+  content: "\ea16";
+}
+
+.icon-energy-shaker::before {
+  content: "\ea17";
+}
+
+.icon-energy-drink::before {
+  content: "\ea18";
+}
+
+.icon-energy-supplement::before {
+  content: "\ea19";
+}
+
+.icon-fencing-swords::before {
+  content: "\ea1a";
+}
+
+.icon-hook::before {
+  content: "\ea1b";
+}
+
+.icon-chequered-flag::before {
+  content: "\ea1c";
+}
+
+.icon-pennant::before {
+  content: "\ea1d";
+}
+
+.icon-lightning::before {
+  content: "\ea1e";
+}
+
+.icon-football-headguard::before {
+  content: "\ea1f";
+}
+
+.icon-archery-target::before {
+  content: "\ea20";
+}
+
+.icon-golf-club::before {
+  content: "\ea21";
+}
+
+.icon-heartbeat::before {
+  content: "\ea22";
+}
+
+.icon-helmet::before {
+  content: "\ea23";
+}
+
+.icon-flip-up::before {
+  content: "\ea24";
+}
+
+.icon-hockey-stick::before {
+  content: "\ea25";
+}
+
+.icon-hoodie::before {
+  content: "\ea26";
+}
+
+.icon-kettlebell::before {
+  content: "\ea27";
+}
+
+.icon-olympic-games::before {
+  content: "\ea28";
+}
+
+.icon-table-tennis-bat::before {
+  content: "\ea29";
+}
+
+.icon-podium-trophy::before {
+  content: "\ea2a";
+}
+
+.icon-podium::before {
+  content: "\ea2b";
+}
+
+.icon-swimming-pool::before {
+  content: "\ea2c";
+}
+
+.icon-phone-heartbeat::before {
+  content: "\ea2d";
+}
+
+.icon-watch-heartbeat::before {
+  content: "\ea2e";
+}
+
+.icon-pulse::before {
+  content: "\ea2f";
+}
+
+.icon-skipping-rope::before {
+  content: "\ea30";
+}
+
+.icon-rowing-oars::before {
+  content: "\ea31";
+}
+
+.icon-rugby-ball::before {
+  content: "\ea32";
+}
+
+.icon-snorkel-mask::before {
+  content: "\ea33";
+}
+
+.icon-shaker::before {
+  content: "\ea34";
+}
+
+.icon-run-shoes::before {
+  content: "\ea35";
+}
+
+.icon-gym-shoes::before {
+  content: "\ea36";
+}
+
+.icon-skateboard-2::before {
+  content: "\ea37";
+}
+
+.icon-skateboard::before {
+  content: "\ea38";
+}
+
+.icon-snowboard::before {
+  content: "\ea39";
+}
+
+.icon-soccer-field::before {
+  content: "\ea3a";
+}
+
+.icon-spa::before {
+  content: "\ea3b";
+}
+
+.icon-steering-wheel::before {
+  content: "\ea3c";
+}
+
+.icon-strategy::before {
+  content: "\ea3d";
+}
+
+.icon-food-supplement::before {
+  content: "\ea3e";
+}
+
+.icon-windsurfing::before {
+  content: "\ea3f";
+}
+
+.icon-surfboard::before {
+  content: "\ea40";
+}
+
+.icon-swimsuit::before {
+  content: "\ea41";
+}
+
+.icon-bikini::before {
+  content: "\ea42";
+}
+
+.icon-tactic::before {
+  content: "\ea43";
+}
+
+.icon-tennis-ball::before {
+  content: "\ea44";
+}
+
+.icon-tennis-racket::before {
+  content: "\ea45";
+}
+
+.icon-ticket::before {
+  content: "\ea46";
+}
+
+.icon--stopwatch::before {
+  content: "\ea47";
+}
+
+.icon-trophy::before {
+  content: "\ea48";
+}
+
+.icon-tshirt-sport::before {
+  content: "\ea49";
+}
+
+.icon-balance::before {
+  content: "\ea4a";
+}
+
+.icon-climbing::before {
+  content: "\ea4b";
+}
+
+.icon-yoga::before {
+  content: "\ea4c";
+}
+
+.icon-athletics::before {
+  content: "\ea4d";
+}
+
+.icon-snowboarding::before {
+  content: "\ea4e";
+}
+
+.icon-swimming::before {
+  content: "\ea4f";
+}
+
+.icon-sports-tank::before {
+  content: "\ea50";
+}
+
+.icon-volleyball::before {
+  content: "\ea51";
+}
+
+.icon-weight-scale::before {
+  content: "\ea52";
+}
+
+.icon-whistle::before {
+  content: "\ea53";
+}
+
+.icon-bike-bmx::before {
+  content: "\ea54";
+}
+
+.icon-cycling::before {
+  content: "\ea55";
+}
+
+.icon-diet::before {
+  content: "\ea56";
+}
+
+.icon-energy::before {
+  content: "\ea57";
+}
+
+.icon-nutrition::before {
+  content: "\ea58";
+}
+
+.icon-diet-plan::before {
+  content: "\ea59";
+}
+
+.icon-timer::before {
+  content: "\ea5a";
+}
+
+.icon-ranking::before {
+  content: "\ea5b";
+}
+
+.icon-distance::before {
+  content: "\ea5c";
+}
+
+.icon-rings::before {
+  content: "\ea5d";
+}
+
+.icon-golf-ball::before {
+  content: "\ea5e";
+}
+
+.icon-golf-strike::before {
+  content: "\ea5f";
+}
+
+.icon-golf-course::before {
+  content: "\ea60";
+}
+
+.icon-olympic-flame::before {
+  content: "\ea61";
+}
+
+.icon-water-polo-ball::before {
+  content: "\ea62";
+}
+
+.icon-analytics::before {
+  content: "\ea63";
+}
+
+.icon-stadium::before {
+  content: "\ea64";
+}
+
+.icon-ice-skates::before {
+  content: "\ea65";
+}
+
+.icon-bowling-pins::before {
+  content: "\ea66";
+}
+
+.icon-boxing-bag::before {
+  content: "\ea67";
+}
+
+.icon-curling-stone::before {
+  content: "\ea68";
+}
+
+.icon-sports-fan::before {
+  content: "\ea69";
+}
+
+.icon-workout-plan::before {
+  content: "\ea6a";
+}
+
+.icon-winner::before {
+  content: "\ea6b";
+}
+
+.icon-jump-rope::before {
+  content: "\ea6c";
+}
+
+.icon-horse::before {
+  content: "\ea6d";
+}
+
+.icon-treadmill::before {
+  content: "\ea6e";
+}
+
+.icon-weight-plate::before {
+  content: "\ea6f";
+}
+
+.icon-shorts::before {
+  content: "\ea70";
+}
+
+.icon-diet-food::before {
+  content: "\ea71";
+}
+
+.icon-drinking-bottle::before {
+  content: "\ea72";
+}
+
+.icon-leggins::before {
+  content: "\ea73";
+}
+
+.icon-blender::before {
+  content: "\ea74";
+}
+
+.icon-crunches::before {
+  content: "\ea75";
+}
+
+.icon-sport-bag::before {
+  content: "\ea76";
+}
+
+.icon-water-aerobics::before {
+  content: "\ea77";
+}
+
+.icon-dancer::before {
+  content: "\ea78";
+}
+
+.icon-volleyball-player::before {
+  content: "\ea79";
+}
+
+.icon-paralympic-games::before {
+  content: "\ea7a";
+}
+
+.icon-skating::before {
+  content: "\ea7b";
+}
+
+.icon-water-polo::before {
+  content: "\ea7c";
+}
+
+.icon-gymnastics::before {
+  content: "\ea7d";
+}
+
+.icon-soccer::before {
+  content: "\ea7e";
+}
+
+.icon-curling::before {
+  content: "\ea7f";
+}
+
+.icon-boxing::before {
+  content: "\ea80";
+}
+
+.icon-rugby::before {
+  content: "\ea81";
+}
+
+.icon-karate::before {
+  content: "\ea82";
+}
+
+.icon-cycling-track::before {
+  content: "\ea83";
+}
+
+.icon-skiing::before {
+  content: "\ea84";
+}
+
+.icon-skateboarding::before {
+  content: "\ea85";
+}
+
+.icon-deadlift::before {
+  content: "\ea86";
+}
+
+.icon-power-lifting::before {
+  content: "\ea87";
+}
+
+.icon-handball::before {
+  content: "\ea88";
+}
+
+.icon-basketball-player::before {
+  content: "\ea89";
+}
+
+.icon-bodybuilder::before {
+  content: "\ea8a";
+}
+
+.icon-stretching::before {
+  content: "\ea8b";
+}
+
+.icon-fencing::before {
+  content: "\ea8c";
+}
+
+.icon-baseball-player::before {
+  content: "\ea8d";
+}
+
+.icon-golf-player::before {
+  content: "\ea8e";
+}
+
+.icon-rowing::before {
+  content: "\ea8f";
+}
+
+.icon-archer::before {
+  content: "\ea90";
+}
+
+.icon-elliptical-cross-trainer::before {
+  content: "\ea91";
+}
+
+.icon-barbell::before {
+  content: "\ea92";
+}
+
+.icon-ez-bar::before {
+  content: "\ea93";
+}
+
+.icon-row-machine::before {
+  content: "\ea94";
+}
+
+.icon-stair-climber::before {
+  content: "\ea95";
+}
+
+.icon-utility-bench::before {
+  content: "\ea96";
+}
+
+.icon-spinning-bike::before {
+  content: "\ea97";
+}
+
+.icon-lat-station::before {
+  content: "\ea98";
+}
+
+.icon-weight-bench::before {
+  content: "\ea99";
+}
+
+.icon-pectoral-machine::before {
+  content: "\ea9a";
+}
+
+.icon-power-rack::before {
+  content: "\ea9b";
+}
+
+.icon-medicine-ball::before {
+  content: "\ea9c";
+}
+
+.icon-towel::before {
+  content: "\ea9d";
+}
+
+.icon-gym::before {
+  content: "\ea9e";
+}
+
+.icon-bicep::before {
+  content: "\ea9f";
+}
+
+.icon-man-up-front::before {
+  content: "\eaa0";
+}
+
+.icon-woman-up-front::before {
+  content: "\eaa1";
+}
+
+.icon-measurement::before {
+  content: "\eaa2";
+}
+
+.icon-body-back::before {
+  content: "\eaa3";
+}
+
+.icon-body-butt::before {
+  content: "\eaa4";
+}
+
+.icon-weight-loss::before {
+  content: "\eaa5";
+}
+
+.icon-phone-heart::before {
+  content: "\eaa6";
+}
+
+.icon-watch-heart::before {
+  content: "\eaa7";
+}
+
+.icon-equestrian-helmet::before {
+  content: "\eaa8";
+}
+
+.icon-sports-bra::before {
+  content: "\eaa9";
+}
+
+.icon-resistance-band::before {
+  content: "\eaaa";
+}
+
+.icon-mat::before {
+  content: "\eaab";
+}
+
+.icon-users-mm::before {
+  content: "\eaac";
+}
+
+.icon-users-ww::before {
+  content: "\eaad";
+}
+
+.icon-referee::before {
+  content: "\eaae";
+}
+
+.icon-personal-trainer::before {
+  content: "\eaaf";
+}
+
+.icon-presentation::before {
+  content: "\eab0";
+}
+
+.icon-gym-class::before {
+  content: "\eab1";
+}
+
+.icon-hockey::before {
+  content: "\eab2";
+}
+
+.icon-tennis::before {
+  content: "\eab3";
+}
+
+.icon-adaptive-bike::before {
+  content: "\eab4";
+}
+
+.icon-final-score::before {
+  content: "\eab5";
+}
+
+.icon-cockade-2::before {
+  content: "\eab6";
+}
+
+.icon-medal-2::before {
+  content: "\eab7";
+}
+
+.icon-shuttlecock-2::before {
+  content: "\eab8";
+}
+
+.icon-basketball-2::before {
+  content: "\eab9";
+}
+
+.icon-soccer-ball-2::before {
+  content: "\eaba";
+}
+
+.icon-baseball-pitch-2::before {
+  content: "\eabb";
+}
+
+.icon-baseball-bat-2::before {
+  content: "\eabc";
+}
+
+.icon-baseball-2::before {
+  content: "\eabd";
+}
+
+.icon-basketball-ring-2::before {
+  content: "\eabe";
+}
+
+.icon-basketball-board-2::before {
+  content: "\eabf";
+}
+
+.icon-racing-bike-2::before {
+  content: "\eac0";
+}
+
+.icon-billiard-ball-2::before {
+  content: "\eac1";
+}
+
+.icon-bike-2::before {
+  content: "\eac2";
+}
+
+.icon-archery-2::before {
+  content: "\eac3";
+}
+
+.icon-bowling-ball-2::before {
+  content: "\eac4";
+}
+
+.icon-boxing-glove-2::before {
+  content: "\eac5";
+}
+
+.icon-exercise-bike-2::before {
+  content: "\eac6";
+}
+
+.icon-cricket-bat-2::before {
+  content: "\eac7";
+}
+
+.icon-crown-2::before {
+  content: "\eac8";
+}
+
+.icon-dart-2::before {
+  content: "\eac9";
+}
+
+.icon-dumbbell-2::before {
+  content: "\eaca";
+}
+
+.icon-energy-shaker-2::before {
+  content: "\eacb";
+}
+
+.icon-energy-drink-2::before {
+  content: "\eacc";
+}
+
+.icon-energy-supplement-2::before {
+  content: "\eacd";
+}
+
+.icon-fencing-swords-2::before {
+  content: "\eace";
+}
+
+.icon-hook-2::before {
+  content: "\eacf";
+}
+
+.icon-chequered-flag-2::before {
+  content: "\ead0";
+}
+
+.icon-pennant-2::before {
+  content: "\ead1";
+}
+
+.icon-lightning-2::before {
+  content: "\ead2";
+}
+
+.icon-football-headguard-2::before {
+  content: "\ead3";
+}
+
+.icon-archery-target-2::before {
+  content: "\ead4";
+}
+
+.icon-golf-club-2::before {
+  content: "\ead5";
+}
+
+.icon-heartbeat-2::before {
+  content: "\ead6";
+}
+
+.icon-helmet-2::before {
+  content: "\ead7";
+}
+
+.icon-flip-up-2::before {
+  content: "\ead8";
+}
+
+.icon-hockey-stick-2::before {
+  content: "\ead9";
+}
+
+.icon-hoodie-2::before {
+  content: "\eada";
+}
+
+.icon-kettlebell-2::before {
+  content: "\eadb";
+}
+
+.icon-olympic-games-2::before {
+  content: "\eadc";
+}
+
+.icon-table-tennis-bat-2::before {
+  content: "\eadd";
+}
+
+.icon-podium-trophy-2::before {
+  content: "\eade";
+}
+
+.icon-podium-2::before {
+  content: "\eadf";
+}
+
+.icon-swimming-pool-2::before {
+  content: "\eae0";
+}
+
+.icon-phone-heartbeat-2::before {
+  content: "\eae1";
+}
+
+.icon-watch-heartbeat-2::before {
+  content: "\eae2";
+}
+
+.icon-pulse-2::before {
+  content: "\eae3";
+}
+
+.icon-skipping-rope-2::before {
+  content: "\eae4";
+}
+
+.icon-rowing-oars-2::before {
+  content: "\eae5";
+}
+
+.icon-rugby-ball-2::before {
+  content: "\eae6";
+}
+
+.icon-snorkel-mask-2::before {
+  content: "\eae7";
+}
+
+.icon-shaker-2::before {
+  content: "\eae8";
+}
+
+.icon-run-shoes-2::before {
+  content: "\eae9";
+}
+
+.icon-gym-shoes-2::before {
+  content: "\eaea";
+}
+
+.icon-skateboard-2-2::before {
+  content: "\eaeb";
+}
+
+.icon-skateboard-3::before {
+  content: "\eaec";
+}
+
+.icon-snowboard-2::before {
+  content: "\eaed";
+}
+
+.icon-soccer-field-2::before {
+  content: "\eaee";
+}
+
+.icon-spa-2::before {
+  content: "\eaef";
+}
+
+.icon-steering-wheel-2::before {
+  content: "\eaf0";
+}
+
+.icon-strategy-2::before {
+  content: "\eaf1";
+}
+
+.icon-food-supplement-2::before {
+  content: "\eaf2";
+}
+
+.icon-windsurfing-2::before {
+  content: "\eaf3";
+}
+
+.icon-surfboard-2::before {
+  content: "\eaf4";
+}
+
+.icon-swimsuit-2::before {
+  content: "\eaf5";
+}
+
+.icon-bikini-2::before {
+  content: "\eaf6";
+}
+
+.icon-tactic-2::before {
+  content: "\eaf7";
+}
+
+.icon-tennis-ball-2::before {
+  content: "\eaf8";
+}
+
+.icon-tennis-racket-2::before {
+  content: "\eaf9";
+}
+
+.icon-ticket-2::before {
+  content: "\eafa";
+}
+
+.icon--stopwatch-2::before {
+  content: "\eafb";
+}
+
+.icon-trophy-2::before {
+  content: "\eafc";
+}
+
+.icon-tshirt-sport-2::before {
+  content: "\eafd";
+}
+
+.icon-balance-2::before {
+  content: "\eafe";
+}
+
+.icon-climbing-2::before {
+  content: "\eaff";
+}
+
+.icon-yoga-2::before {
+  content: "\eb00";
+}
+
+.icon-athletics-2::before {
+  content: "\eb01";
+}
+
+.icon-snowboarding-2::before {
+  content: "\eb02";
+}
+
+.icon-swimming-2::before {
+  content: "\eb03";
+}
+
+.icon-sports-tank-2::before {
+  content: "\eb04";
+}
+
+.icon-volleyball-2::before {
+  content: "\eb05";
+}
+
+.icon-weight-scale-2::before {
+  content: "\eb06";
+}
+
+.icon-whistle-2::before {
+  content: "\eb07";
+}
+
+.icon-bike-bmx-2::before {
+  content: "\eb08";
+}
+
+.icon-cycling-2::before {
+  content: "\eb09";
+}
+
+.icon-diet-2::before {
+  content: "\eb0a";
+}
+
+.icon-energy-2::before {
+  content: "\eb0b";
+}
+
+.icon-nutrition-2::before {
+  content: "\eb0c";
+}
+
+.icon-diet-plan-2::before {
+  content: "\eb0d";
+}
+
+.icon-timer-2::before {
+  content: "\eb0e";
+}
+
+.icon-ranking-2::before {
+  content: "\eb0f";
+}
+
+.icon-distance-2::before {
+  content: "\eb10";
+}
+
+.icon-rings-2::before {
+  content: "\eb11";
+}
+
+.icon-golf-ball-2::before {
+  content: "\eb12";
+}
+
+.icon-golf-strike-2::before {
+  content: "\eb13";
+}
+
+.icon-golf-course-2::before {
+  content: "\eb14";
+}
+
+.icon-olympic-flame-2::before {
+  content: "\eb15";
+}
+
+.icon-water-polo-ball-2::before {
+  content: "\eb16";
+}
+
+.icon-analytics-2::before {
+  content: "\eb17";
+}
+
+.icon-stadium-2::before {
+  content: "\eb18";
+}
+
+.icon-ice-skates-2::before {
+  content: "\eb19";
+}
+
+.icon-bowling-pins-2::before {
+  content: "\eb1a";
+}
+
+.icon-boxing-bag-2::before {
+  content: "\eb1b";
+}
+
+.icon-curling-stone-2::before {
+  content: "\eb1c";
+}
+
+.icon-sports-fan-2::before {
+  content: "\eb1d";
+}
+
+.icon-workout-plan-2::before {
+  content: "\eb1e";
+}
+
+.icon-winner-2::before {
+  content: "\eb1f";
+}
+
+.icon-jump-rope-2::before {
+  content: "\eb20";
+}
+
+.icon-horse-2::before {
+  content: "\eb21";
+}
+
+.icon-treadmill-2::before {
+  content: "\eb22";
+}
+
+.icon-weight-plate-2::before {
+  content: "\eb23";
+}
+
+.icon-shorts-2::before {
+  content: "\eb24";
+}
+
+.icon-diet-food-2::before {
+  content: "\eb25";
+}
+
+.icon-drinking-bottle-2::before {
+  content: "\eb26";
+}
+
+.icon-leggins-2::before {
+  content: "\eb27";
+}
+
+.icon-blender-2::before {
+  content: "\eb28";
+}
+
+.icon-crunches-2::before {
+  content: "\eb29";
+}
+
+.icon-sport-bag-2::before {
+  content: "\eb2a";
+}
+
+.icon-water-aerobics-2::before {
+  content: "\eb2b";
+}
+
+.icon-dancer-2::before {
+  content: "\eb2c";
+}
+
+.icon-volleyball-player-2::before {
+  content: "\eb2d";
+}
+
+.icon-paralympic-games-2::before {
+  content: "\eb2e";
+}
+
+.icon-skating-2::before {
+  content: "\eb2f";
+}
+
+.icon-water-polo-2::before {
+  content: "\eb30";
+}
+
+.icon-gymnastics-2::before {
+  content: "\eb31";
+}
+
+.icon-soccer-2::before {
+  content: "\eb32";
+}
+
+.icon-curling-2::before {
+  content: "\eb33";
+}
+
+.icon-boxing-2::before {
+  content: "\eb34";
+}
+
+.icon-rugby-2::before {
+  content: "\eb35";
+}
+
+.icon-karate-2::before {
+  content: "\eb36";
+}
+
+.icon-cycling-track-2::before {
+  content: "\eb37";
+}
+
+.icon-skiing-2::before {
+  content: "\eb38";
+}
+
+.icon-skateboarding-2::before {
+  content: "\eb39";
+}
+
+.icon-deadlift-2::before {
+  content: "\eb3a";
+}
+
+.icon-power-lifting-2::before {
+  content: "\eb3b";
+}
+
+.icon-handball-2::before {
+  content: "\eb3c";
+}
+
+.icon-basketball-player-2::before {
+  content: "\eb3d";
+}
+
+.icon-bodybuilder-2::before {
+  content: "\eb3e";
+}
+
+.icon-stretching-2::before {
+  content: "\eb3f";
+}
+
+.icon-fencing-2::before {
+  content: "\eb40";
+}
+
+.icon-baseball-player-2::before {
+  content: "\eb41";
+}
+
+.icon-golf-player-2::before {
+  content: "\eb42";
+}
+
+.icon-rowing-2::before {
+  content: "\eb43";
+}
+
+.icon-archer-2::before {
+  content: "\eb44";
+}
+
+.icon-elliptical-cross-trainer-2::before {
+  content: "\eb45";
+}
+
+.icon-barbell-2::before {
+  content: "\eb46";
+}
+
+.icon-ez-bar-2::before {
+  content: "\eb47";
+}
+
+.icon-row-machine-2::before {
+  content: "\eb48";
+}
+
+.icon-stair-climber-2::before {
+  content: "\eb49";
+}
+
+.icon-utility-bench-2::before {
+  content: "\eb4a";
+}
+
+.icon-spinning-bike-2::before {
+  content: "\eb4b";
+}
+
+.icon-lat-station-2::before {
+  content: "\eb4c";
+}
+
+.icon-weight-bench-2::before {
+  content: "\eb4d";
+}
+
+.icon-pectoral-machine-2::before {
+  content: "\eb4e";
+}
+
+.icon-power-rack-2::before {
+  content: "\eb4f";
+}
+
+.icon-medicine-ball-2::before {
+  content: "\eb50";
+}
+
+.icon-towel-2::before {
+  content: "\eb51";
+}
+
+.icon-gym-2::before {
+  content: "\eb52";
+}
+
+.icon-bicep-2::before {
+  content: "\eb53";
+}
+
+.icon-man-up-front-2::before {
+  content: "\eb54";
+}
+
+.icon-woman-up-front-2::before {
+  content: "\eb55";
+}
+
+.icon-measurement-2::before {
+  content: "\eb56";
+}
+
+.icon-body-back-2::before {
+  content: "\eb57";
+}
+
+.icon-body-butt-2::before {
+  content: "\eb58";
+}
+
+.icon-weight-loss-2::before {
+  content: "\eb59";
+}
+
+.icon-phone-heart-2::before {
+  content: "\eb5a";
+}
+
+.icon-watch-heart-2::before {
+  content: "\eb5b";
+}
+
+.icon-equestrian-helmet-2::before {
+  content: "\eb5c";
+}
+
+.icon-sports-bra-2::before {
+  content: "\eb5d";
+}
+
+.icon-resistance-band-2::before {
+  content: "\eb5e";
+}
+
+.icon-mat-2::before {
+  content: "\eb5f";
+}
+
+.icon-users-mm-2::before {
+  content: "\eb60";
+}
+
+.icon-users-ww-2::before {
+  content: "\eb61";
+}
+
+.icon-referee-2::before {
+  content: "\eb62";
+}
+
+.icon-personal-trainer-2::before {
+  content: "\eb63";
+}
+
+.icon-presentation-2::before {
+  content: "\eb64";
+}
+
+.icon-gym-class-2::before {
+  content: "\eb65";
+}
+
+.icon-hockey-2::before {
+  content: "\eb66";
+}
+
+.icon-tennis-2::before {
+  content: "\eb67";
+}
+
+.icon-adaptive-bike-2::before {
+  content: "\eb68";
+}
+
+.icon-final-score-2::before {
+  content: "\eb69";
+}
+
+.icon-light::before {
+  content: "\eb6a";
+}
+
+.icon-bulb-63::before {
+  content: "\eb6b";
+}
+
+.icon-toilette::before {
+  content: "\eb6c";
+}
+
+.icon-parking::before {
+  content: "\eb6d";
+}
+
+.icon-car-parking::before {
+  content: "\eb6e";
+}
+
+.icon-hanger::before {
+  content: "\eb6f";
+}
+
+.icon-stairs::before {
+  content: "\eb70";
+}
+
+.icon-wheelchair-2::before {
+  content: "\eb71";
+}
+
+.icon-wheelchair::before {
+  content: "\eb72";
+}
+
+.icon-wheelchair-ramp::before {
+  content: "\eb73";
+}
+
+.icon-bath-tub::before {
+  content: "\eb74";
+}
+
+.icon-name-card::before {
+  content: "\eb75";
+}
+
+.icon-show::before {
+  content: "\eb76";
+}
+
+.icon-video-player::before {
+  content: "\eb77";
+}
+
+.icon-amazon-card::before {
+  content: "\eb78";
+}
+
+.icon-bitcoin::before {
+  content: "\eb79";
+}
+
+.icon-citi::before {
+  content: "\eb7a";
+}
+
+.icon-discover::before {
+  content: "\eb7b";
+}
+
+.icon-diners-club::before {
+  content: "\eb7c";
+}
+
+.icon-credit-card::before {
+  content: "\eb7d";
+}
+
+.icon-hand-card::before {
+  content: "\eb7e";
+}
+
+.icon-stripe::before {
+  content: "\eb7f";
+}
+
+.icon-visa::before {
+  content: "\eb80";
+}
+
+.icon-card-switch::before {
+  content: "\eb81";
+}
+
+.icon-contactless-card::before {
+  content: "\eb82";
+}
+
+.icon-shop::before {
+  content: "\eb83";
+}
+
+.icon-store::before {
+  content: "\eb84";
+}
+
+.icon-cutlery::before {
+  content: "\eb85";
+}
+
+.icon-food-course::before {
+  content: "\eb86";
+}
+
+.icon-cutlery-77::before {
+  content: "\eb87";
+}
+

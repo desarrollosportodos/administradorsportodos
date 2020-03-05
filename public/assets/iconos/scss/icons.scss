@@ -1,0 +1,1958 @@
+/*------------------------
+	icons
+-------------------------*/
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+$icon-cockade: unicode(ea02);
+$icon-medal: unicode(ea03);
+$icon-shuttlecock: unicode(ea04);
+$icon-basketball: unicode(ea05);
+$icon-soccer-ball: unicode(ea06);
+$icon-baseball-pitch: unicode(ea07);
+$icon-baseball-bat: unicode(ea08);
+$icon-baseball: unicode(ea09);
+$icon-basketball-ring: unicode(ea0a);
+$icon-basketball-board: unicode(ea0b);
+$icon-racing-bike: unicode(ea0c);
+$icon-billiard-ball: unicode(ea0d);
+$icon-bike: unicode(ea0e);
+$icon-archery: unicode(ea0f);
+$icon-bowling-ball: unicode(ea10);
+$icon-boxing-glove: unicode(ea11);
+$icon-exercise-bike: unicode(ea12);
+$icon-cricket-bat: unicode(ea13);
+$icon-crown: unicode(ea14);
+$icon-dart: unicode(ea15);
+$icon-dumbbell: unicode(ea16);
+$icon-energy-shaker: unicode(ea17);
+$icon-energy-drink: unicode(ea18);
+$icon-energy-supplement: unicode(ea19);
+$icon-fencing-swords: unicode(ea1a);
+$icon-hook: unicode(ea1b);
+$icon-chequered-flag: unicode(ea1c);
+$icon-pennant: unicode(ea1d);
+$icon-lightning: unicode(ea1e);
+$icon-football-headguard: unicode(ea1f);
+$icon-archery-target: unicode(ea20);
+$icon-golf-club: unicode(ea21);
+$icon-heartbeat: unicode(ea22);
+$icon-helmet: unicode(ea23);
+$icon-flip-up: unicode(ea24);
+$icon-hockey-stick: unicode(ea25);
+$icon-hoodie: unicode(ea26);
+$icon-kettlebell: unicode(ea27);
+$icon-olympic-games: unicode(ea28);
+$icon-table-tennis-bat: unicode(ea29);
+$icon-podium-trophy: unicode(ea2a);
+$icon-podium: unicode(ea2b);
+$icon-swimming-pool: unicode(ea2c);
+$icon-phone-heartbeat: unicode(ea2d);
+$icon-watch-heartbeat: unicode(ea2e);
+$icon-pulse: unicode(ea2f);
+$icon-skipping-rope: unicode(ea30);
+$icon-rowing-oars: unicode(ea31);
+$icon-rugby-ball: unicode(ea32);
+$icon-snorkel-mask: unicode(ea33);
+$icon-shaker: unicode(ea34);
+$icon-run-shoes: unicode(ea35);
+$icon-gym-shoes: unicode(ea36);
+$icon-skateboard-2: unicode(ea37);
+$icon-skateboard: unicode(ea38);
+$icon-snowboard: unicode(ea39);
+$icon-soccer-field: unicode(ea3a);
+$icon-spa: unicode(ea3b);
+$icon-steering-wheel: unicode(ea3c);
+$icon-strategy: unicode(ea3d);
+$icon-food-supplement: unicode(ea3e);
+$icon-windsurfing: unicode(ea3f);
+$icon-surfboard: unicode(ea40);
+$icon-swimsuit: unicode(ea41);
+$icon-bikini: unicode(ea42);
+$icon-tactic: unicode(ea43);
+$icon-tennis-ball: unicode(ea44);
+$icon-tennis-racket: unicode(ea45);
+$icon-ticket: unicode(ea46);
+$icon--stopwatch: unicode(ea47);
+$icon-trophy: unicode(ea48);
+$icon-tshirt-sport: unicode(ea49);
+$icon-balance: unicode(ea4a);
+$icon-climbing: unicode(ea4b);
+$icon-yoga: unicode(ea4c);
+$icon-athletics: unicode(ea4d);
+$icon-snowboarding: unicode(ea4e);
+$icon-swimming: unicode(ea4f);
+$icon-sports-tank: unicode(ea50);
+$icon-volleyball: unicode(ea51);
+$icon-weight-scale: unicode(ea52);
+$icon-whistle: unicode(ea53);
+$icon-bike-bmx: unicode(ea54);
+$icon-cycling: unicode(ea55);
+$icon-diet: unicode(ea56);
+$icon-energy: unicode(ea57);
+$icon-nutrition: unicode(ea58);
+$icon-diet-plan: unicode(ea59);
+$icon-timer: unicode(ea5a);
+$icon-ranking: unicode(ea5b);
+$icon-distance: unicode(ea5c);
+$icon-rings: unicode(ea5d);
+$icon-golf-ball: unicode(ea5e);
+$icon-golf-strike: unicode(ea5f);
+$icon-golf-course: unicode(ea60);
+$icon-olympic-flame: unicode(ea61);
+$icon-water-polo-ball: unicode(ea62);
+$icon-analytics: unicode(ea63);
+$icon-stadium: unicode(ea64);
+$icon-ice-skates: unicode(ea65);
+$icon-bowling-pins: unicode(ea66);
+$icon-boxing-bag: unicode(ea67);
+$icon-curling-stone: unicode(ea68);
+$icon-sports-fan: unicode(ea69);
+$icon-workout-plan: unicode(ea6a);
+$icon-winner: unicode(ea6b);
+$icon-jump-rope: unicode(ea6c);
+$icon-horse: unicode(ea6d);
+$icon-treadmill: unicode(ea6e);
+$icon-weight-plate: unicode(ea6f);
+$icon-shorts: unicode(ea70);
+$icon-diet-food: unicode(ea71);
+$icon-drinking-bottle: unicode(ea72);
+$icon-leggins: unicode(ea73);
+$icon-blender: unicode(ea74);
+$icon-crunches: unicode(ea75);
+$icon-sport-bag: unicode(ea76);
+$icon-water-aerobics: unicode(ea77);
+$icon-dancer: unicode(ea78);
+$icon-volleyball-player: unicode(ea79);
+$icon-paralympic-games: unicode(ea7a);
+$icon-skating: unicode(ea7b);
+$icon-water-polo: unicode(ea7c);
+$icon-gymnastics: unicode(ea7d);
+$icon-soccer: unicode(ea7e);
+$icon-curling: unicode(ea7f);
+$icon-boxing: unicode(ea80);
+$icon-rugby: unicode(ea81);
+$icon-karate: unicode(ea82);
+$icon-cycling-track: unicode(ea83);
+$icon-skiing: unicode(ea84);
+$icon-skateboarding: unicode(ea85);
+$icon-deadlift: unicode(ea86);
+$icon-power-lifting: unicode(ea87);
+$icon-handball: unicode(ea88);
+$icon-basketball-player: unicode(ea89);
+$icon-bodybuilder: unicode(ea8a);
+$icon-stretching: unicode(ea8b);
+$icon-fencing: unicode(ea8c);
+$icon-baseball-player: unicode(ea8d);
+$icon-golf-player: unicode(ea8e);
+$icon-rowing: unicode(ea8f);
+$icon-archer: unicode(ea90);
+$icon-elliptical-cross-trainer: unicode(ea91);
+$icon-barbell: unicode(ea92);
+$icon-ez-bar: unicode(ea93);
+$icon-row-machine: unicode(ea94);
+$icon-stair-climber: unicode(ea95);
+$icon-utility-bench: unicode(ea96);
+$icon-spinning-bike: unicode(ea97);
+$icon-lat-station: unicode(ea98);
+$icon-weight-bench: unicode(ea99);
+$icon-pectoral-machine: unicode(ea9a);
+$icon-power-rack: unicode(ea9b);
+$icon-medicine-ball: unicode(ea9c);
+$icon-towel: unicode(ea9d);
+$icon-gym: unicode(ea9e);
+$icon-bicep: unicode(ea9f);
+$icon-man-up-front: unicode(eaa0);
+$icon-woman-up-front: unicode(eaa1);
+$icon-measurement: unicode(eaa2);
+$icon-body-back: unicode(eaa3);
+$icon-body-butt: unicode(eaa4);
+$icon-weight-loss: unicode(eaa5);
+$icon-phone-heart: unicode(eaa6);
+$icon-watch-heart: unicode(eaa7);
+$icon-equestrian-helmet: unicode(eaa8);
+$icon-sports-bra: unicode(eaa9);
+$icon-resistance-band: unicode(eaaa);
+$icon-mat: unicode(eaab);
+$icon-users-mm: unicode(eaac);
+$icon-users-ww: unicode(eaad);
+$icon-referee: unicode(eaae);
+$icon-personal-trainer: unicode(eaaf);
+$icon-presentation: unicode(eab0);
+$icon-gym-class: unicode(eab1);
+$icon-hockey: unicode(eab2);
+$icon-tennis: unicode(eab3);
+$icon-adaptive-bike: unicode(eab4);
+$icon-final-score: unicode(eab5);
+$icon-cockade-2: unicode(eab6);
+$icon-medal-2: unicode(eab7);
+$icon-shuttlecock-2: unicode(eab8);
+$icon-basketball-2: unicode(eab9);
+$icon-soccer-ball-2: unicode(eaba);
+$icon-baseball-pitch-2: unicode(eabb);
+$icon-baseball-bat-2: unicode(eabc);
+$icon-baseball-2: unicode(eabd);
+$icon-basketball-ring-2: unicode(eabe);
+$icon-basketball-board-2: unicode(eabf);
+$icon-racing-bike-2: unicode(eac0);
+$icon-billiard-ball-2: unicode(eac1);
+$icon-bike-2: unicode(eac2);
+$icon-archery-2: unicode(eac3);
+$icon-bowling-ball-2: unicode(eac4);
+$icon-boxing-glove-2: unicode(eac5);
+$icon-exercise-bike-2: unicode(eac6);
+$icon-cricket-bat-2: unicode(eac7);
+$icon-crown-2: unicode(eac8);
+$icon-dart-2: unicode(eac9);
+$icon-dumbbell-2: unicode(eaca);
+$icon-energy-shaker-2: unicode(eacb);
+$icon-energy-drink-2: unicode(eacc);
+$icon-energy-supplement-2: unicode(eacd);
+$icon-fencing-swords-2: unicode(eace);
+$icon-hook-2: unicode(eacf);
+$icon-chequered-flag-2: unicode(ead0);
+$icon-pennant-2: unicode(ead1);
+$icon-lightning-2: unicode(ead2);
+$icon-football-headguard-2: unicode(ead3);
+$icon-archery-target-2: unicode(ead4);
+$icon-golf-club-2: unicode(ead5);
+$icon-heartbeat-2: unicode(ead6);
+$icon-helmet-2: unicode(ead7);
+$icon-flip-up-2: unicode(ead8);
+$icon-hockey-stick-2: unicode(ead9);
+$icon-hoodie-2: unicode(eada);
+$icon-kettlebell-2: unicode(eadb);
+$icon-olympic-games-2: unicode(eadc);
+$icon-table-tennis-bat-2: unicode(eadd);
+$icon-podium-trophy-2: unicode(eade);
+$icon-podium-2: unicode(eadf);
+$icon-swimming-pool-2: unicode(eae0);
+$icon-phone-heartbeat-2: unicode(eae1);
+$icon-watch-heartbeat-2: unicode(eae2);
+$icon-pulse-2: unicode(eae3);
+$icon-skipping-rope-2: unicode(eae4);
+$icon-rowing-oars-2: unicode(eae5);
+$icon-rugby-ball-2: unicode(eae6);
+$icon-snorkel-mask-2: unicode(eae7);
+$icon-shaker-2: unicode(eae8);
+$icon-run-shoes-2: unicode(eae9);
+$icon-gym-shoes-2: unicode(eaea);
+$icon-skateboard-2-2: unicode(eaeb);
+$icon-skateboard-3: unicode(eaec);
+$icon-snowboard-2: unicode(eaed);
+$icon-soccer-field-2: unicode(eaee);
+$icon-spa-2: unicode(eaef);
+$icon-steering-wheel-2: unicode(eaf0);
+$icon-strategy-2: unicode(eaf1);
+$icon-food-supplement-2: unicode(eaf2);
+$icon-windsurfing-2: unicode(eaf3);
+$icon-surfboard-2: unicode(eaf4);
+$icon-swimsuit-2: unicode(eaf5);
+$icon-bikini-2: unicode(eaf6);
+$icon-tactic-2: unicode(eaf7);
+$icon-tennis-ball-2: unicode(eaf8);
+$icon-tennis-racket-2: unicode(eaf9);
+$icon-ticket-2: unicode(eafa);
+$icon--stopwatch-2: unicode(eafb);
+$icon-trophy-2: unicode(eafc);
+$icon-tshirt-sport-2: unicode(eafd);
+$icon-balance-2: unicode(eafe);
+$icon-climbing-2: unicode(eaff);
+$icon-yoga-2: unicode(eb00);
+$icon-athletics-2: unicode(eb01);
+$icon-snowboarding-2: unicode(eb02);
+$icon-swimming-2: unicode(eb03);
+$icon-sports-tank-2: unicode(eb04);
+$icon-volleyball-2: unicode(eb05);
+$icon-weight-scale-2: unicode(eb06);
+$icon-whistle-2: unicode(eb07);
+$icon-bike-bmx-2: unicode(eb08);
+$icon-cycling-2: unicode(eb09);
+$icon-diet-2: unicode(eb0a);
+$icon-energy-2: unicode(eb0b);
+$icon-nutrition-2: unicode(eb0c);
+$icon-diet-plan-2: unicode(eb0d);
+$icon-timer-2: unicode(eb0e);
+$icon-ranking-2: unicode(eb0f);
+$icon-distance-2: unicode(eb10);
+$icon-rings-2: unicode(eb11);
+$icon-golf-ball-2: unicode(eb12);
+$icon-golf-strike-2: unicode(eb13);
+$icon-golf-course-2: unicode(eb14);
+$icon-olympic-flame-2: unicode(eb15);
+$icon-water-polo-ball-2: unicode(eb16);
+$icon-analytics-2: unicode(eb17);
+$icon-stadium-2: unicode(eb18);
+$icon-ice-skates-2: unicode(eb19);
+$icon-bowling-pins-2: unicode(eb1a);
+$icon-boxing-bag-2: unicode(eb1b);
+$icon-curling-stone-2: unicode(eb1c);
+$icon-sports-fan-2: unicode(eb1d);
+$icon-workout-plan-2: unicode(eb1e);
+$icon-winner-2: unicode(eb1f);
+$icon-jump-rope-2: unicode(eb20);
+$icon-horse-2: unicode(eb21);
+$icon-treadmill-2: unicode(eb22);
+$icon-weight-plate-2: unicode(eb23);
+$icon-shorts-2: unicode(eb24);
+$icon-diet-food-2: unicode(eb25);
+$icon-drinking-bottle-2: unicode(eb26);
+$icon-leggins-2: unicode(eb27);
+$icon-blender-2: unicode(eb28);
+$icon-crunches-2: unicode(eb29);
+$icon-sport-bag-2: unicode(eb2a);
+$icon-water-aerobics-2: unicode(eb2b);
+$icon-dancer-2: unicode(eb2c);
+$icon-volleyball-player-2: unicode(eb2d);
+$icon-paralympic-games-2: unicode(eb2e);
+$icon-skating-2: unicode(eb2f);
+$icon-water-polo-2: unicode(eb30);
+$icon-gymnastics-2: unicode(eb31);
+$icon-soccer-2: unicode(eb32);
+$icon-curling-2: unicode(eb33);
+$icon-boxing-2: unicode(eb34);
+$icon-rugby-2: unicode(eb35);
+$icon-karate-2: unicode(eb36);
+$icon-cycling-track-2: unicode(eb37);
+$icon-skiing-2: unicode(eb38);
+$icon-skateboarding-2: unicode(eb39);
+$icon-deadlift-2: unicode(eb3a);
+$icon-power-lifting-2: unicode(eb3b);
+$icon-handball-2: unicode(eb3c);
+$icon-basketball-player-2: unicode(eb3d);
+$icon-bodybuilder-2: unicode(eb3e);
+$icon-stretching-2: unicode(eb3f);
+$icon-fencing-2: unicode(eb40);
+$icon-baseball-player-2: unicode(eb41);
+$icon-golf-player-2: unicode(eb42);
+$icon-rowing-2: unicode(eb43);
+$icon-archer-2: unicode(eb44);
+$icon-elliptical-cross-trainer-2: unicode(eb45);
+$icon-barbell-2: unicode(eb46);
+$icon-ez-bar-2: unicode(eb47);
+$icon-row-machine-2: unicode(eb48);
+$icon-stair-climber-2: unicode(eb49);
+$icon-utility-bench-2: unicode(eb4a);
+$icon-spinning-bike-2: unicode(eb4b);
+$icon-lat-station-2: unicode(eb4c);
+$icon-weight-bench-2: unicode(eb4d);
+$icon-pectoral-machine-2: unicode(eb4e);
+$icon-power-rack-2: unicode(eb4f);
+$icon-medicine-ball-2: unicode(eb50);
+$icon-towel-2: unicode(eb51);
+$icon-gym-2: unicode(eb52);
+$icon-bicep-2: unicode(eb53);
+$icon-man-up-front-2: unicode(eb54);
+$icon-woman-up-front-2: unicode(eb55);
+$icon-measurement-2: unicode(eb56);
+$icon-body-back-2: unicode(eb57);
+$icon-body-butt-2: unicode(eb58);
+$icon-weight-loss-2: unicode(eb59);
+$icon-phone-heart-2: unicode(eb5a);
+$icon-watch-heart-2: unicode(eb5b);
+$icon-equestrian-helmet-2: unicode(eb5c);
+$icon-sports-bra-2: unicode(eb5d);
+$icon-resistance-band-2: unicode(eb5e);
+$icon-mat-2: unicode(eb5f);
+$icon-users-mm-2: unicode(eb60);
+$icon-users-ww-2: unicode(eb61);
+$icon-referee-2: unicode(eb62);
+$icon-personal-trainer-2: unicode(eb63);
+$icon-presentation-2: unicode(eb64);
+$icon-gym-class-2: unicode(eb65);
+$icon-hockey-2: unicode(eb66);
+$icon-tennis-2: unicode(eb67);
+$icon-adaptive-bike-2: unicode(eb68);
+$icon-final-score-2: unicode(eb69);
+$icon-light: unicode(eb6a);
+$icon-bulb-63: unicode(eb6b);
+$icon-toilette: unicode(eb6c);
+$icon-parking: unicode(eb6d);
+$icon-car-parking: unicode(eb6e);
+$icon-hanger: unicode(eb6f);
+$icon-stairs: unicode(eb70);
+$icon-wheelchair-2: unicode(eb71);
+$icon-wheelchair: unicode(eb72);
+$icon-wheelchair-ramp: unicode(eb73);
+$icon-bath-tub: unicode(eb74);
+$icon-name-card: unicode(eb75);
+$icon-show: unicode(eb76);
+$icon-video-player: unicode(eb77);
+$icon-amazon-card: unicode(eb78);
+$icon-bitcoin: unicode(eb79);
+$icon-citi: unicode(eb7a);
+$icon-discover: unicode(eb7b);
+$icon-diners-club: unicode(eb7c);
+$icon-credit-card: unicode(eb7d);
+$icon-hand-card: unicode(eb7e);
+$icon-stripe: unicode(eb7f);
+$icon-visa: unicode(eb80);
+$icon-card-switch: unicode(eb81);
+$icon-contactless-card: unicode(eb82);
+$icon-shop: unicode(eb83);
+$icon-store: unicode(eb84);
+$icon-cutlery: unicode(eb85);
+$icon-food-course: unicode(eb86);
+$icon-cutlery-77: unicode(eb87);
+
+.icon-cockade::before {
+  content: $icon-cockade;
+}
+
+.icon-medal::before {
+  content: $icon-medal;
+}
+
+.icon-shuttlecock::before {
+  content: $icon-shuttlecock;
+}
+
+.icon-basketball::before {
+  content: $icon-basketball;
+}
+
+.icon-soccer-ball::before {
+  content: $icon-soccer-ball;
+}
+
+.icon-baseball-pitch::before {
+  content: $icon-baseball-pitch;
+}
+
+.icon-baseball-bat::before {
+  content: $icon-baseball-bat;
+}
+
+.icon-baseball::before {
+  content: $icon-baseball;
+}
+
+.icon-basketball-ring::before {
+  content: $icon-basketball-ring;
+}
+
+.icon-basketball-board::before {
+  content: $icon-basketball-board;
+}
+
+.icon-racing-bike::before {
+  content: $icon-racing-bike;
+}
+
+.icon-billiard-ball::before {
+  content: $icon-billiard-ball;
+}
+
+.icon-bike::before {
+  content: $icon-bike;
+}
+
+.icon-archery::before {
+  content: $icon-archery;
+}
+
+.icon-bowling-ball::before {
+  content: $icon-bowling-ball;
+}
+
+.icon-boxing-glove::before {
+  content: $icon-boxing-glove;
+}
+
+.icon-exercise-bike::before {
+  content: $icon-exercise-bike;
+}
+
+.icon-cricket-bat::before {
+  content: $icon-cricket-bat;
+}
+
+.icon-crown::before {
+  content: $icon-crown;
+}
+
+.icon-dart::before {
+  content: $icon-dart;
+}
+
+.icon-dumbbell::before {
+  content: $icon-dumbbell;
+}
+
+.icon-energy-shaker::before {
+  content: $icon-energy-shaker;
+}
+
+.icon-energy-drink::before {
+  content: $icon-energy-drink;
+}
+
+.icon-energy-supplement::before {
+  content: $icon-energy-supplement;
+}
+
+.icon-fencing-swords::before {
+  content: $icon-fencing-swords;
+}
+
+.icon-hook::before {
+  content: $icon-hook;
+}
+
+.icon-chequered-flag::before {
+  content: $icon-chequered-flag;
+}
+
+.icon-pennant::before {
+  content: $icon-pennant;
+}
+
+.icon-lightning::before {
+  content: $icon-lightning;
+}
+
+.icon-football-headguard::before {
+  content: $icon-football-headguard;
+}
+
+.icon-archery-target::before {
+  content: $icon-archery-target;
+}
+
+.icon-golf-club::before {
+  content: $icon-golf-club;
+}
+
+.icon-heartbeat::before {
+  content: $icon-heartbeat;
+}
+
+.icon-helmet::before {
+  content: $icon-helmet;
+}
+
+.icon-flip-up::before {
+  content: $icon-flip-up;
+}
+
+.icon-hockey-stick::before {
+  content: $icon-hockey-stick;
+}
+
+.icon-hoodie::before {
+  content: $icon-hoodie;
+}
+
+.icon-kettlebell::before {
+  content: $icon-kettlebell;
+}
+
+.icon-olympic-games::before {
+  content: $icon-olympic-games;
+}
+
+.icon-table-tennis-bat::before {
+  content: $icon-table-tennis-bat;
+}
+
+.icon-podium-trophy::before {
+  content: $icon-podium-trophy;
+}
+
+.icon-podium::before {
+  content: $icon-podium;
+}
+
+.icon-swimming-pool::before {
+  content: $icon-swimming-pool;
+}
+
+.icon-phone-heartbeat::before {
+  content: $icon-phone-heartbeat;
+}
+
+.icon-watch-heartbeat::before {
+  content: $icon-watch-heartbeat;
+}
+
+.icon-pulse::before {
+  content: $icon-pulse;
+}
+
+.icon-skipping-rope::before {
+  content: $icon-skipping-rope;
+}
+
+.icon-rowing-oars::before {
+  content: $icon-rowing-oars;
+}
+
+.icon-rugby-ball::before {
+  content: $icon-rugby-ball;
+}
+
+.icon-snorkel-mask::before {
+  content: $icon-snorkel-mask;
+}
+
+.icon-shaker::before {
+  content: $icon-shaker;
+}
+
+.icon-run-shoes::before {
+  content: $icon-run-shoes;
+}
+
+.icon-gym-shoes::before {
+  content: $icon-gym-shoes;
+}
+
+.icon-skateboard-2::before {
+  content: $icon-skateboard-2;
+}
+
+.icon-skateboard::before {
+  content: $icon-skateboard;
+}
+
+.icon-snowboard::before {
+  content: $icon-snowboard;
+}
+
+.icon-soccer-field::before {
+  content: $icon-soccer-field;
+}
+
+.icon-spa::before {
+  content: $icon-spa;
+}
+
+.icon-steering-wheel::before {
+  content: $icon-steering-wheel;
+}
+
+.icon-strategy::before {
+  content: $icon-strategy;
+}
+
+.icon-food-supplement::before {
+  content: $icon-food-supplement;
+}
+
+.icon-windsurfing::before {
+  content: $icon-windsurfing;
+}
+
+.icon-surfboard::before {
+  content: $icon-surfboard;
+}
+
+.icon-swimsuit::before {
+  content: $icon-swimsuit;
+}
+
+.icon-bikini::before {
+  content: $icon-bikini;
+}
+
+.icon-tactic::before {
+  content: $icon-tactic;
+}
+
+.icon-tennis-ball::before {
+  content: $icon-tennis-ball;
+}
+
+.icon-tennis-racket::before {
+  content: $icon-tennis-racket;
+}
+
+.icon-ticket::before {
+  content: $icon-ticket;
+}
+
+.icon--stopwatch::before {
+  content: $icon--stopwatch;
+}
+
+.icon-trophy::before {
+  content: $icon-trophy;
+}
+
+.icon-tshirt-sport::before {
+  content: $icon-tshirt-sport;
+}
+
+.icon-balance::before {
+  content: $icon-balance;
+}
+
+.icon-climbing::before {
+  content: $icon-climbing;
+}
+
+.icon-yoga::before {
+  content: $icon-yoga;
+}
+
+.icon-athletics::before {
+  content: $icon-athletics;
+}
+
+.icon-snowboarding::before {
+  content: $icon-snowboarding;
+}
+
+.icon-swimming::before {
+  content: $icon-swimming;
+}
+
+.icon-sports-tank::before {
+  content: $icon-sports-tank;
+}
+
+.icon-volleyball::before {
+  content: $icon-volleyball;
+}
+
+.icon-weight-scale::before {
+  content: $icon-weight-scale;
+}
+
+.icon-whistle::before {
+  content: $icon-whistle;
+}
+
+.icon-bike-bmx::before {
+  content: $icon-bike-bmx;
+}
+
+.icon-cycling::before {
+  content: $icon-cycling;
+}
+
+.icon-diet::before {
+  content: $icon-diet;
+}
+
+.icon-energy::before {
+  content: $icon-energy;
+}
+
+.icon-nutrition::before {
+  content: $icon-nutrition;
+}
+
+.icon-diet-plan::before {
+  content: $icon-diet-plan;
+}
+
+.icon-timer::before {
+  content: $icon-timer;
+}
+
+.icon-ranking::before {
+  content: $icon-ranking;
+}
+
+.icon-distance::before {
+  content: $icon-distance;
+}
+
+.icon-rings::before {
+  content: $icon-rings;
+}
+
+.icon-golf-ball::before {
+  content: $icon-golf-ball;
+}
+
+.icon-golf-strike::before {
+  content: $icon-golf-strike;
+}
+
+.icon-golf-course::before {
+  content: $icon-golf-course;
+}
+
+.icon-olympic-flame::before {
+  content: $icon-olympic-flame;
+}
+
+.icon-water-polo-ball::before {
+  content: $icon-water-polo-ball;
+}
+
+.icon-analytics::before {
+  content: $icon-analytics;
+}
+
+.icon-stadium::before {
+  content: $icon-stadium;
+}
+
+.icon-ice-skates::before {
+  content: $icon-ice-skates;
+}
+
+.icon-bowling-pins::before {
+  content: $icon-bowling-pins;
+}
+
+.icon-boxing-bag::before {
+  content: $icon-boxing-bag;
+}
+
+.icon-curling-stone::before {
+  content: $icon-curling-stone;
+}
+
+.icon-sports-fan::before {
+  content: $icon-sports-fan;
+}
+
+.icon-workout-plan::before {
+  content: $icon-workout-plan;
+}
+
+.icon-winner::before {
+  content: $icon-winner;
+}
+
+.icon-jump-rope::before {
+  content: $icon-jump-rope;
+}
+
+.icon-horse::before {
+  content: $icon-horse;
+}
+
+.icon-treadmill::before {
+  content: $icon-treadmill;
+}
+
+.icon-weight-plate::before {
+  content: $icon-weight-plate;
+}
+
+.icon-shorts::before {
+  content: $icon-shorts;
+}
+
+.icon-diet-food::before {
+  content: $icon-diet-food;
+}
+
+.icon-drinking-bottle::before {
+  content: $icon-drinking-bottle;
+}
+
+.icon-leggins::before {
+  content: $icon-leggins;
+}
+
+.icon-blender::before {
+  content: $icon-blender;
+}
+
+.icon-crunches::before {
+  content: $icon-crunches;
+}
+
+.icon-sport-bag::before {
+  content: $icon-sport-bag;
+}
+
+.icon-water-aerobics::before {
+  content: $icon-water-aerobics;
+}
+
+.icon-dancer::before {
+  content: $icon-dancer;
+}
+
+.icon-volleyball-player::before {
+  content: $icon-volleyball-player;
+}
+
+.icon-paralympic-games::before {
+  content: $icon-paralympic-games;
+}
+
+.icon-skating::before {
+  content: $icon-skating;
+}
+
+.icon-water-polo::before {
+  content: $icon-water-polo;
+}
+
+.icon-gymnastics::before {
+  content: $icon-gymnastics;
+}
+
+.icon-soccer::before {
+  content: $icon-soccer;
+}
+
+.icon-curling::before {
+  content: $icon-curling;
+}
+
+.icon-boxing::before {
+  content: $icon-boxing;
+}
+
+.icon-rugby::before {
+  content: $icon-rugby;
+}
+
+.icon-karate::before {
+  content: $icon-karate;
+}
+
+.icon-cycling-track::before {
+  content: $icon-cycling-track;
+}
+
+.icon-skiing::before {
+  content: $icon-skiing;
+}
+
+.icon-skateboarding::before {
+  content: $icon-skateboarding;
+}
+
+.icon-deadlift::before {
+  content: $icon-deadlift;
+}
+
+.icon-power-lifting::before {
+  content: $icon-power-lifting;
+}
+
+.icon-handball::before {
+  content: $icon-handball;
+}
+
+.icon-basketball-player::before {
+  content: $icon-basketball-player;
+}
+
+.icon-bodybuilder::before {
+  content: $icon-bodybuilder;
+}
+
+.icon-stretching::before {
+  content: $icon-stretching;
+}
+
+.icon-fencing::before {
+  content: $icon-fencing;
+}
+
+.icon-baseball-player::before {
+  content: $icon-baseball-player;
+}
+
+.icon-golf-player::before {
+  content: $icon-golf-player;
+}
+
+.icon-rowing::before {
+  content: $icon-rowing;
+}
+
+.icon-archer::before {
+  content: $icon-archer;
+}
+
+.icon-elliptical-cross-trainer::before {
+  content: $icon-elliptical-cross-trainer;
+}
+
+.icon-barbell::before {
+  content: $icon-barbell;
+}
+
+.icon-ez-bar::before {
+  content: $icon-ez-bar;
+}
+
+.icon-row-machine::before {
+  content: $icon-row-machine;
+}
+
+.icon-stair-climber::before {
+  content: $icon-stair-climber;
+}
+
+.icon-utility-bench::before {
+  content: $icon-utility-bench;
+}
+
+.icon-spinning-bike::before {
+  content: $icon-spinning-bike;
+}
+
+.icon-lat-station::before {
+  content: $icon-lat-station;
+}
+
+.icon-weight-bench::before {
+  content: $icon-weight-bench;
+}
+
+.icon-pectoral-machine::before {
+  content: $icon-pectoral-machine;
+}
+
+.icon-power-rack::before {
+  content: $icon-power-rack;
+}
+
+.icon-medicine-ball::before {
+  content: $icon-medicine-ball;
+}
+
+.icon-towel::before {
+  content: $icon-towel;
+}
+
+.icon-gym::before {
+  content: $icon-gym;
+}
+
+.icon-bicep::before {
+  content: $icon-bicep;
+}
+
+.icon-man-up-front::before {
+  content: $icon-man-up-front;
+}
+
+.icon-woman-up-front::before {
+  content: $icon-woman-up-front;
+}
+
+.icon-measurement::before {
+  content: $icon-measurement;
+}
+
+.icon-body-back::before {
+  content: $icon-body-back;
+}
+
+.icon-body-butt::before {
+  content: $icon-body-butt;
+}
+
+.icon-weight-loss::before {
+  content: $icon-weight-loss;
+}
+
+.icon-phone-heart::before {
+  content: $icon-phone-heart;
+}
+
+.icon-watch-heart::before {
+  content: $icon-watch-heart;
+}
+
+.icon-equestrian-helmet::before {
+  content: $icon-equestrian-helmet;
+}
+
+.icon-sports-bra::before {
+  content: $icon-sports-bra;
+}
+
+.icon-resistance-band::before {
+  content: $icon-resistance-band;
+}
+
+.icon-mat::before {
+  content: $icon-mat;
+}
+
+.icon-users-mm::before {
+  content: $icon-users-mm;
+}
+
+.icon-users-ww::before {
+  content: $icon-users-ww;
+}
+
+.icon-referee::before {
+  content: $icon-referee;
+}
+
+.icon-personal-trainer::before {
+  content: $icon-personal-trainer;
+}
+
+.icon-presentation::before {
+  content: $icon-presentation;
+}
+
+.icon-gym-class::before {
+  content: $icon-gym-class;
+}
+
+.icon-hockey::before {
+  content: $icon-hockey;
+}
+
+.icon-tennis::before {
+  content: $icon-tennis;
+}
+
+.icon-adaptive-bike::before {
+  content: $icon-adaptive-bike;
+}
+
+.icon-final-score::before {
+  content: $icon-final-score;
+}
+
+.icon-cockade-2::before {
+  content: $icon-cockade-2;
+}
+
+.icon-medal-2::before {
+  content: $icon-medal-2;
+}
+
+.icon-shuttlecock-2::before {
+  content: $icon-shuttlecock-2;
+}
+
+.icon-basketball-2::before {
+  content: $icon-basketball-2;
+}
+
+.icon-soccer-ball-2::before {
+  content: $icon-soccer-ball-2;
+}
+
+.icon-baseball-pitch-2::before {
+  content: $icon-baseball-pitch-2;
+}
+
+.icon-baseball-bat-2::before {
+  content: $icon-baseball-bat-2;
+}
+
+.icon-baseball-2::before {
+  content: $icon-baseball-2;
+}
+
+.icon-basketball-ring-2::before {
+  content: $icon-basketball-ring-2;
+}
+
+.icon-basketball-board-2::before {
+  content: $icon-basketball-board-2;
+}
+
+.icon-racing-bike-2::before {
+  content: $icon-racing-bike-2;
+}
+
+.icon-billiard-ball-2::before {
+  content: $icon-billiard-ball-2;
+}
+
+.icon-bike-2::before {
+  content: $icon-bike-2;
+}
+
+.icon-archery-2::before {
+  content: $icon-archery-2;
+}
+
+.icon-bowling-ball-2::before {
+  content: $icon-bowling-ball-2;
+}
+
+.icon-boxing-glove-2::before {
+  content: $icon-boxing-glove-2;
+}
+
+.icon-exercise-bike-2::before {
+  content: $icon-exercise-bike-2;
+}
+
+.icon-cricket-bat-2::before {
+  content: $icon-cricket-bat-2;
+}
+
+.icon-crown-2::before {
+  content: $icon-crown-2;
+}
+
+.icon-dart-2::before {
+  content: $icon-dart-2;
+}
+
+.icon-dumbbell-2::before {
+  content: $icon-dumbbell-2;
+}
+
+.icon-energy-shaker-2::before {
+  content: $icon-energy-shaker-2;
+}
+
+.icon-energy-drink-2::before {
+  content: $icon-energy-drink-2;
+}
+
+.icon-energy-supplement-2::before {
+  content: $icon-energy-supplement-2;
+}
+
+.icon-fencing-swords-2::before {
+  content: $icon-fencing-swords-2;
+}
+
+.icon-hook-2::before {
+  content: $icon-hook-2;
+}
+
+.icon-chequered-flag-2::before {
+  content: $icon-chequered-flag-2;
+}
+
+.icon-pennant-2::before {
+  content: $icon-pennant-2;
+}
+
+.icon-lightning-2::before {
+  content: $icon-lightning-2;
+}
+
+.icon-football-headguard-2::before {
+  content: $icon-football-headguard-2;
+}
+
+.icon-archery-target-2::before {
+  content: $icon-archery-target-2;
+}
+
+.icon-golf-club-2::before {
+  content: $icon-golf-club-2;
+}
+
+.icon-heartbeat-2::before {
+  content: $icon-heartbeat-2;
+}
+
+.icon-helmet-2::before {
+  content: $icon-helmet-2;
+}
+
+.icon-flip-up-2::before {
+  content: $icon-flip-up-2;
+}
+
+.icon-hockey-stick-2::before {
+  content: $icon-hockey-stick-2;
+}
+
+.icon-hoodie-2::before {
+  content: $icon-hoodie-2;
+}
+
+.icon-kettlebell-2::before {
+  content: $icon-kettlebell-2;
+}
+
+.icon-olympic-games-2::before {
+  content: $icon-olympic-games-2;
+}
+
+.icon-table-tennis-bat-2::before {
+  content: $icon-table-tennis-bat-2;
+}
+
+.icon-podium-trophy-2::before {
+  content: $icon-podium-trophy-2;
+}
+
+.icon-podium-2::before {
+  content: $icon-podium-2;
+}
+
+.icon-swimming-pool-2::before {
+  content: $icon-swimming-pool-2;
+}
+
+.icon-phone-heartbeat-2::before {
+  content: $icon-phone-heartbeat-2;
+}
+
+.icon-watch-heartbeat-2::before {
+  content: $icon-watch-heartbeat-2;
+}
+
+.icon-pulse-2::before {
+  content: $icon-pulse-2;
+}
+
+.icon-skipping-rope-2::before {
+  content: $icon-skipping-rope-2;
+}
+
+.icon-rowing-oars-2::before {
+  content: $icon-rowing-oars-2;
+}
+
+.icon-rugby-ball-2::before {
+  content: $icon-rugby-ball-2;
+}
+
+.icon-snorkel-mask-2::before {
+  content: $icon-snorkel-mask-2;
+}
+
+.icon-shaker-2::before {
+  content: $icon-shaker-2;
+}
+
+.icon-run-shoes-2::before {
+  content: $icon-run-shoes-2;
+}
+
+.icon-gym-shoes-2::before {
+  content: $icon-gym-shoes-2;
+}
+
+.icon-skateboard-2-2::before {
+  content: $icon-skateboard-2-2;
+}
+
+.icon-skateboard-3::before {
+  content: $icon-skateboard-3;
+}
+
+.icon-snowboard-2::before {
+  content: $icon-snowboard-2;
+}
+
+.icon-soccer-field-2::before {
+  content: $icon-soccer-field-2;
+}
+
+.icon-spa-2::before {
+  content: $icon-spa-2;
+}
+
+.icon-steering-wheel-2::before {
+  content: $icon-steering-wheel-2;
+}
+
+.icon-strategy-2::before {
+  content: $icon-strategy-2;
+}
+
+.icon-food-supplement-2::before {
+  content: $icon-food-supplement-2;
+}
+
+.icon-windsurfing-2::before {
+  content: $icon-windsurfing-2;
+}
+
+.icon-surfboard-2::before {
+  content: $icon-surfboard-2;
+}
+
+.icon-swimsuit-2::before {
+  content: $icon-swimsuit-2;
+}
+
+.icon-bikini-2::before {
+  content: $icon-bikini-2;
+}
+
+.icon-tactic-2::before {
+  content: $icon-tactic-2;
+}
+
+.icon-tennis-ball-2::before {
+  content: $icon-tennis-ball-2;
+}
+
+.icon-tennis-racket-2::before {
+  content: $icon-tennis-racket-2;
+}
+
+.icon-ticket-2::before {
+  content: $icon-ticket-2;
+}
+
+.icon--stopwatch-2::before {
+  content: $icon--stopwatch-2;
+}
+
+.icon-trophy-2::before {
+  content: $icon-trophy-2;
+}
+
+.icon-tshirt-sport-2::before {
+  content: $icon-tshirt-sport-2;
+}
+
+.icon-balance-2::before {
+  content: $icon-balance-2;
+}
+
+.icon-climbing-2::before {
+  content: $icon-climbing-2;
+}
+
+.icon-yoga-2::before {
+  content: $icon-yoga-2;
+}
+
+.icon-athletics-2::before {
+  content: $icon-athletics-2;
+}
+
+.icon-snowboarding-2::before {
+  content: $icon-snowboarding-2;
+}
+
+.icon-swimming-2::before {
+  content: $icon-swimming-2;
+}
+
+.icon-sports-tank-2::before {
+  content: $icon-sports-tank-2;
+}
+
+.icon-volleyball-2::before {
+  content: $icon-volleyball-2;
+}
+
+.icon-weight-scale-2::before {
+  content: $icon-weight-scale-2;
+}
+
+.icon-whistle-2::before {
+  content: $icon-whistle-2;
+}
+
+.icon-bike-bmx-2::before {
+  content: $icon-bike-bmx-2;
+}
+
+.icon-cycling-2::before {
+  content: $icon-cycling-2;
+}
+
+.icon-diet-2::before {
+  content: $icon-diet-2;
+}
+
+.icon-energy-2::before {
+  content: $icon-energy-2;
+}
+
+.icon-nutrition-2::before {
+  content: $icon-nutrition-2;
+}
+
+.icon-diet-plan-2::before {
+  content: $icon-diet-plan-2;
+}
+
+.icon-timer-2::before {
+  content: $icon-timer-2;
+}
+
+.icon-ranking-2::before {
+  content: $icon-ranking-2;
+}
+
+.icon-distance-2::before {
+  content: $icon-distance-2;
+}
+
+.icon-rings-2::before {
+  content: $icon-rings-2;
+}
+
+.icon-golf-ball-2::before {
+  content: $icon-golf-ball-2;
+}
+
+.icon-golf-strike-2::before {
+  content: $icon-golf-strike-2;
+}
+
+.icon-golf-course-2::before {
+  content: $icon-golf-course-2;
+}
+
+.icon-olympic-flame-2::before {
+  content: $icon-olympic-flame-2;
+}
+
+.icon-water-polo-ball-2::before {
+  content: $icon-water-polo-ball-2;
+}
+
+.icon-analytics-2::before {
+  content: $icon-analytics-2;
+}
+
+.icon-stadium-2::before {
+  content: $icon-stadium-2;
+}
+
+.icon-ice-skates-2::before {
+  content: $icon-ice-skates-2;
+}
+
+.icon-bowling-pins-2::before {
+  content: $icon-bowling-pins-2;
+}
+
+.icon-boxing-bag-2::before {
+  content: $icon-boxing-bag-2;
+}
+
+.icon-curling-stone-2::before {
+  content: $icon-curling-stone-2;
+}
+
+.icon-sports-fan-2::before {
+  content: $icon-sports-fan-2;
+}
+
+.icon-workout-plan-2::before {
+  content: $icon-workout-plan-2;
+}
+
+.icon-winner-2::before {
+  content: $icon-winner-2;
+}
+
+.icon-jump-rope-2::before {
+  content: $icon-jump-rope-2;
+}
+
+.icon-horse-2::before {
+  content: $icon-horse-2;
+}
+
+.icon-treadmill-2::before {
+  content: $icon-treadmill-2;
+}
+
+.icon-weight-plate-2::before {
+  content: $icon-weight-plate-2;
+}
+
+.icon-shorts-2::before {
+  content: $icon-shorts-2;
+}
+
+.icon-diet-food-2::before {
+  content: $icon-diet-food-2;
+}
+
+.icon-drinking-bottle-2::before {
+  content: $icon-drinking-bottle-2;
+}
+
+.icon-leggins-2::before {
+  content: $icon-leggins-2;
+}
+
+.icon-blender-2::before {
+  content: $icon-blender-2;
+}
+
+.icon-crunches-2::before {
+  content: $icon-crunches-2;
+}
+
+.icon-sport-bag-2::before {
+  content: $icon-sport-bag-2;
+}
+
+.icon-water-aerobics-2::before {
+  content: $icon-water-aerobics-2;
+}
+
+.icon-dancer-2::before {
+  content: $icon-dancer-2;
+}
+
+.icon-volleyball-player-2::before {
+  content: $icon-volleyball-player-2;
+}
+
+.icon-paralympic-games-2::before {
+  content: $icon-paralympic-games-2;
+}
+
+.icon-skating-2::before {
+  content: $icon-skating-2;
+}
+
+.icon-water-polo-2::before {
+  content: $icon-water-polo-2;
+}
+
+.icon-gymnastics-2::before {
+  content: $icon-gymnastics-2;
+}
+
+.icon-soccer-2::before {
+  content: $icon-soccer-2;
+}
+
+.icon-curling-2::before {
+  content: $icon-curling-2;
+}
+
+.icon-boxing-2::before {
+  content: $icon-boxing-2;
+}
+
+.icon-rugby-2::before {
+  content: $icon-rugby-2;
+}
+
+.icon-karate-2::before {
+  content: $icon-karate-2;
+}
+
+.icon-cycling-track-2::before {
+  content: $icon-cycling-track-2;
+}
+
+.icon-skiing-2::before {
+  content: $icon-skiing-2;
+}
+
+.icon-skateboarding-2::before {
+  content: $icon-skateboarding-2;
+}
+
+.icon-deadlift-2::before {
+  content: $icon-deadlift-2;
+}
+
+.icon-power-lifting-2::before {
+  content: $icon-power-lifting-2;
+}
+
+.icon-handball-2::before {
+  content: $icon-handball-2;
+}
+
+.icon-basketball-player-2::before {
+  content: $icon-basketball-player-2;
+}
+
+.icon-bodybuilder-2::before {
+  content: $icon-bodybuilder-2;
+}
+
+.icon-stretching-2::before {
+  content: $icon-stretching-2;
+}
+
+.icon-fencing-2::before {
+  content: $icon-fencing-2;
+}
+
+.icon-baseball-player-2::before {
+  content: $icon-baseball-player-2;
+}
+
+.icon-golf-player-2::before {
+  content: $icon-golf-player-2;
+}
+
+.icon-rowing-2::before {
+  content: $icon-rowing-2;
+}
+
+.icon-archer-2::before {
+  content: $icon-archer-2;
+}
+
+.icon-elliptical-cross-trainer-2::before {
+  content: $icon-elliptical-cross-trainer-2;
+}
+
+.icon-barbell-2::before {
+  content: $icon-barbell-2;
+}
+
+.icon-ez-bar-2::before {
+  content: $icon-ez-bar-2;
+}
+
+.icon-row-machine-2::before {
+  content: $icon-row-machine-2;
+}
+
+.icon-stair-climber-2::before {
+  content: $icon-stair-climber-2;
+}
+
+.icon-utility-bench-2::before {
+  content: $icon-utility-bench-2;
+}
+
+.icon-spinning-bike-2::before {
+  content: $icon-spinning-bike-2;
+}
+
+.icon-lat-station-2::before {
+  content: $icon-lat-station-2;
+}
+
+.icon-weight-bench-2::before {
+  content: $icon-weight-bench-2;
+}
+
+.icon-pectoral-machine-2::before {
+  content: $icon-pectoral-machine-2;
+}
+
+.icon-power-rack-2::before {
+  content: $icon-power-rack-2;
+}
+
+.icon-medicine-ball-2::before {
+  content: $icon-medicine-ball-2;
+}
+
+.icon-towel-2::before {
+  content: $icon-towel-2;
+}
+
+.icon-gym-2::before {
+  content: $icon-gym-2;
+}
+
+.icon-bicep-2::before {
+  content: $icon-bicep-2;
+}
+
+.icon-man-up-front-2::before {
+  content: $icon-man-up-front-2;
+}
+
+.icon-woman-up-front-2::before {
+  content: $icon-woman-up-front-2;
+}
+
+.icon-measurement-2::before {
+  content: $icon-measurement-2;
+}
+
+.icon-body-back-2::before {
+  content: $icon-body-back-2;
+}
+
+.icon-body-butt-2::before {
+  content: $icon-body-butt-2;
+}
+
+.icon-weight-loss-2::before {
+  content: $icon-weight-loss-2;
+}
+
+.icon-phone-heart-2::before {
+  content: $icon-phone-heart-2;
+}
+
+.icon-watch-heart-2::before {
+  content: $icon-watch-heart-2;
+}
+
+.icon-equestrian-helmet-2::before {
+  content: $icon-equestrian-helmet-2;
+}
+
+.icon-sports-bra-2::before {
+  content: $icon-sports-bra-2;
+}
+
+.icon-resistance-band-2::before {
+  content: $icon-resistance-band-2;
+}
+
+.icon-mat-2::before {
+  content: $icon-mat-2;
+}
+
+.icon-users-mm-2::before {
+  content: $icon-users-mm-2;
+}
+
+.icon-users-ww-2::before {
+  content: $icon-users-ww-2;
+}
+
+.icon-referee-2::before {
+  content: $icon-referee-2;
+}
+
+.icon-personal-trainer-2::before {
+  content: $icon-personal-trainer-2;
+}
+
+.icon-presentation-2::before {
+  content: $icon-presentation-2;
+}
+
+.icon-gym-class-2::before {
+  content: $icon-gym-class-2;
+}
+
+.icon-hockey-2::before {
+  content: $icon-hockey-2;
+}
+
+.icon-tennis-2::before {
+  content: $icon-tennis-2;
+}
+
+.icon-adaptive-bike-2::before {
+  content: $icon-adaptive-bike-2;
+}
+
+.icon-final-score-2::before {
+  content: $icon-final-score-2;
+}
+
+.icon-light::before {
+  content: $icon-light;
+}
+
+.icon-bulb-63::before {
+  content: $icon-bulb-63;
+}
+
+.icon-toilette::before {
+  content: $icon-toilette;
+}
+
+.icon-parking::before {
+  content: $icon-parking;
+}
+
+.icon-car-parking::before {
+  content: $icon-car-parking;
+}
+
+.icon-hanger::before {
+  content: $icon-hanger;
+}
+
+.icon-stairs::before {
+  content: $icon-stairs;
+}
+
+.icon-wheelchair-2::before {
+  content: $icon-wheelchair-2;
+}
+
+.icon-wheelchair::before {
+  content: $icon-wheelchair;
+}
+
+.icon-wheelchair-ramp::before {
+  content: $icon-wheelchair-ramp;
+}
+
+.icon-bath-tub::before {
+  content: $icon-bath-tub;
+}
+
+.icon-name-card::before {
+  content: $icon-name-card;
+}
+
+.icon-show::before {
+  content: $icon-show;
+}
+
+.icon-video-player::before {
+  content: $icon-video-player;
+}
+
+.icon-amazon-card::before {
+  content: $icon-amazon-card;
+}
+
+.icon-bitcoin::before {
+  content: $icon-bitcoin;
+}
+
+.icon-citi::before {
+  content: $icon-citi;
+}
+
+.icon-discover::before {
+  content: $icon-discover;
+}
+
+.icon-diners-club::before {
+  content: $icon-diners-club;
+}
+
+.icon-credit-card::before {
+  content: $icon-credit-card;
+}
+
+.icon-hand-card::before {
+  content: $icon-hand-card;
+}
+
+.icon-stripe::before {
+  content: $icon-stripe;
+}
+
+.icon-visa::before {
+  content: $icon-visa;
+}
+
+.icon-card-switch::before {
+  content: $icon-card-switch;
+}
+
+.icon-contactless-card::before {
+  content: $icon-contactless-card;
+}
+
+.icon-shop::before {
+  content: $icon-shop;
+}
+
+.icon-store::before {
+  content: $icon-store;
+}
+
+.icon-cutlery::before {
+  content: $icon-cutlery;
+}
+
+.icon-food-course::before {
+  content: $icon-food-course;
+}
+
+.icon-cutlery-77::before {
+  content: $icon-cutlery-77;
+}
+

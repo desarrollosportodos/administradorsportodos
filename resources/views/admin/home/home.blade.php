@@ -33,13 +33,13 @@ Home
         </a>
     </div>
     <div class="col-sm-3">
-        <a class="card-button" href="{{ route("espacios") }}">
+        <a class="card-button" href="{{ route("puntos") }}">
             <div class="row align-items-center">
                 <div class="col-sm-3">
                     <i class="metismenu-icon pe-7s-map-2"></i>
                 </div>
                 <div class="col-sm-9">
-                    <h2> Espacios Deportivos</h2>
+                    <h2> Puntos de Encuentro</h2>
                     <div class="descripcion">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
                 </div>
             </div>
