@@ -78,11 +78,11 @@ class PuntosController extends Controller
 
    public function actualizar(Request $request,$id)
    {
-      $elemento = $this->getId($id); 
+      $elemento = $this->getId($id);
       $data = $request->all();
       if($request->file("imagen")){
-         if(isset($elemento['foto'])){
-            $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['foto']);
+         if(isset($elemento['punto']['foto'])){
+            $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['punto']['foto']);
             Storage::disk('public')->delete($image);
          }
          $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
