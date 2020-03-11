@@ -12,7 +12,10 @@
             <div class="card-body" >
                 <div class="row">
                     <div class="col-sm-3">
-                        <img src="{{ $data['punto']['foto'] }}" alt="" class="foto-detalle-espacio" >
+                        @if (isset($data['punto']['foto']))
+                        <img src="{{ $data['punto']['foto'] }}" alt="" class="foto-detalle-espacio" >  
+                        @endif
+                        
                     </div>
                     <div class="col-sm-5">
                         <div class="descripcion">{!! $data['punto']['descripcion'] !!}</div>
