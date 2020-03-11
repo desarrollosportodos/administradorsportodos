@@ -5,7 +5,9 @@
                 <h2>{{$item['nombre']}}</h2>
                 <div class="row">
                     <div class="col-5">
-                    <img src="{{$item['foto']}}">
+                        <?php if(isset($item['foto'])){ ?>
+                            <img src="{{$item['foto']}}">
+                        <?php } ?>
                     </div>
                     <div class="col-7">
                         <div class="descripcion">El parque metropolitano Simón Bolívar es el más grande e importante de la ciudad por varias razones: su estratégica ubicación en el corazón de Bogotá.</div>
