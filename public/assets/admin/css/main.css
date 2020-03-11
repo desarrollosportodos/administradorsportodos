@@ -24985,18 +24985,24 @@ body{
     -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
 box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
 color: #333333;
+height: calc(100% - 20px);
 }
 .card-button i{
-    font-size:50px;display: block;
+    font-size:50px;
+    display: block;
     text-align: center;
     color:#3ac47d ;
 }
 .card-button h2{
     font-size: 20px;
     color: #3ac47d;
+    margin-left: 10px;
 }
 .card-button .descripcion{
-    font-size: 12px;
+    font-size: 13px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     
 }
 .card-button:hover{
