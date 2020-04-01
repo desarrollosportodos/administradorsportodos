@@ -13,7 +13,8 @@ class PuntosController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      return view('admin.puntos.home', compact('listado','deporte','asideactual'));
+      $asideactual = 3;
+      return view('admin.puntos.home',compact('asideactual'));
    }
 
    public function listado()
@@ -22,7 +23,8 @@ class PuntosController extends Controller
       $post['redsocial'] = '49';
       $listado = Sportodos::request("puntos",$post);
       $deportes = $this->getDeportes();
-      return view('admin.puntos.listado', compact('listado','deporte','asideactual'));
+      $asideactual = 3;
+      return view('admin.puntos.listado', compact('listado','deportes','asideactual'));
    }
    public function listadocajas()
    {
@@ -30,8 +32,8 @@ class PuntosController extends Controller
       $post['redsocial'] = '49';
       $listado = Sportodos::request("puntos",$post);
       $deportes = $this->getDeportes();
-
-      return view('admin.puntos.cajas', compact('listado','deporte','asideactual'));
+      $asideactual = 3;
+      return view('admin.puntos.cajas', compact('listado','deportes','asideactual'));
    }
 
    public function nuevo()
@@ -49,6 +51,9 @@ class PuntosController extends Controller
       $data['redsocial'] = 49;
       if($request->file("imagen")){
          $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
+      }
+      if($request->file("portada")){
+         $data['portada'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("portada"));
       }
       $post = $data;
       $data = Sportodos::request("puntos/crear",$post);
@@ -87,6 +92,19 @@ class PuntosController extends Controller
          }
          $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
       }
+
+      if($request->file("portada")){
+         if(isset($elemento['punto']['portada'])){
+            $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['punto']['portada']);
+            Storage::disk('public')->delete($image);
+         }
+         $data['portada'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("portada"));
+      }
+      $data['fotos'] = [];
+      foreach ($request->file("imagenotras") as $imagen) {
+         $foto = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$imagen);
+         array_push($data['fotos'],$foto);
+      }
       Sportodos::request("puntos/editar/".$id,$data);
       return redirect('administrador/puntos/detalle/'.$id)->with("mensaje","Tu Recurso ha sido Actualizado con exito.");
    }
@@ -101,6 +119,14 @@ class PuntosController extends Controller
 
       Sportodos::request("puntos/eliminar",$data);
       return redirect('administrador/puntos')->with("mensaje","Tu Recurso ha sido Eliminado con exito.");
+   }
+   public function eliminarimagen(Request $reques){
+      $data = $reques->all();
+      if(isset($data['imagen']) ){
+         $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$data['imagen']);
+         Storage::disk('public')->delete($image);
+      }
+      return response()->json([])->header('Access-Control-Allow-Origin', '*');
    }
 
    public function getId($id){

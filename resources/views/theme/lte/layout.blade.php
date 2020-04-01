@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="/assets/DataTables/datatables.min.css"/>
     <link rel="stylesheet" href="{{ asset("/assets/iconos/css/style.css")}}">
     <link rel="stylesheet" href="{{ asset("assets/admin/css/main.css")}}">
+    <link rel="stylesheet" href="{{ asset("assets/fileinput/css/fileinput.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("assets/galery/baguetteBox.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("assets/galery/fluid-gallery.css")}}">
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
     @yield('styles')
 
@@ -33,7 +36,10 @@
         <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/js/bootstrap4-toggle.min.js"></script>
         <script type="text/javascript" src="/assets/DataTables/datatables.min.js"></script>
         <script src="/assets/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
-    <script type="text/javascript" src="{{ asset("assets/admin/scripts/main.js") }}"></script>
+        <script type="text/javascript" src="{{ asset("assets/fileinput/js/fileinput.js") }}"></script>
+        <script type="text/javascript" src="{{ asset("assets/fileinput/js/locales/es.js") }}"></script>
+        <script type="text/javascript" src="{{ asset("assets/galery/baguetteBox.min.js") }}"></script>
+        <script type="text/javascript" src="{{ asset("assets/admin/scripts/main.js") }}"></script>
         @yield("scripts")
         
 </body>

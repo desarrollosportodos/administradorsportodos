@@ -128,6 +128,25 @@
             </div>
         </div>
     </div>
+    <br>
+    <?php if(isset($data['punto']['fotos'])){ ?>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="subtitulo">Imagenes</h3>
+                <div class="tz-gallery">
+                    <div class="row">
+                        <?php foreach ($data['punto']['fotos'] as $key => $foto) { ?>
+                            <div class="col-md-4">
+                                <a class="lightbox" href="<?php echo $foto['imagen'] ?>" style="background-image:url(<?php echo $foto['imagen'] ?>);">
+                                </a>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
     
 @endsection
 
@@ -145,9 +164,8 @@
         lat: "{{$data['punto']['latitud']}}",
         lng: "{{$data['punto']['longitud']}}",
     });
-       
-    
-
-         
+</script>
+<script>
+    baguetteBox.run('.tz-gallery');
 </script>
 @endsection

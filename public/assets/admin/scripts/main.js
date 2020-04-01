@@ -140,3 +140,4 @@ tinymce.init({
   filemanager_title:"Archivos Cargados" ,
   external_filemanager_path:"/assets/tinymce/plugins/filemanager/"
 });
+

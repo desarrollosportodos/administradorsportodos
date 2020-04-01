@@ -32,6 +32,7 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::post('puntos/actualizar/{id}', 'PuntosController@actualizar')->name('puntos-actualizar');
     Route::post('puntos/eliminar/{id}', 'PuntosController@eliminar')->name('puntos-eliminar');
     Route::get('puntos/detalle/{id}', 'PuntosController@detalle')->name('puntos-detalle');
+    Route::any('puntos/eliminarimagen', 'PuntosController@eliminarimagen')->name('puntos-eliminarimagen');
 
 
     Route::get('espacio/nuevo', 'EspacioController@nuevo')->name('espacio-nuevo');

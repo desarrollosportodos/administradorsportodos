@@ -1,7 +1,7 @@
 <div class="row">
     @foreach ($listado as $numero => $item)
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card-espacio">
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <a class="card-espacio" href="{{ route('puntos-detalle',[ 'id' => $item['id'] ]) }}" >
                 <h2>{{$item['nombre']}}</h2>
                 <div class="row">
                     <div class="col-5">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="footer-card">
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-12">
                             <div class="text-left calificaciones">
                                 <strong>Calificación:</strong>
                                 <span> (0,0) </span>
@@ -44,13 +44,10 @@
                                 <i class="pe-7s-star"></i>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <a href="{{ route('puntos-detalle',[ 'id' => $item['id'] ]) }}" class="btn btn-sm btn-warning "><i class="fas fa-eye"></i></a>
-                        </div>
                     </div>
                     
                 </div>
-            </div>
+            </a>
         </div>
     @endforeach
 </div>

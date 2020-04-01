@@ -16,13 +16,12 @@ Puntos de encuentro
                 </div>
             </div>
             <div class="page-title-actions">
-                <a data-toggle="tooltip" title="" data-placement="bottom" class="btn-shadow mr-3 btn btn-success" data-original-title="Nuevo Espacio o Recurso" href="{{ route("puntos-nuevo") }}">
-                    <i class="fa fa-plus"></i>
-                </a>
+                
             </div>
         </div>
     </div>
     <div class="text-right">
+        <a data-toggle="tooltip" title="" data-placement="bottom" class="btn-shadow btn btn-success" data-original-title="Nuevo Espacio o Recurso" href="{{ route("puntos-nuevo") }}"> <i class="fa fa-plus"></i> </a>
         <button class="btn btn-info" id="tipo_listado"><i class="fas fa-list-ul"></i></button>
         <button class="btn btn-info" id="tipo_cajas"><i class="fas fa-th"></i></button>
     </div>
