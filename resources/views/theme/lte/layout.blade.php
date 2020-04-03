@@ -21,7 +21,7 @@
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        @include("theme/lte/header");
+        @include("theme/lte/header")
         <div class="app-main">
             @include("theme/lte/aside")
             <div class="app-main__outer">

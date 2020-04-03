@@ -5045,7 +5045,7 @@ input[type="button"].btn-block {
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(26, 54, 126, 0.125);
-    border-radius: .25rem
+    border-radius: 0.5em
 }
 
 .card>hr {
@@ -11128,6 +11128,11 @@ button,
 
 .app-theme-white .app-page-title {
     background: #FFFFFF;
+    padding:10px;
+}
+.app-page-title .page-title-icon{
+    box-shadow:none!important;
+    padding-right: 10px;
 }
 
 .app-theme-white .app-footer .app-footer__inner,
@@ -25041,7 +25046,7 @@ a.card-button:not([href]):not([tabindex]) h2 , a.card-button:not([href]):not([ta
 }
 
 .card-espacio:hover{
-    color:#3ac47d;
+    color:#666666;
     text-decoration: none;
      -webkit-box-shadow: inset 0 0 5px 0 rgba(0,0,0,0.5);
     box-shadow:inset 0 0 5px 0 rgba(0,0,0,0.5);
@@ -25255,4 +25260,22 @@ a.card-button:not([href]):not([tabindex]) h2 , a.card-button:not([href]):not([ta
 .file-input .krajee-default.file-preview-frame .kv-file-content{
     width: 100px;
     height:100px;
+}
+
+.titulo-general{
+    color:#999999;
+    font-weight: 700;
+    font-size:20px;
+    text-transform: uppercase;
+    margin:0;
+}
+.titulo-general a{
+    color:#12314D;
+}
+.intro-general{
+    padding-bottom: 20px;
+    font-weight: 300;
+    color:#666666;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 20px;
 }

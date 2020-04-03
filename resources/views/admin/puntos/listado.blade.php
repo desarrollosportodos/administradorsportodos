@@ -5,6 +5,8 @@
                 <tr>
                     <th></th>
                     <th>Nombre</th>
+                    <th>Deportes</th>
+                    <th>Servicios</th>
 
                     <th width="100"></th>
                 </tr>
@@ -19,10 +21,20 @@
                         <td>
                            {{ $item['nombre'] }}
                         </td>
+                        <td>
+                            @foreach ($item['deportes'] as $deporte)
+                                <i class="icon {{$deporte['icono']}}"></i>
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach ($item['servicios'] as $servicio)
+                                <i class="icon {{$servicio['icono']}}"></i>
+                            @endforeach
+                        </td>
                 
                         <td class="text-center">
                             <div class="content-form">
-                                <a href="{{ route('puntos-editar',[ 'id' => $item['id'] ]) }}" class="btn btn-sm btn-info "><i class="fas fa-edit"></i></a>
+                                <a href="{{ route('puntos-detalle',[ 'id' => $item['id'] ]) }}" class="btn btn-sm btn-info "><i class="fas fa-eye"></i></a>
                             </div>
                         </td>
                     </tr>

@@ -10,13 +10,11 @@ Home
                 <i class="pe-7s-home icon-gradient bg-night-fade">
                 </i>
             </div>
-            <div>Administrador Sportodos
-                <div class="page-title-subheading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laborum quis distinctio officiis debitis eum veritatis porro magni provident eligendi nostrum dolores fugit maiores quisquam, doloribus optio recusandae quam molestiae.
-                </div>
-            </div>
+            <h1 class="titulo-general">Administrador Sportodos</h1>
         </div>
     </div>
 </div>
+<div class="intro-general">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laborum quis distinctio officiis debitis eum veritatis porro magni provident eligendi nostrum dolores fugit maiores quisquam, doloribus optio recusandae quam molestiae.</div>
 
 <div class="row">
     <div class="col-sm-4 ">

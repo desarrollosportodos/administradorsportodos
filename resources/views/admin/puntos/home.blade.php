@@ -10,16 +10,17 @@ Puntos de encuentro
                     <i class="pe-7s-box1 icon-gradient bg-night-fade">
                     </i>
                 </div>
-                <div>Gestion de Puntos de encuentro
-                    <div class="page-title-subheading">Aconticunación encontraras el listado de los puntos deportivos, podras gestionar y visualizar el detalle de cada uno de ellos.
-                    </div>
-                </div>
+                <h1 class="titulo-general">Gestion de Puntos de encuentro</h1>
+
             </div>
             <div class="page-title-actions">
                 
             </div>
         </div>
     </div>
+
+    <div class="intro-general">Aconticunación encontraras el listado de los puntos deportivos, podras gestionar y visualizar el detalle de cada uno de ellos.
+                    </div>
     <div class="text-right">
         <a data-toggle="tooltip" title="" data-placement="bottom" class="btn-shadow btn btn-success" data-original-title="Nuevo Espacio o Recurso" href="{{ route("puntos-nuevo") }}"> <i class="fa fa-plus"></i> </a>
         <button class="btn btn-info" id="tipo_listado"><i class="fas fa-list-ul"></i></button>

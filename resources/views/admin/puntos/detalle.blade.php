@@ -3,6 +3,21 @@
     Detalle punto de encuentro {{ $data['punto']['nombre'] }}
 @endsection
 @section('contenido')
+<div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div class="page-title-icon">
+                    <i class="pe-7s-box1 icon-gradient bg-night-fade">
+                    </i>
+                </div>
+                <h1 class="titulo-general"><a href="{{ route("puntos") }}" >Gestion de Puntos de encuentro</a> / {{  $data['punto']['nombre']  }}  </h1>
+
+            </div>
+            <div class="page-title-actions">
+                
+            </div>
+        </div>
+    </div>
     <div class="card">
         <div class="card-body">
             <div class="card-header">
