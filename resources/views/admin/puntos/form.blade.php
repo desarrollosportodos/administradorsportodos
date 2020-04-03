@@ -1,7 +1,7 @@
 @csrf
 <div class="mb-3 card">
     <div class="card-header card-header-tab-animation">
-        <ul class="nav nav-justified">
+        <ul class="nav  nav-justified">
             <li class="nav-item"><a data-toggle="tab" href="#informacion" class="nav-link active show">Información</a></li>
             <li class="nav-item"><a data-toggle="tab" href="#multimedia" class="nav-link show">Multimedia</a></li>
             <li class="nav-item"><a data-toggle="tab" href="#serviciosydeporte" class="nav-link show">Servicios y Deportes</a></li>
@@ -93,13 +93,17 @@
             </div>
             <div class="tab-pane show" id="multimedia" role="tabpanel">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-3">
                         <div class="form-group">
-                            <label for="nombre">Imagen Perfil</label>
+                            <label for="nombre">Imagen Perfil </label>
+                            <span type="button" class="btn-redondo-info" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover670173">
+                                <i class="pe-7s-help1"></i>
+                            </span>
+                            
                             <input type="file" name="imagen" id="imagen" class="form-control inputimage">
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-9">
                         <div class="form-group">
                             <label for="nombre">Imagen Portada</label>
                             <input type="file" name="portada" id="portada" class="form-control inputimage">

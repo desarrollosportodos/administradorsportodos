@@ -19,10 +19,12 @@ Editar punto de encuentro
     </div>
 
 <form action="{{ route('puntos-actualizar',[ 'id' => $data['punto']['id'] ]) }}" method="POST" enctype="multipart/form-data" >
-    @include('admin.puntos.form')
-    <div class="text-right">
+     <div class="text-right">
         <button type="submit" class="btn btn-success">Guardar</button>
     </div>
+    <br>
+    @include('admin.puntos.form')
+   
 </form>
 
 @endsection

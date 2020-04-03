@@ -5098,7 +5098,7 @@ input[type="button"].btn-block {
 }
 
 .card-header:first-child {
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+    border-radius:0.5em;
 }
 
 .card-header+.list-group .list-group-item:first-child {
@@ -15231,13 +15231,16 @@ a.badge-alternate:focus {
     text-transform: none;
     width: 100%;
     display: block;
-    color: #495057
+    color: #495057;
+    font-size:20px;
+    font-weight: 300;
+
 }
 
 .card-header>.nav .nav-link::before {
     content: '';
     border-radius: 15px;
-    background: #3f6ad8;
+    background: #3ac47d;
     transition: all .2s;
     height: 4px;
     width: 100%;
@@ -15248,15 +15251,19 @@ a.badge-alternate:focus {
 }
 
 .card-header>.nav .nav-link:hover {
-    color: #3f6ad8
+    color: #3ac47d
 }
 
 .card-header>.nav .nav-link.active {
-    color: #3f6ad8
+    color: #3ac47d;
+    font-weight: 700;
 }
 
 .card-header>.nav .nav-link.active::before {
     opacity: 1
+}
+.card .tab-content{
+    padding:15px;
 }
 
 .card-border {
@@ -25278,4 +25285,11 @@ a.card-button:not([href]):not([tabindex]) h2 , a.card-button:not([href]):not([ta
     color:#666666;
     border-bottom: 1px solid #CCCCCC;
     margin-bottom: 20px;
+}
+
+.btn-redondo-info{
+    color:#999999;
+}
+.btn-redondo-info:hover{
+    color:#2FCD7F;
 }
