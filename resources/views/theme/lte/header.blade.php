@@ -64,7 +64,7 @@
 
                         <div class="widget-content-left  ml-3 header-user-info">
                             <div class="widget-heading">
-                                <?php echo Session::get("usuario")->nombre; ?>
+                                <?php echo Session::get("usuario")->user_names." ".Session::get("usuario")->user_lastnames ; ?>
                             </div>
                             <div class="widget-subheading">
                                 Administrador

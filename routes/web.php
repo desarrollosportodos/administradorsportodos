@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    Redirect::intended('/administrador');
-});
+
+
 Route::get('administrador/login', 'Admin\LoginController@index')->name('login');
 Route::post('administrador/login2', 'Admin\LoginController@login')->name('login2');
+Route::get('','Admin\HomeController@index')->name('home')->middleware("admin");
+
 Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['admin'] ], function(){ 
     Route::get('logout', 'LoginController@logout')->name('logout');
 

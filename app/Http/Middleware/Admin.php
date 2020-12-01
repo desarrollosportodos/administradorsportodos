@@ -17,7 +17,7 @@ class Admin
     public function handle($request, Closure $next)
     {
         $usuario = Session::get('usuario');
-        if(isset($usuario) && $usuario->id >0 ){
+        if(isset($usuario) && $usuario->user_id >0 ){
             return $next($request);
         } else {
             //echo "no login";

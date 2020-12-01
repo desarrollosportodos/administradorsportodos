@@ -24,7 +24,7 @@
                 @csrf
                 <div class="form-group">
                     <i class="fa fa-user"></i>
-                    <input type="text" name="user" class="form-control usuario" placeholder="Usuario">
+                    <input type="text" name="email" class="form-control usuario" placeholder="Correo">
                 </div>
                 <div class="form-group">
                     <i class="fa fa-key"></i>

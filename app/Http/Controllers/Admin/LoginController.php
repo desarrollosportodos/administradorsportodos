@@ -24,12 +24,15 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $post = $request->all();
-        $data = Togroow::request("usuarios/autenticar",$post);
-        if($data['estado'] == 1){
+        $data = Togroow::request("usuarios/login",$post,1);
+        if(isset($data['access_token'])){
+            /*echo "<pre>";
+            print_r($data);*/
             Session::put('usuario',(object)$data['usuario']);
+            Session::put('access_token',$data['access_token']);
             return  redirect('/administrador');
         } else {
-            return redirect('/administrador/login')->with("mensaje",$data['mensaje']);
+            return redirect('/administrador/login')->with("mensaje",$data['error']);
         }
         
     }

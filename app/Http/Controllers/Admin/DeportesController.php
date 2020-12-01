@@ -10,9 +10,10 @@ class DeportesController extends Controller
 {
    public function index(){
         $post = [];
-        $post['redsocial'] = '49';
-        $listado = Sportodos::request("deportes",$post);
-        return view('admin.deportes.home',compact('listado','tipos'));
+        $listado = Sportodos::request("/sportodos/deportes",[],0);
+        echo "<pre>";
+        print_r($listado);
+        //return view('admin.deportes.home',compact('listado'));
    }
 
    public function nuevo(){
