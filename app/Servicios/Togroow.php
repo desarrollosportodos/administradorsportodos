@@ -31,7 +31,7 @@ class Togroow
                 curl_setopt($ch, CURLOPT_URL, $url);
             }
         }
-        echo $result = curl_exec($ch);
+        $result = curl_exec($ch);
         $data = json_decode($result, JSON_UNESCAPED_UNICODE);
         return $data;
     }
