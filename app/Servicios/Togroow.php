@@ -33,10 +33,19 @@ class Togroow
         }
         if( Session::get('access_token')){
             $token = Session::get('access_token');
-            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
-            curl_setopt($ch,CURLOPT_XOAUTH2_BEARER,$token);
+            if( CURLAUTH_BEARER ){
+                curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
+                curl_setopt($ch,CURLOPT_XOAUTH2_BEARER,$token);
+            } else {
+                $headers = array(
+                    "Content-Type: application/json",
+                    "Authorization: Bearer $token"
+                );
+                curl_setopt( $ch, CURLINFO_HEADER_OUT, true);
+                curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
+            }
         }
-        echo $result = curl_exec($ch);
+        $result = curl_exec($ch);
         $data = json_decode($result, JSON_UNESCAPED_UNICODE);
         return $data;
     }
