@@ -24,7 +24,11 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $post = $request->all();
-        $data = Togroow::request("usuarios/login",$post,1);
+        $datos = [];
+        $datos['email'] = $post['email'];
+        $datos['password'] = $post['password'];
+        //print_r($datos);
+        $data = Togroow::request("usuarios/login",$datos,1);
         if(isset($data['access_token'])){
             /*echo "<pre>";
             print_r($data);*/
@@ -32,13 +36,20 @@ class LoginController extends Controller
             Session::put('access_token',$data['access_token']);
             return  redirect('/administrador');
         } else {
-            return redirect('/administrador/login')->with("mensaje",$data['error']);
+            $error ="ha ocurriod un error intente mas tarde";
+            if(isset($data['error'])){
+                $error = $data['error'];
+            } else if(isset($data['message'])){
+                $error = $data['message'];
+            }
+            return redirect('/administrador/login')->with("mensaje",$error);
         }
         
     }
 
     public function logout(){
         Session::forget('usuario');
+        Session::forget('access_token');
         return  redirect('/administrador/login');
     }
 }

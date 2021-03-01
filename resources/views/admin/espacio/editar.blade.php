@@ -5,7 +5,7 @@
     </button>
 </div>
 <div class="modal-body">
-    <form action="{{ route('espacio-actualizar',[ 'id' => $data['espacio']['id'] ]) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('espacio-actualizar',[ 'id' => $data['id'] ]) }}" method="POST" enctype="multipart/form-data">
         @include('admin.espacio.form')
         <div class="text-right">
             <button type="submit" class="btn btn-success">Guardar</button>

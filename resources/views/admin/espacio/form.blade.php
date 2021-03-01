@@ -7,14 +7,15 @@
 </div>
 <div class="card-body">
     @csrf
-    <input type="hidden" name="punto" id="punto" value="<?php if(isset($punto['punto']['id'])){ echo $punto['punto']['id']; } else if(isset($data['espacio']['punto'])) { echo $data['espacio']['punto']; } ?>">
+    <input type="hidden" name="punto" id="punto" value="<?php if(isset($punto['id'])){ echo $punto['id']; } else if(isset($data['punto_id'])) { echo $data['punto_id']; } ?>">
+    <input type="hidden" name="punto_id" id="punto_id" value="<?php if(isset($punto['id'])){ echo $punto['id']; } else if(isset($data['punto_id'])) { echo $data['punto_id']; } ?>">
     <div class="tab-content">
         <div class="tab-pane active show" id="informacion" role="tabpanel">
             <div class="row">
                 <div class="col-md-8">
                     <div class="form-group">
                         <label for="nombre">Nombre </label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" value="{{old('nombre', $data['espacio']['nombre'] ?? '')}}">
+                        <input type="text" name="nombre" id="nombre" class="form-control" value="{{old('nombre', $data['nombre'] ?? '')}}">
                     </div>
 
                     <div class="form-group">
@@ -22,21 +23,29 @@
                         <div id="mappopup" class="form-map">
 
                         </div>
-                        <input type="hidden" name="latitud" id="latitud" value="<?php if(isset($punto['punto']['latitud'])){ echo $punto['punto']['latitud']; } else if(isset($data['espacio']['latitud'])) { echo $data['espacio']['latitud']; } ?>">
-                        <input type="hidden" name="longitud" id="longitud" value="<?php if(isset($punto['punto']['longitud'])){ echo $punto['punto']['longitud']; } else if(isset($data['espacio']['longitud'])) { echo $data['espacio']['longitud']; } ?>">
+                        <input type="hidden" name="latitud" id="latitud" value="<?php if(isset($punto['latitud'])){ echo $punto['latitud']; } else if(isset($data['latitud'])) { echo $data['latitud']; } ?>">
+                        <input type="hidden" name="longitud" id="longitud" value="<?php if(isset($punto['longitud'])){ echo $punto['longitud']; } else if(isset($data['longitud'])) { echo $data['longitud']; } ?>">
                     </div>
                     <div class="form-group">
                         <label for="">Descripcion</label>
-                        <textarea name="descripcion" id="descripcion" class="tinypopup" cols="30" rows="14"> {{old('descripcion', $data['espacio']['descripcion'] ?? '')}}</textarea>
+                        <textarea name="descripcion" id="descripcion" class="tinypopup" cols="30" rows="14"> {{old('descripcion', $data['descripcion'] ?? '')}}</textarea>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <label for="">Deportes</label>
+                    <?php
+                                $misdeportes = [];
+                                if(isset($data['deportes'])){
+                                    foreach ($data['deportes'] as $key => $deporte) {
+                                        $misdeportes[$key] = $deporte['id'];
+                                    }
+                                }
+                            ?>
                     <div class="row">
                         @foreach ($deportes as $deporte)
                             <div class="col-sm-12">
                                 <label for="deporte{{$deporte['id']}}" class="check-group">
-                                    <input class="flat-red"  type="checkbox" name="deportes[]" id="deporte{{$deporte['id']}}" value="{{$deporte['id']}}" <?php if( isset($data['deportes']) && in_array($deporte['id'],$data['deportes'])){ echo "checked"; } ?> />
+                                    <input class="flat-red"  type="checkbox" name="deportes[]" id="deporte{{$deporte['id']}}" value="{{$deporte['id']}}" <?php if( isset($data['deportes']) && in_array($deporte['id'],$misdeportes)){ echo "checked"; } ?> />
                                     <span>{{$deporte['nombre']}}</span>
                                 </label>
                             </div>

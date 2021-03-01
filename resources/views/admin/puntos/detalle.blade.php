@@ -1,6 +1,6 @@
 @extends("theme.lte.layout")
 @section('titulo')
-    Detalle punto de encuentro {{ $data['punto']['nombre'] }}
+    Detalle punto de encuentro {{ $data['nombre'] }}
 @endsection
 @section('contenido')
 <div class="app-page-title">
@@ -10,7 +10,7 @@
                     <i class="pe-7s-box1 icon-gradient bg-night-fade">
                     </i>
                 </div>
-                <h1 class="titulo-general"><a href="{{ route("puntos") }}" >Gestion de Puntos de encuentro</a> / {{  $data['punto']['nombre']  }}  </h1>
+                <h1 class="titulo-general"><a href="{{ route("puntos") }}" >Gestion de Puntos de encuentro</a> / {{  $data['nombre']  }}  </h1>
 
             </div>
             <div class="page-title-actions">
@@ -21,19 +21,19 @@
     <div class="card">
         <div class="card-body">
             <div class="card-header">
-                <h1 class="titulo-principal">{{  $data['punto']['nombre']  }}</h1>
-                <a class="btn-icon btn-icon-only btn btn-link btn-float-card" href="{{ route('puntos-editar',[ 'id' => $data['punto']['id'] ]) }}"><i class="pe-7s-pen btn-icon-wrapper"></i></a>
+                <h1 class="titulo-principal">{{  $data['nombre']  }}</h1>
+                <a class="btn-icon btn-icon-only btn btn-link btn-float-card" href="{{ route('puntos-editar',[ 'id' => $data['id'] ]) }}"><i class="pe-7s-pen btn-icon-wrapper"></i></a>
             </div>
             <div class="card-body" >
                 <div class="row">
                     <div class="col-sm-3">
-                        @if (isset($data['punto']['foto']))
-                        <img src="{{ $data['punto']['foto'] }}" alt="" class="foto-detalle-espacio" >  
+                        @if (isset($data['foto']))
+                        <img src="{{ $data['foto'] }}" alt="" class="foto-detalle-espacio" >  
                         @endif
                         
                     </div>
                     <div class="col-sm-5">
-                        <div class="descripcion">{!! $data['punto']['descripcion'] !!}</div>
+                        <div class="descripcion">{!! $data['descripcion'] !!}</div>
                         <div class="text-left calificaciones">
                             <strong>Calificación:</strong>
                             <span> (0,0) </span>
@@ -76,12 +76,12 @@
                     <div class="col-sm-5">
                          <div class="subtitulo">Informacion de Contacto</div>
                          <div style="padding-left:20px;">
-                         <div class="descripcion"><strong>Ciudad:</strong> {{  $data['punto']['direccion']  }} </div>
-                         <div class="descripcion"><strong>Zona:</strong> {{  $data['punto']['direccion']  }} </div>
-                         <div class="descripcion"><strong>Dirección:</strong> {{  $data['punto']['direccion']  }} </div>
-                         <div class="descripcion"><strong>Nombre Contacto:</strong> {{  $data['punto']['contacto']  }} </div>
-                         <div class="descripcion"><strong>Telefono:</strong> {{  $data['punto']['telefono']  }} </div>
-                         <div class="descripcion"><strong>Correo:</strong> {{  $data['punto']['correo']  }} </div>
+                         <div class="descripcion"><strong>Ciudad:</strong> {{  $data['direccion']  }} </div>
+                         <div class="descripcion"><strong>Zona:</strong> {{  $data['direccion']  }} </div>
+                         <div class="descripcion"><strong>Dirección:</strong> {{  $data['direccion']  }} </div>
+                         <div class="descripcion"><strong>Nombre Contacto:</strong> {{  $data['contacto']  }} </div>
+                         <div class="descripcion"><strong>Telefono:</strong> {{  $data['telefono']  }} </div>
+                         <div class="descripcion"><strong>Correo:</strong> {{  $data['correo']  }} </div>
                          </div>
                      </div>
                      <div class="col-sm-7">
@@ -100,7 +100,7 @@
         <div class="card-body">
             
             <h3 class="subtitulo">Espacios Deportivos</h3>
-            <a  data-toggle="modal" data-target="#modalUrl" class="btn-icon btn-icon-only btn btn-link btn-float-card" href="{{ route('espacio-nuevo',[ 'punto' => $data['punto']['id'] ]) }}"><i class="pe-7s-plus btn-icon-wrapper"></i></a>
+            <a  data-toggle="modal" data-target="#modalUrl" class="btn-icon btn-icon-only btn btn-link btn-float-card" href="{{ route('espacio-nuevo',[ 'punto' => $data['id'] ]) }}"><i class="pe-7s-plus btn-icon-wrapper"></i></a>
 
             <div class="row">
             @foreach ($espacios as $item)
@@ -111,13 +111,11 @@
                             <a data-toggle="modal" data-target="#modalUrl"  href="{{ route('espacio-editar',[ 'id' => $item['id'] ]) }}" ><i class="pe-7s-pen"></i></a>
                         </div>
                         <h2>{{$item['nombre']}}</h2>
-                        <div class="imagen" style="background-image:url({{$item['foto']}});"></div>
+                        <div class="imagen" style="background-image:url(http://testing.togroow.com/images/{{$item['foto']}});"></div>
                         
                         <div>
                             <div class="deportes">
-                                @foreach ($item['deportes'] as $deporte)
-                                    <i class="icon {{$deporte['icono']}}"></i>
-                                @endforeach
+                               
                             </div>
                         </div>
                         
@@ -144,13 +142,13 @@
         </div>
     </div>
     <br>
-    <?php if(isset($data['punto']['fotos'])){ ?>
+    <?php if(isset($data['fotos'])){ ?>
         <div class="card">
             <div class="card-body">
                 <h3 class="subtitulo">Imagenes</h3>
                 <div class="tz-gallery">
                     <div class="row">
-                        <?php foreach ($data['punto']['fotos'] as $key => $foto) { ?>
+                        <?php foreach ($data['fotos'] as $key => $foto) { ?>
                             <div class="col-md-4">
                                 <a class="lightbox" href="<?php echo $foto['imagen'] ?>" style="background-image:url(<?php echo $foto['imagen'] ?>);">
                                 </a>
@@ -171,13 +169,13 @@
 <script>
     var map = new GMaps({
         div: '#map',
-        lat: "{{$data['punto']['latitud']}}",
-        lng: "{{$data['punto']['longitud']}}",
+        lat: "{{$data['latitud']}}",
+        lng: "{{$data['longitud']}}",
         disableDefaultUI: true
     });
     var marker = map.addMarker({
-        lat: "{{$data['punto']['latitud']}}",
-        lng: "{{$data['punto']['longitud']}}",
+        lat: "{{$data['latitud']}}",
+        lng: "{{$data['longitud']}}",
     });
 </script>
 <script>

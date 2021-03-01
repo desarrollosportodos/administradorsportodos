@@ -1,3 +1,4 @@
+<?php //print_r($listado) ?>
 <div class="card">
     <div class="card-body">
         <table id="listtable" class="mb-0 table table-bordered">
@@ -7,12 +8,12 @@
                     <th>Nombre</th>
                     <th>Deportes</th>
                     <th>Servicios</th>
-
                     <th width="100"></th>
                 </tr>
             </thead>
+            
             <tbody>
-                @foreach ($listado as $numero => $item)
+                /*@foreach ($listado as $numero => $item)
                     @csrf
                     <tr>
                         <th>

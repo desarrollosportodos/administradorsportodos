@@ -10,7 +10,7 @@ Editar punto de encuentro
                     <i class="pe-7s-box1 icon-gradient bg-night-fade">
                     </i>
                 </div>
-                <h1 class="titulo-general"><a href="{{ route('puntos') }}" >Gestion de Puntos de encuentro</a> / <a href="{{ route('puntos-detalle',[ 'id' => $data['punto']['id'] ]) }}" >{{$data['punto']['nombre']}}</a> / Editar  </h1>
+                <h1 class="titulo-general"><a href="{{ route('puntos') }}" >Gestion de Puntos de encuentro</a> / <a href="{{ route('puntos-detalle',[ 'id' => $data['id'] ]) }}" >{{$data['nombre']}}</a> / Editar  </h1>
             </div>
             <div class="page-title-actions">
                 
@@ -18,7 +18,7 @@ Editar punto de encuentro
         </div>
     </div>
 
-<form action="{{ route('puntos-actualizar',[ 'id' => $data['punto']['id'] ]) }}" method="POST" enctype="multipart/form-data" >
+<form action="{{ route('puntos-actualizar',[ 'id' => $data['id'] ]) }}" method="POST" enctype="multipart/form-data" >
      <div class="text-right">
         <button type="submit" class="btn btn-success">Guardar</button>
     </div>

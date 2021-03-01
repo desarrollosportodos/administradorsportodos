@@ -14,32 +14,32 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="nombre">Nombre </label>
-                            <input type="text" name="nombre" id="nombre" class="form-control" value="{{old('nombre', $data['punto']['nombre'] ?? '')}}">
+                            <input type="text" name="nombre" id="nombre" class="form-control" value="{{old('nombre', $data['nombre'] ?? '')}}">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Nombre Contacto</label>
-                            <input type="text" name="contacto" class="form-control" value="{{old('contacto', $data['punto']['contacto'] ?? '')}}" >
+                            <input type="text" name="contacto" class="form-control" value="{{old('contacto', $data['contacto'] ?? '')}}" >
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="">Telefono</label>
-                            <input type="text" name="telefono" class="form-control" value="{{old('telefono', $data['punto']['telefono'] ?? '')}}" >
+                            <input type="text" name="telefono" class="form-control" value="{{old('telefono', $data['telefono'] ?? '')}}" >
                         </div>
                     </div>
                     <div class="col-sm-8">
                         <div class="form-group">
                             <label for="">Correo</label>
-                            <input type="text" name="correo" class="form-control" value="{{old('correo', $data['punto']['correo'] ?? '')}}" >
+                            <input type="text" name="correo" class="form-control" value="{{old('correo', $data['correo'] ?? '')}}" >
                         </div>
                     </div>
                     <?php if(2==1){ ?>
                         <div class="col-sm-4 noclaseespacio3 noclaseespacio2">
                             <div class="form-group">
                                 <label for="">Pais</label>
-                                <select name="pais" id="pais" class="form-control">
+                                <select name="pais_id" id="pais" class="form-control">
                                     <option value="">Seleccione...</option>
                                     <?php foreach ($paises as $key => $pais) { ?>
                                         <?php if(isset($pais['pais_codigo'])){ ?>
@@ -50,29 +50,29 @@
                             </div>
                         </div>
                     <?php } else { ?>
-                        <input type="hidden" name="pais" id="pais" value="CO">
+                        <input type="hidden" name="pais_id" id="pais" value="CO">
                     <?php } ?>
                     
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="">Ciudad</label>
-                            <select name="ciudad" id="ciudad" class="form-control select2" data-value="{{old('ciudad', $data['punto']['ciudad'] ?? '')}}">
+                            <select name="ciudad_id" id="ciudad" class="form-control select2" data-value="{{old('ciudad', $data['ciudad_id'] ?? '')}}">
                                 
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="">Zona</label>
-                            <select name="zona" id="zona" class="form-control select2" data-value="{{old('zona', $data['punto']['zona'] ?? '')}}">
+                            <select name="zona_id" id="zona" class="form-control select2" data-value="{{old('zona', $data['zona_id'] ?? '')}}">
                                 
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="direccion">Direccion</label>
-                            <input type="text" name="direccion" id="direccion" class="form-control"  value="{{old('direccion', $data['punto']['direccion'] ?? '')}}">
+                            <input type="text" name="direccion" id="direccion" class="form-control"  value="{{old('direccion', $data['direccion'] ?? '')}}">
                         </div>
-                        <input type="hidden" name="latitud" id="latitud" value="{{old('latitud', $data['punto']['latitud'] ?? '')}}">
-                        <input type="hidden" name="longitud" id="longitud" value="{{old('longitud', $data['punto']['longitud'] ?? '')}}">
+                        <input type="hidden" name="latitud" id="latitud" value="{{old('latitud', $data['latitud'] ?? '')}}">
+                        <input type="hidden" name="longitud" id="longitud" value="{{old('longitud', $data['longitud'] ?? '')}}">
                     </div>
                     <div class="col-sm-8 ">
                         <div id="map" class="form-map">
@@ -86,7 +86,7 @@
                     <div class="col-sm-12">
                         <div class="form-group">
                             <label for="">Descripcion</label>
-                            <textarea name="descripcion" id="descripcion" class="tiny" cols="30" rows="10"> {{old('descripcion', $data['punto']['descripcion'] ?? '')}}</textarea>
+                            <textarea name="descripcion" id="descripcion" class="tiny" cols="30" rows="10"> {{old('descripcion', $data['descripcion'] ?? '')}}</textarea>
                         </div>
                     </div>
                 </div>
@@ -122,10 +122,20 @@
                     <div class="col-sm-12">
                         <h3 for="" class="subtitulo">Servicios</h3>
                         <div class="row">
+                        
+                            <?php
+                          
+                                $misservicios = []; 
+                                if(isset($data['servicios'])){
+                                    foreach ($data['servicios'] as $key => $servicio) {
+                                        $misservicios[$key] = $servicio['id'];
+                                    }
+                                }
+                            ?>
                             @foreach ($servicios as $servicio)
                                 <div class="col-sm-4">
                                     <label for="servicio{{$servicio['id']}}" class="check-group">
-                                        <input class="flat-red"  type="checkbox" name="servicios[]" id="servicio{{$servicio['id']}}" value="{{$servicio['id']}}" <?php if(isset($data['servicios']) && in_array($servicio['id'],$data['servicios'])){ echo "checked"; } ?> />
+                                        <input class="flat-red"  type="checkbox" name="servicios[]" id="servicio{{$servicio['id']}}" value="{{$servicio['id']}}" <?php if(isset($data['servicios']) && in_array($servicio['id'],$misservicios)){ echo "checked"; } ?> />
                                         <span>{{$servicio['nombre']}}</span>
                                     </label>
                                 </div>
@@ -136,10 +146,19 @@
                         <hr>
                         <h3 class="subtitulo">Deportes</h3>
                         <div class="row">
+    
+                            <?php
+                                $misdeportes = [];
+                                if(isset($data['deportes'])){
+                                    foreach ($data['deportes'] as $key => $deporte) {
+                                        $misdeportes[$key] = $deporte['id'];
+                                    }
+                                }
+                            ?>
                             @foreach ($deportes as $deporte)
                                 <div class="col-sm-4">
                                     <label for="deporte{{$deporte['id']}}" class="check-group">
-                                        <input class="flat-red"  type="checkbox" name="deportes[]" id="deporte{{$deporte['id']}}" value="{{$deporte['id']}}" <?php if( isset($data['deportes']) && in_array($deporte['id'],$data['deportes'])){ echo "checked"; } ?> />
+                                        <input class="flat-red"  type="checkbox" name="deportes[]" id="deporte{{$deporte['id']}}" value="{{$deporte['id']}}" <?php if( isset($data['deportes']) && in_array($deporte['id'], $misdeportes)){ echo "checked"; } ?> />
                                         <span>{{$deporte['nombre']}}</span>
                                     </label>
                                 </div>
@@ -202,10 +221,11 @@
             var value = $('#ciudad').data("value");
             console.log(value);
             $.each(res, function (key, entry) {
+                console.log(entry);
                 if(parseInt(value) == parseInt(entry.id) ){
-                    dropdown.append($('<option selected></option>').attr('value', entry.id).text(entry.nombre));
+                    dropdown.append($('<option selected></option>').attr('value', entry.id).text(entry.ciudad));
                 } else {
-                    dropdown.append($('<option></option>').attr('value', entry.id).text(entry.nombre));
+                    dropdown.append($('<option></option>').attr('value', entry.id).text(entry.ciudad));
                 }
                 
             });
@@ -254,13 +274,13 @@
     showCaption: false,
     removeIcon: '<i class="fas fa-trash"></i>',
     deleteIcon: '<i class="fas fa-trash"></i>',
-    <?php if( isset($data['punto']['foto'])){ ?>
+    <?php if( isset($data['foto'])){ ?>
         initialPreviewAsData: true,
         initialPreview: [
-            "<?php echo $data['punto']['foto'];?>"
+            "<?php echo $data['foto'];?>"
         ],
         initialPreviewConfig: [
-            {url:"/administrador/puntos/eliminarimagen?imagen=<?php echo $data['punto']['foto'];?>&punto=<?php echo $data['punto']['id'];?>"}
+            {url:"/administrador/puntos/eliminarimagen?imagen=<?php echo $data['foto'];?>&punto=<?php echo $data['id'];?>"}
         ],
     <?php } ?>
     layoutTemplates: {
@@ -284,13 +304,13 @@ $("#portada").fileinput({
     showBrowse: false,
     showCaption: false,
     removeIcon: '<i class="fas fa-trash"></i>',
-    <?php if( isset($data['punto']['portada'])){ ?>
+    <?php if( isset($data['portada'])){ ?>
         initialPreviewAsData: true,
         initialPreview: [
-            "<?php echo $data['punto']['portada'];?>"
+            "<?php echo $data['portada'];?>"
         ],
         initialPreviewConfig: [
-            {url:"/administrador/puntos/eliminarimagen?imagen=<?php echo $data['punto']['portada'];?>&punto=<?php echo $data['punto']['id'];?>"}
+            {url:"/administrador/puntos/eliminarimagen?imagen=<?php echo $data['portada'];?>&punto=<?php echo $data['id'];?>"}
         ],
     <?php } ?>
     layoutTemplates: {
@@ -315,15 +335,15 @@ $("#imagenes").fileinput({
     showBrowse: false,
     showCaption: false,
     removeIcon: '<i class="fas fa-trash"></i>',
-    <?php if( isset($data['punto']['fotos'])){ ?>
+    <?php if( isset($data['fotos'])){ ?>
         initialPreviewAsData: true,
         initialPreview: [
-            <?php foreach ($data['punto']['fotos'] as $key => $foto) {?>
+            <?php foreach ($data['fotos'] as $key => $foto) {?>
             "<?php echo $foto['imagen'];?>",
             <?php } ?>
         ],
         initialPreviewConfig: [
-            <?php foreach ($data['punto']['fotos'] as $key => $foto) {?>
+            <?php foreach ($data['fotos'] as $key => $foto) {?>
             {url:"/administrador/puntos/eliminarimagen?imagen=<?php echo $foto['imagen'];?>&idimagen=<?php echo $foto['id'];?>"},
             <?php } ?>
            

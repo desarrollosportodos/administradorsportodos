@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Servicios\Sportodos;
+use App\Servicios\Togroow;
 
 class PuntosController extends Controller
 {
@@ -21,19 +21,18 @@ class PuntosController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      $listado = Sportodos::request("puntos",$post);
-      $deportes = $this->getDeportes();
+      $listado = Togroow::request("sportodos/puntos/all",$post);
       $asideactual = 3;
-      return view('admin.puntos.listado', compact('listado','deportes','asideactual'));
+      //return view('admin.puntos.listado', compact('listado','asideactual'));
    }
    public function listadocajas()
    {
       $post = [];
       $post['redsocial'] = '49';
-      $listado = Sportodos::request("puntos",$post);
-      $deportes = $this->getDeportes();
+      $listado = Togroow::request("sportodos/puntos/all",$post);
+      //$deportes = $this->getDeportes();
       $asideactual = 3;
-      return view('admin.puntos.cajas', compact('listado','deportes','asideactual'));
+      return view('admin.puntos.cajas', compact('listado','asideactual'));
    }
 
    public function nuevo()
@@ -48,16 +47,26 @@ class PuntosController extends Controller
    public function crear(Request $request)
    {
       $data = $request->all();
-      $data['redsocial'] = 49;
+      $post = $data;
       if($request->file("imagen")){
-         $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
+         $post['imagen'] = curl_file_create($_FILES['imagen']['tmp_name'], $_FILES['imagen']['type'], $_FILES['imagen']['name']);
       }
       if($request->file("portada")){
-         $data['portada'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("portada"));
+         $post['portada'] = curl_file_create($_FILES['portada']['tmp_name'], $_FILES['portada']['type'], $_FILES['portada']['name']);
       }
-      $post = $data;
-      $data = Sportodos::request("puntos/crear",$post);
-      return redirect('administrador/puntos')->with("mensaje","Tu tipo de Recurso ha sido creado con exito.");
+      if(isset($data['imagenotras']) && count($data['imagenotras']) > 0 ){
+         $post['imagenotras'] = [];
+         foreach ($data['imagenotras'] as $key => $imagen) {
+            $post['imagenotras'][$key] = curl_file_create($_FILES['imagenotras']['tmp_name'][$key], $_FILES['imagenotras']['type'][$key], $_FILES['imagenotras']['name'][$key]);
+         }
+      }
+      $res = Togroow::request("sportodos/puntos/crear",$post,1);
+      if(isset($res['id_punto'])){
+         return redirect('administrador/puntos/detalle/'.$res['id_punto'])->with("mensaje","Tu tipo de Recurso ha sido creado con exito.");
+      } else {
+         return redirect('administrador/puntos/')->with("mensaje","Tu punto no pudo ser creado");
+      }
+      
    }
 
    public function editar($id)
@@ -78,35 +87,31 @@ class PuntosController extends Controller
       $servicios = $this->getServicios();
       $asideactual = 3;
       $espacios = $this->getEspacios($id);
+      /*echo "<pre>";
+      print_r($data);
+      echo "</pre>";*/
       return view('admin.puntos.detalle', compact('deportes','data','paises','servicios','asideactual','espacios'));
    }
 
    public function actualizar(Request $request,$id)
    {
-      $elemento = $this->getId($id);
+      //$elemento = $this->getId($id);
       $data = $request->all();
+      $post = $data;
       if($request->file("imagen")){
-         if(isset($elemento['punto']['foto'])){
-            $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['punto']['foto']);
-            Storage::disk('public')->delete($image);
-         }
-         $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
+         $post['imagen'] = curl_file_create($_FILES['imagen']['tmp_name'], $_FILES['imagen']['type'], $_FILES['imagen']['name']);
       }
-
       if($request->file("portada")){
-         if(isset($elemento['punto']['portada'])){
-            $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['punto']['portada']);
-            Storage::disk('public')->delete($image);
+         $post['portada'] = curl_file_create($_FILES['portada']['tmp_name'], $_FILES['portada']['type'], $_FILES['portada']['name']);
+      }
+      if(isset($data['imagenotras']) && count($data['imagenotras']) > 0 ){
+         $post['imagenotras'] = [];
+         foreach ($data['imagenotras'] as $key => $imagen) {
+            $post['imagenotras'][$key] = curl_file_create($_FILES['imagenotras']['tmp_name'][$key], $_FILES['imagenotras']['type'][$key], $_FILES['imagenotras']['name'][$key]);
          }
-         $data['portada'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("portada"));
       }
-      $data['fotos'] = [];
-      foreach ($request->file("imagenotras") as $imagen) {
-         $foto = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$imagen);
-         array_push($data['fotos'],$foto);
-      }
-      Sportodos::request("puntos/editar/".$id,$data);
-      return redirect('administrador/puntos/detalle/'.$id)->with("mensaje","Tu Recurso ha sido Actualizado con exito.");
+      Togroow::request("sportodos/puntos/".$id."/editar/",$post,3);
+      return redirect('administrador/puntos/detalle/'.$id)->with("mensaje","Tu Punto de encuentro ha sido Actualizado con exito.");
    }
 
    public function eliminar(Request $request,$id){
@@ -131,13 +136,15 @@ class PuntosController extends Controller
 
    public function getId($id){
       $post = [];
-      $data = Sportodos::request("puntos/detalle/".$id,$post);
+      $data = Togroow::request("sportodos/puntos/".$id."/detalle",$post);
       return $data;
    }
    public function getIdamplio($id){
+
       $post = [];
-      $data = Sportodos::request("puntos/detalleamplio/".$id,$post);
+      $data = Togroow::request("sportodos/puntos/".$id."/detalle",$post);
       return $data;
+
    }
 
 
@@ -145,25 +152,24 @@ class PuntosController extends Controller
    {
         $post = [];
         $post['redsocial'] = '49';
-        $data = Sportodos::request("deportes",$post);
+        $data = Togroow::request("sportodos/deportes",$post);
         $deportes = (object)$data;
         return $deportes;
    }
 
    public function getServicios()
    {
-
         $post = [];
         $post['redsocial'] = '49';
-        $servicios = Sportodos::request("servicios",$post);
+        $servicios = Togroow::request("sportodos/servicios",$post);
         return $servicios;
    }
 
    public function getEspacios($punto)
    {
         $post = [];
-        $post['punto'] = $punto;
-        $espacios = Sportodos::request("espacio",$post);
+        $post['punto_id'] = $punto;
+        $espacios = Togroow::request("sportodos/espacios/",$post);
         return $espacios;
    }
 
@@ -171,7 +177,7 @@ class PuntosController extends Controller
    {
         $post = [];
         $post['redsocial'] = '49';
-        $data = Sportodos::request("lugares/paises",$post);
+        $data = Togroow::request("lugares/paises",$post);
         $paises = $data;
         return $paises;
    }

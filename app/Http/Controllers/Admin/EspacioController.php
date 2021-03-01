@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Servicios\Sportodos;
+use App\Servicios\Togroow;
+
 
 class EspacioController extends Controller
 {
@@ -14,23 +15,24 @@ class EspacioController extends Controller
 
    public function nuevo(Request $request)
    {
-    $data = $request->all();
+      $data = $request->all();
       $deportes = $this->getDeportes();
       $post = [];
-      $punto = Sportodos::request("puntos/detalle/".$data['punto'],$post);
+      $punto =Togroow::request("sportodos/puntos/".$data['punto']."/detalle",$post);
       return view('admin.espacio.crear', compact('deportes','punto'));
    }
 
    public function crear(Request $request)
    {
       $data = $request->all();
+      $post = $data;
       if($request->file("imagen")){
-         $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
+         $post['foto'] = curl_file_create($_FILES['imagen']['tmp_name'], $_FILES['imagen']['type'], $_FILES['imagen']['name']);
       }
       $punto = $data['punto'];
-      $post = $data;
-      $data = Sportodos::request("espacio/crear",$post);
-      return redirect('/administrador/puntos/detalle/'.$punto)->with("mensaje","Tu espacio ha sido creado con exito.");
+     
+      $res = Togroow::request("sportodos/espacios/crear",$post,1);
+      //return redirect('/administrador/puntos/detalle/'.$punto)->with("mensaje","Tu espacio ha sido creado con exito.");
    }
 
    public function editar($id)
@@ -48,18 +50,15 @@ class EspacioController extends Controller
 
    public function actualizar(Request $request,$id)
    {
-      $elemento = $this->getId($id); 
+      //$elemento = $this->getId($id); 
       $data = $request->all();
+      $post = $data;
       if($request->file("imagen")){
-         if(isset($elemento['foto'])){
-            $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['foto']);
-            Storage::disk('public')->delete($image);
-         }
-         $data['foto'] = "http://".$_SERVER["HTTP_HOST"]."/imagenes/".Storage::disk('public')->put('',$request->file("imagen"));
+         $post['foto'] = curl_file_create($_FILES['imagen']['tmp_name'], $_FILES['imagen']['type'], $_FILES['imagen']['name']);
       }
       $punto = $data['punto'];
-      Sportodos::request("espacio/editar/".$id,$data);
-      return redirect('/administrador/puntos/detalle/'.$punto)->with("mensaje","Tu espacio ha sido creado con exito.");
+      $res = Togroow::request("sportodos/espacios/".$id."/editar",$post,3);
+      return redirect('/administrador/puntos/detalle/'.$punto)->with("mensaje","Tu espacio ha sido editado con exito.");
    }
 
    public function eliminar(Request $request,$id){
@@ -76,42 +75,25 @@ class EspacioController extends Controller
 
    public function getId($id){
       $post = [];
-      $data = Sportodos::request("espacio/detalle/".$id,$post);
+      $data =  Togroow::request("sportodos/espacios/".$id."/detalle",$post);
       return $data;
    }
    public function getIdamplio($id){
       $post = [];
-      $data = Sportodos::request("espacio/detalleamplio/".$id,$post);
+      $data =  Togroow::request("sportodos/espacios/".$id."/detalle",$post);
       return $data;
    }
 
 
    public function getDeportes()
    {
-        $post = [];
-        $post['redsocial'] = '49';
-        $data = Sportodos::request("deportes",$post);
-        $deportes = (object)$data;
-        return $deportes;
+      $post = [];
+      $post['redsocial'] = '49';
+      $data = Togroow::request("sportodos/deportes",$post);
+      $deportes = (object)$data;
+      return $deportes;
    }
 
-   public function getServicios()
-   {
-
-        $post = [];
-        $post['redsocial'] = '49';
-        $servicios = Sportodos::request("servicios",$post);
-        return $servicios;
-   }
-
-   public function getPaises()
-   {
-        $post = [];
-        $post['redsocial'] = '49';
-        $data = Sportodos::request("lugares/paises",$post);
-        $paises = $data;
-        return $paises;
-   }
 
    
 

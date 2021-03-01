@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Servicios\Sportodos;
+use App\Servicios\Togroow;
 
 class CiudadesController extends Controller
 {
@@ -13,12 +13,13 @@ class CiudadesController extends Controller
         $post = [];
         $post['pais'] = '';
         if(isset($data['pais']) ){
-            $post['pais'] = $data['pais'];
+            $pais = $data['pais'];
         }
-        $data = Sportodos::request("/lugares/ciudades",$post);
-        $listado = (object)$data;
+        $data = Togroow::request("sportodos/lugares/paises/".$pais."/ciudades",$post);
+        $listado = $data;
         return response()->json($listado)->header('Access-Control-Allow-Origin', '*');
    }
+   
    public function zonas(Request $request){
     $data = $request->all();
     $post = [];
@@ -26,8 +27,8 @@ class CiudadesController extends Controller
     if(isset($data['ciudad']) ){
         $post['ciudad'] = $data['ciudad'];
     }
-    $data = Sportodos::request("/lugares/zonas",$post);
-    $listado = (object)$data;
+    $data = Togroow::request("sportodos/lugares/ciudades/".$data['ciudad']."/zonas",$post);
+    $listado = $data;
     return response()->json($listado)->header('Access-Control-Allow-Origin', '*');
 }
 
