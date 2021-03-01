@@ -33,7 +33,7 @@ class Togroow
         }
         if( Session::get('access_token')){
             $token = Session::get('access_token');
-            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
+            //curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
             curl_setopt($ch,CURLOPT_XOAUTH2_BEARER,$token);
         }
         $result = curl_exec($ch);
