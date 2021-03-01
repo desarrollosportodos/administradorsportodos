@@ -7,7 +7,7 @@ class Togroow
 
     public static function request($metodo,$data,$tipo = null){
        
-        $url = "http://servicios.testing.togroow.com/api/".$metodo;
+        $url = "http://api.togroow.com/api/".$metodo;
         //$url = "http://api.togroow.local/api/".$metodo;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
