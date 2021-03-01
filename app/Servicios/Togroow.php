@@ -33,10 +33,10 @@ class Togroow
         }
         if( Session::get('access_token')){
             $token = Session::get('access_token');
-            //curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
+            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
             curl_setopt($ch,CURLOPT_XOAUTH2_BEARER,$token);
         }
-        $result = curl_exec($ch);
+        echo $result = curl_exec($ch);
         $data = json_decode($result, JSON_UNESCAPED_UNICODE);
         return $data;
     }
