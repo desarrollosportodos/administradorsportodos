@@ -11,6 +11,15 @@ class Togroow
         //$url = "http://api.togroow.local/api/".$metodo;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        if( Session::get('access_token')){
+            $token = Session::get('access_token');
+            $header = array(utf8_encode("Authorization: Bearer ".$token.""),"Content-Type: application/x-www-form-urlencoded");
+            /*curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
+            curl_setopt($ch,CURLOPT_XOAUTH2_BEARER,$token);*/
+            curl_setopt($ch,CURLOPT_HTTPHEADER,$header);
+            curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);
+        }
+        
         if(isset($tipo) && ($tipo == 1 || $tipo == 3)){
             curl_setopt($ch, CURLOPT_URL,$url);
             if($tipo == 1){
@@ -31,11 +40,7 @@ class Togroow
                 curl_setopt($ch, CURLOPT_URL, $url);
             }
         }
-        if( Session::get('access_token')){
-            $token = Session::get('access_token');
-            curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
-            curl_setopt($ch,CURLOPT_XOAUTH2_BEARER,$token);
-        }
+        
         $result = curl_exec($ch);
         $data = json_decode($result, JSON_UNESCAPED_UNICODE);
         return $data;
