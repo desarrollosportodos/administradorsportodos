@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Servicios\Sportodos;
+use App\Servicios\Togroow;
 
 class DeporteposicionController extends Controller
 {
@@ -12,7 +12,9 @@ class DeporteposicionController extends Controller
         $post = [];
         $post['redsocial'] = '49';
         $deportes = $this->getDeportes();
-        $listado = Sportodos::request("deporteposicion",$post);
+        $listado = Togroow::request("sportodos/deporteposicion",$post);
+        /*echo "<pre>";
+        print_r($listado);*/
         return view('admin.deporteposicion.home',compact('listado','deportes'));
    }
 
@@ -23,21 +25,21 @@ class DeporteposicionController extends Controller
       $data = $request->all();
       $data['red'] = 49;
       $post = $data;
-      Sportodos::request("deporteposicion/crear",$post);
+      Togroow::request("sportodos/deporteposicion/crear",$post,1);
       return redirect('administrador/deporteposicion')->with("mensaje","Tu tipo de Espacio ha sido creado con exito.");
    }
 
    public function actualizar(Request $request,$id){
       $data = $request->all();
       $post = $data;
-      Sportodos::request("deporteposicion/editar/".$id,$post);
+      Togroow::request("sportodos/deporteposicion/".$id."/editar",$post,3);
       return redirect('administrador/deporteposicion')->with("mensaje","Tu tipo de Recurso ha sido Actualizado con exito.");
    }
 
    public function eliminar(Request $request,$id){
       $data = $request->all();
       $post = $data;
-      Sportodos::request("deporteposicion/eliminar/".$id,$post);
+      Togroow::request("sportodos/deporteposicion/".$id."/eliminar",$post,2);
       return redirect('administrador/deporteposicion')->with("mensaje","Tu tipo de Recurso ha sido Actualizado con exito.");
    }
 
@@ -45,7 +47,7 @@ class DeporteposicionController extends Controller
    {
         $post = [];
         $post['redsocial'] = '49';
-        $datos = Sportodos::request("deportes",$post);;
+        $datos = Togroow::request("sportodos/deportes",$post);;
         $deportes = [];
         foreach ($datos as  $value) {
             $deportes[$value['id']] = $value['nombre'];

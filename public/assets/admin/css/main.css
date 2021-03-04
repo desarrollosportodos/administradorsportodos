@@ -24981,6 +24981,11 @@ body{
     padding-left: 30px;
     border-radius: 0.5em;
 }
+.check-group  span i{
+    font-size: 18px;
+    float: right;
+    text-shadow: 0 0 1px #000000;
+}
 
 .check-group input:checked + span {
     display: block;
@@ -25079,11 +25084,14 @@ a.card-button:not([href]):not([tabindex]) h2 , a.card-button:not([href]):not([ta
     bottom: 0;
     padding:5px;
 }
+.deportes{
+    font-size:14px;
+}
+
 .deportes i{
     font-size: 20px;
     margin:4px;
     text-shadow: 0 0 1px #333333;
-
 }
 
 .card-espacio .descripcion{

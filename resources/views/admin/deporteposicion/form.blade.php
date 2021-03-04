@@ -6,8 +6,8 @@
 
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label for="deporte">Deporte</label>
-                    <select name="deporte" id="deporte" required class="form-control">
+                    <label for="deporte_id">Deporte</label>
+                    <select name="deporte_id" id="deporte_id" required class="form-control">
                         <option value="">Seleccione</option>
                         @foreach ($deportes as $id => $deporte)
                             <option value="{{$id}}">{{$deporte}}</option>

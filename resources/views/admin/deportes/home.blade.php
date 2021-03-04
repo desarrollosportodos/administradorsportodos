@@ -30,12 +30,20 @@ Deportes
 </div>
 <div class="card">
     <div class="card-body">
+        <?php
+            $equipos = [];
+            $equipos[0]="Si";
+            $equipos[1]="No";
+        ?>
         <table class="mb-0 table table-bordered">
             <thead>
                 <tr>
                     <th>No.</th>
                     <th>Nombre</th>
-                    <td>Icono</td>
+                    <th>Icono</th>
+                    <th>Equipos</th>
+                    <th>Minimo</th>
+                    <th>Maximo</th>
                     <th width="100"></th>
                 </tr>
             </thead>
@@ -48,12 +56,28 @@ Deportes
                             {{$numero+1}}
                         </th>
                         <td>
+                            <div class="content-form"> <i class="icon {{$item['icono']}}"></i></div>
+                            <input type="text" name="icono" value="{{$item['icono']}}" class="form-control form-control-sm edit-form">
+                        </td>
+                        <td>
                             <div class="content-form">{{$item['nombre']}}</div>
                             <input type="text" name="nombre" value="{{$item['nombre']}}" class="form-control form-control-sm edit-form">
                         </td>
+                        
                         <td>
-                            <div class="content-form"> <i class="icon {{$item['icono']}}"></i></div>
-                            <input type="text" name="icono" value="{{$item['icono']}}" class="form-control form-control-sm edit-form">
+                            <div class="content-form">{{ $equipos[(int)$item['tipo']]}}</div>
+                            <select name="tipo" class="form-control form-control-sm edit-form">
+                                <option value="0">Si</option>
+                                <option value="1" <?php if($item['tipo'] == 1){ echo "selected"; } ?>>No</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="content-form">{{$item['minimo']}}</div>
+                            <input type="text" name="minimo" value="{{$item['minimo']}}" class="form-control form-control-sm edit-form">
+                        </td>
+                        <td>
+                            <div class="content-form">{{$item['maximo']}}</div>
+                            <input type="text" name="maximo" value="{{$item['maximo']}}" class="form-control form-control-sm edit-form">
                         </td>
                         <td class="text-center">
                             <div class="content-form">

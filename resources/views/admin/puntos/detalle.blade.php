@@ -18,6 +18,7 @@
             </div>
         </div>
     </div>
+
     <div class="card">
         <div class="card-body">
             <div class="card-header">
@@ -32,7 +33,7 @@
                         @endif
                         
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-9">
                         <div class="descripcion">{!! $data['descripcion'] !!}</div>
                         <div class="text-left calificaciones">
                             <strong>Calificación:</strong>
@@ -44,21 +45,35 @@
                             <i class="pe-7s-star"></i>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div>
-                            <div class="subtitulo">Deportes</div>
-                            <div class="deportes">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body" >
+            <div class="row">
+              
+                <div class="col-sm-6">
+                    <div>
+                        <div class="subtitulo">Deportes</div>
+                        <div class="deportes">
+                            <div class="row">
                                 @foreach ($data['deportes'] as $deporte)
-                                    <i class="icon {{$deporte['icono']}}"></i>
+                                    <div class="col-sm-4"><i class="icon {{$deporte['icono']}}"></i> {{$deporte['nombre']}}</div>
                                 @endforeach
                             </div>
                         </div>
-                        <hr>
-                        <div>
-                            <div class="subtitulo">Servicios</div>
-                            <div class="deportes">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div>
+                        <div class="subtitulo">Servicios</div>
+                        <div class="deportes">
+                            <div class="row">
                                 @foreach ($data['servicios'] as $servicio)
-                                    <i class="icon {{$servicio['icono']}}"></i>
+                                    <div class="col-sm-6"><i class="icon {{$servicio['icono']}}"></i> {{$servicio['nombre']}}</div>
                                 @endforeach
                             </div>
                         </div>
@@ -66,6 +81,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <br>
     <div class="card">

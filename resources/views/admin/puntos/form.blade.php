@@ -136,7 +136,7 @@
                                 <div class="col-sm-4">
                                     <label for="servicio{{$servicio['id']}}" class="check-group">
                                         <input class="flat-red"  type="checkbox" name="servicios[]" id="servicio{{$servicio['id']}}" value="{{$servicio['id']}}" <?php if(isset($data['servicios']) && in_array($servicio['id'],$misservicios)){ echo "checked"; } ?> />
-                                        <span>{{$servicio['nombre']}}</span>
+                                        <span>{{$servicio['nombre']}}   <i class="icon {{$servicio['icono']}} "></i></span>
                                     </label>
                                 </div>
                             @endforeach
@@ -159,7 +159,8 @@
                                 <div class="col-sm-4">
                                     <label for="deporte{{$deporte['id']}}" class="check-group">
                                         <input class="flat-red"  type="checkbox" name="deportes[]" id="deporte{{$deporte['id']}}" value="{{$deporte['id']}}" <?php if( isset($data['deportes']) && in_array($deporte['id'], $misdeportes)){ echo "checked"; } ?> />
-                                        <span>{{$deporte['nombre']}}</span>
+                                        <span>{{$deporte['nombre']}}   <i class="icon {{$deporte['icono']}} "></i></span>
+                                      
                                     </label>
                                 </div>
                             @endforeach

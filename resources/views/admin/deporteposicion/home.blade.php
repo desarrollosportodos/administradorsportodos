@@ -48,11 +48,16 @@
                             {{$numero+1}}
                         </th>
                         <td>
-                            <div class="content-form">{{$deportes[$item['deporte']]}}</div>
-                            <select name="deporte" id="deporte" required class="form-control form-control-sm edit-form">
+                            <div class="content-form">
+                                @if (isset($item['deporte_id']) && isset($deportes[$item['deporte_id']]))
+                                     {{$deportes[$item['deporte_id']]}}
+                                @endif
+                               
+                            </div>
+                            <select name="deporte_id"  required class="form-control form-control-sm edit-form">
                                 <option value="">Seleccione</option>
                                 @foreach ($deportes as $id => $deporte)
-                                    <option value="{{$id}}" <?php if($item['deporte'] == $id){ echo "selected"; } ?> >{{$deporte}}</option>
+                                    <option value="{{$id}}" <?php if(isset($item['deporte_id']) && isset($deportes[$item['deporte_id']]) && $item['deporte_id'] == $id){ echo "selected"; } ?> >{{$deporte}}</option>
                                 @endforeach
                             </select>
                     

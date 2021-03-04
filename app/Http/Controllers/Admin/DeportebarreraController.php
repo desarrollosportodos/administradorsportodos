@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Servicios\Sportodos;
+use App\Servicios\Togroow;
 
 class DeportebarreraController extends Controller
 {
    public function index(){
         $post = [];
         $post['redsocial'] = '49';
-        $listado =  Sportodos::request("deportebarrera",$post);
+        $listado =  Togroow::request("sportodos/deportebarrera",$post);
         $tipos = $this->getTipos();
         return view('admin.deportebarrera.home',compact('listado','tipos'));
    }
@@ -23,21 +23,21 @@ class DeportebarreraController extends Controller
       $data = $request->all();
       $data['red'] = 49;
       $post = $data;
-      Sportodos::request("deportebarrera/crear",$post);
+      Togroow::request("sportodos/deportebarrera/crear",$post,1);
       return redirect('administrador/deportebarrera')->with("mensaje","Tu tipo de Espacio ha sido creado con exito.");
    }
 
    public function actualizar(Request $request,$id){
       $data = $request->all();
       $post = $data;
-      Sportodos::request("deportebarrera/editar/".$id,$post);
+      Togroow::request("sportodos/deportebarrera/".$id."/editar",$post,3);
       return redirect('administrador/deportebarrera')->with("mensaje","Tu tipo de Recurso ha sido Actualizado con exito.");
    }
 
    public function eliminar(Request $request,$id){
       $data = $request->all();
       $post = $data;
-      Sportodos::request("deportebarrera/eliminar/".$id,$post);
+      Togroow::request("sportodos/deportebarrera/".$id."/eliminar",$post,2);
       return redirect('administrador/deportebarrera')->with("mensaje","Tu tipo de Recurso ha sido Actualizado con exito.");
    }
 

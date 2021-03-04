@@ -8,7 +8,7 @@ class Togroow
     public static function request($metodo,$data,$tipo = null){
        
         $url = "http://api.togroow.com/api/".$metodo;
-        //$url = "http://api.togroow.local/api/".$metodo;
+        $url = "http://api.togroow.local/api/".$metodo;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         if( Session::get('access_token')){
@@ -19,7 +19,6 @@ class Togroow
             curl_setopt($ch,CURLOPT_HTTPHEADER,$header);
             curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);
         }
-        
         if(isset($tipo) && ($tipo == 1 || $tipo == 3)){
             curl_setopt($ch, CURLOPT_URL,$url);
             if($tipo == 1){

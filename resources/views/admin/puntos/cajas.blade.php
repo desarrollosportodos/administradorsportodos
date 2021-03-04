@@ -11,7 +11,7 @@ entro a esta cosa
                         <?php } ?>
                     </div>
                     <div class="col-7">
-                        <div class="descripcion">El parque metropolitano Simón Bolívar es el más grande e importante de la ciudad por varias razones: su estratégica ubicación en el corazón de Bogotá.</div>
+                        <div class="descripcion"><?php echo substr(strip_tags($item['descripcion']),0,250)."...";  ?></div>
                     </div>
                 </div>
                 <hr>
