@@ -83,7 +83,7 @@
 <script>
     $(".inputimage").fileinput({
         language: "es",
-        allowedFileExtensions: ["jpg", "png", "gif"],
+        allowedFileExtensions: ["jpg", "png", "gif","jpeg"],
         showUpload:false,
         showClose:false,
         browseOnZoneClick:true,

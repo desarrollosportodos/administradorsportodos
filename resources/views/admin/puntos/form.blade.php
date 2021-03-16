@@ -266,7 +266,7 @@
     
     $("#imagen").fileinput({
     language: "es",
-    allowedFileExtensions: ["jpg", "png", "gif"],
+    allowedFileExtensions: ["jpg", "png", "gif","jpeg"],
     showUpload:false,
     showClose:false,
     browseOnZoneClick:true,
@@ -297,7 +297,7 @@
 });
 $("#portada").fileinput({
     language: "es",
-    allowedFileExtensions: ["jpg", "png", "gif"],
+    allowedFileExtensions: ["jpg", "png", "gif","jpeg"],
     showUpload:false,
     showClose:false,
     browseOnZoneClick:true,
@@ -328,7 +328,7 @@ $("#portada").fileinput({
 
 $("#imagenes").fileinput({
     language: "es",
-    allowedFileExtensions: ["jpg", "png", "gif"],
+    allowedFileExtensions: ["jpg", "png", "gif","jpeg"],
     showUpload:false,
     showClose:false,
     browseOnZoneClick:true,
