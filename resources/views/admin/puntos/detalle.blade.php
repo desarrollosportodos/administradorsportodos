@@ -127,7 +127,7 @@
                             <a data-toggle="modal" data-target="#modalUrl"  href="{{ route('espacio-editar',[ 'id' => $item['id'] ]) }}" ><i class="pe-7s-pen"></i></a>
                         </div>
                         <h2>{{$item['nombre']}}</h2>
-                        <div class="imagen" style="background-image:url(http://testing.togroow.com/images/{{$item['foto']}});"></div>
+                        <div class="imagen" style="background-image:url({{$item['foto']}});"></div>
                         
                         <div>
                             <div class="deportes">
