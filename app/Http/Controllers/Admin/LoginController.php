@@ -8,11 +8,14 @@ use Illuminate\Http\Request;
 use App\Servicios\Togroow;
 use Redirect;
 use Session;
-
+/**
+ * @group Gestion de Login y Logout
+ * clase que permita la gestion de los diferentes espacios deportivos lista, crea , edita y elimina
+ */
 class LoginController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Vista de ingreso al sistema
      *
      * @return \Illuminate\Http\Response
      */
@@ -21,6 +24,15 @@ class LoginController extends Controller
         return view('theme.lte.login');
     }
    
+    /**
+     * Funcion para hacer Login
+     * envia al servicio el usuario y la contraseña para su validacion y hace el respectivo login en caso de ser correcto
+     *
+     * @param Request $request
+     * @bodyParam email
+     * @bodyParam password
+     * @return void
+     */
     public function login(Request $request)
     {
         $post = $request->all();
@@ -47,6 +59,11 @@ class LoginController extends Controller
         
     }
 
+    /**
+     * Funcion pra cerrar la sesion en el sistema
+     *
+     * @return void
+     */
     public function logout(){
         Session::forget('usuario');
         Session::forget('access_token');

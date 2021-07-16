@@ -57,13 +57,6 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::post('servicios/actualizar/{id}', 'ServiciosController@actualizar')->name('servicios-actualizar');
     Route::post('servicios/eliminar/{id}', 'ServiciosController@eliminar')->name('servicios-eliminar');
     
-    Route::get('espaciostipos', 'EspaciostipoController@index')->name('espaciostipos');
-    Route::get('espaciostipos/nuevo', 'EspaciostipoController@nuevo')->name('espaciostipos-nuevo');
-    Route::post('espaciostipos/crear', 'EspaciostipoController@crear')->name('espaciostipos-crear');
-    Route::get('espaciostipos/editar/{id}', 'EspaciostipoController@editar')->name('espaciostipos-editar');
-    Route::post('espaciostipos/actualizar/{id}', 'EspaciostipoController@actualizar')->name('espaciostipos-actualizar');
-    Route::post('espaciostipos/eliminar/{id}', 'EspaciostipoController@eliminar')->name('espaciostipos-eliminar');
-
     Route::get('deporteposicion', 'DeporteposicionController@index')->name('deporteposicion');
     Route::get('deporteposicion/nuevo', 'DeporteposicionController@nuevo')->name('deporteposicion-nuevo');
     Route::post('deporteposicion/crear', 'DeporteposicionController@crear')->name('deporteposicion-crear');

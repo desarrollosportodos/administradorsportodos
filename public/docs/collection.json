@@ -1,0 +1,1295 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Laravel API",
+        "_postman_id": "e3a4705a-1e73-48e8-8150-8fe627f85201",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Gestion de Espacios deportivos",
+            "description": "clase que permita la gestion de los diferentes espacios deportivos lista, crea , edita y elimina",
+            "item": [
+                {
+                    "name": "Formulario para crear un espacio deportivo",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/espacio\/nuevo",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que llama al servicio de creacion de espacio y crea el espacio deportivo en el sistema",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/espacio\/crear",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Formulario de edicion de un espacio deportivo en especifico",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/espacio\/editar\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 19\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que llama al servicio de edicios de espacio y edita el espacio deportivo en el sistema",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/espacio\/actualizar\/:id",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 8\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Vista del detalle de un  espacio deportivo especifico",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/espacio\/detalle\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 4\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Gestion de Login y Logout",
+            "description": "clase que permita la gestion de los diferentes espacios deportivos lista, crea , edita y elimina",
+            "item": [
+                {
+                    "name": "Vista de ingreso al sistema",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/login",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion pra cerrar la sesion en el sistema",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/logout",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Gestion de Servicios",
+            "description": "clase que permita la gestion de los diferentes servicios lista, crea , edita y elimina",
+            "item": [
+                {
+                    "name": "Vista con el listado de servicios disponibles",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/servicios",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Formulario para crear un nuevo servicio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/servicios\/nuevo",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que llama el servicio de crear un servicio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/servicios\/crear",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que llama a editar un servicio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/servicios\/actualizar\/:id",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 14\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que llama el servicio de eliminar",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/servicios\/eliminar\/:id",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 18\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Gestion de las barreras deportivas",
+            "description": "clase que permita la gestion de las barreras deportivas  lista, crea , edita y elimina",
+            "item": [
+                {
+                    "name": "Funcion que muestra el listado de barreras y permite ve las acciones que se le pueden hacer a cada una de ellas",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportebarrera",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que muestra el formulario de creacion de una barrera",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportebarrera\/nuevo",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que crea  la barrera deportiva enviando los datos de la barrera al servicio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportebarrera\/crear",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que edita una barrera deportiva enviando los datos de la barrera al servicio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportebarrera\/actualizar\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "ea",
+                                    "description": "identificador de la barrera a editar"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para eliminar una barrera esta funcion hace el llamado al servicio de eliminacion",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportebarrera\/eliminar\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "suscipit",
+                                    "description": "identificador de la barrera a eliminar"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Gestion de las posiciones deportivas",
+            "description": "clase que permita la gestion posiciones deportivas  lista, crea , edita y elimina",
+            "item": [
+                {
+                    "name": "Funcion que retorna el listado de posiciones cargadas en el sistema",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deporteposicion",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Formulario para crear una nueva posicion deportiva",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deporteposicion\/nuevo",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para crear una posicion deportiva  por medio del servicio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deporteposicion\/crear",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para actualizar una posicion deportiva y enviarla al servicio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deporteposicion\/actualizar\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "accusantium",
+                                    "description": "identificador de la de la posicion a editar"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para elimianr una posicion deportiva",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deporteposicion\/eliminar\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "saepe",
+                                    "description": "identificador de la de la posicion a eliminar"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Gestion de los deportes",
+            "description": "clase que permita la gestion de los diferentes  deportes  lista, crea , edita y elimina",
+            "item": [
+                {
+                    "name": "Funcion para mostrar el listado de deportes registrados en el sistema",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportes",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Formulario de creacion de un deporte",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportes\/nuevo",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para crear un deporte y enviar la creacion a los servicios",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportes\/crear",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para editar un deporte y consumir su servicio",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportes\/actualizar\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "suscipit",
+                                    "description": "identificador del deporte a actualizar"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para eliminar un deporte",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/deportes\/eliminar\/:id",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "vitae",
+                                    "description": "identificador del deporte a eliminar"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Gestion de puntos de encuentro",
+            "description": "clase que permita la gestion de los diferentes puntos de encuentro lista, crea , edita y elimina",
+            "item": [
+                {
+                    "name": "Vista con el listado de puntos de encuentro en el sistema",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Vista con el listado de puntos de encuentro en el sistema en formato de tabla",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos\/listado",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Vista con el listado de puntos de encuentro en el sistema en formato de cajas",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos\/listadocajas",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Formulario para crear un nuevo punto de encuentro",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos\/nuevo",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que llama al servicio de creacion de punto de encuentro",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos\/crear",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Formulario de edicion de un pinto de encuentro en especifico",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos\/editar\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 15\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para llamar al servicio de actualizacion de punto de encuentro",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos\/actualizar\/:id",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 10\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para eliminar un punto de encuentro",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos\/eliminar\/:id",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 14\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Vista con el detalle de un punto de encuentro",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos\/detalle\/:id",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"id\": 15\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion para eliminar una imagen dentro de un punto de encuentro",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/puntos\/eliminarimagen",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Home sistema",
+            "description": "clase que muestra el home del sistema",
+            "item": [
+                {
+                    "name": "Vista de las opciones de home en el sistema",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "\/",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Vista de las opciones de home en el sistema",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Listado de Ciudades y Zonas",
+            "description": " clase para traer el listado de ciudades y de zonas dentro de sportodos",
+            "item": [
+                {
+                    "name": "Funcion que trae el listado de ciudades consumiendo los servicios",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/ciudades",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Funcion que trae el listado de zonas consumiendo los servicios",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/zonas",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Vista parametrizacion",
+            "description": "esta seccion se utiliza para mostrar la vista con los botones de parametrizacion",
+            "item": [
+                {
+                    "name": "Vista de parametizacion",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "sportodos.com",
+                            "path": "administrador\/parametrizacion",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

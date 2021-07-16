@@ -1,0 +1,1655 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://sportodos.com/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Gestion de Espacios deportivos</h1>
+<p>clase que permita la gestion de los diferentes espacios deportivos lista, crea , edita y elimina</p>
+<!-- START_5ffbd56eef6f5b82480a82e95f5bf95d -->
+<h2>Formulario para crear un espacio deportivo</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/espacio/nuevo" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/espacio/nuevo"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/espacio/nuevo</code></p>
+<!-- END_5ffbd56eef6f5b82480a82e95f5bf95d -->
+<!-- START_bbe0da4171484c24e4129fa0203f442b -->
+<h2>Funcion que llama al servicio de creacion de espacio y crea el espacio deportivo en el sistema</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/espacio/crear" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/espacio/crear"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/espacio/crear</code></p>
+<!-- END_bbe0da4171484c24e4129fa0203f442b -->
+<!-- START_ab78b967f1a1b41f2cbaa4ad93c48c86 -->
+<h2>Formulario de edicion de un espacio deportivo en especifico</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/espacio/editar/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":19}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/espacio/editar/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 19
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/espacio/editar/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>identificador del espacio deportivo en el sistema</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ab78b967f1a1b41f2cbaa4ad93c48c86 -->
+<!-- START_991a7998ca4c0a897f066c7a4e1592ce -->
+<h2>Funcion que llama al servicio de edicios de espacio y edita el espacio deportivo en el sistema</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/espacio/actualizar/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":8}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/espacio/actualizar/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 8
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/espacio/actualizar/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>identificador del espacio deportivo en el sistema</td>
+</tr>
+</tbody>
+</table>
+<!-- END_991a7998ca4c0a897f066c7a4e1592ce -->
+<!-- START_e48eb1d3e645d3b0bf1aaa4857b3734f -->
+<h2>Vista del detalle de un  espacio deportivo especifico</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/espacio/detalle/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":4}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/espacio/detalle/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 4
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/espacio/detalle/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>identificador del espacio deportivo en el sistema</td>
+</tr>
+</tbody>
+</table>
+<!-- END_e48eb1d3e645d3b0bf1aaa4857b3734f -->
+<h1>Gestion de Login y Logout</h1>
+<p>clase que permita la gestion de los diferentes espacios deportivos lista, crea , edita y elimina</p>
+<!-- START_08c823bfb89664197c8ce562c3c1912c -->
+<h2>Vista de ingreso al sistema</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/login</code></p>
+<!-- END_08c823bfb89664197c8ce562c3c1912c -->
+<!-- START_34fbdd1e18d983b18f6705864e920d8b -->
+<h2>Funcion pra cerrar la sesion en el sistema</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/logout" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/logout</code></p>
+<!-- END_34fbdd1e18d983b18f6705864e920d8b -->
+<h1>Gestion de Servicios</h1>
+<p>clase que permita la gestion de los diferentes servicios lista, crea , edita y elimina</p>
+<!-- START_007ed23d47113cfeb52e946bd7783989 -->
+<h2>Vista con el listado de servicios disponibles</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/servicios" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/servicios"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/servicios</code></p>
+<!-- END_007ed23d47113cfeb52e946bd7783989 -->
+<!-- START_63bc65c0e0c0ebb5f0d7554d4e7a6875 -->
+<h2>Formulario para crear un nuevo servicio</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/servicios/nuevo" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/servicios/nuevo"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/servicios/nuevo</code></p>
+<!-- END_63bc65c0e0c0ebb5f0d7554d4e7a6875 -->
+<!-- START_ff048b4fa72fc5bcead08d6e77395479 -->
+<h2>Funcion que llama el servicio de crear un servicio</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/servicios/crear" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/servicios/crear"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/servicios/crear</code></p>
+<!-- END_ff048b4fa72fc5bcead08d6e77395479 -->
+<!-- START_79e91c3b9e24f0dbf4844bbe688ed7ec -->
+<h2>Funcion que llama a editar un servicio</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/servicios/actualizar/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":14}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/servicios/actualizar/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 14
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/servicios/actualizar/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>identificador del servicio en el sistema</td>
+</tr>
+</tbody>
+</table>
+<!-- END_79e91c3b9e24f0dbf4844bbe688ed7ec -->
+<!-- START_5d3b13e6b472f5f9ac889efefa0d0d41 -->
+<h2>Funcion que llama el servicio de eliminar</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/servicios/eliminar/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":18}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/servicios/eliminar/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 18
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/servicios/eliminar/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>identificador del servicio en el sistema</td>
+</tr>
+</tbody>
+</table>
+<!-- END_5d3b13e6b472f5f9ac889efefa0d0d41 -->
+<h1>Gestion de las barreras deportivas</h1>
+<p>clase que permita la gestion de las barreras deportivas  lista, crea , edita y elimina</p>
+<!-- START_c07e89a54906474318b6d03ee003580f -->
+<h2>Funcion que muestra el listado de barreras y permite ve las acciones que se le pueden hacer a cada una de ellas</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/deportebarrera" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportebarrera"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/deportebarrera</code></p>
+<!-- END_c07e89a54906474318b6d03ee003580f -->
+<!-- START_a1b7ad8996e6fc319126ca30968d2980 -->
+<h2>Funcion que muestra el formulario de creacion de una barrera</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/deportebarrera/nuevo" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportebarrera/nuevo"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/deportebarrera/nuevo</code></p>
+<!-- END_a1b7ad8996e6fc319126ca30968d2980 -->
+<!-- START_ab1b068c956d85daf81cab5597dc54ae -->
+<h2>Funcion que crea  la barrera deportiva enviando los datos de la barrera al servicio</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/deportebarrera/crear" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportebarrera/crear"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/deportebarrera/crear</code></p>
+<!-- END_ab1b068c956d85daf81cab5597dc54ae -->
+<!-- START_fa78fcd08e83d4e4d5f8b535b9e61e86 -->
+<h2>Funcion que edita una barrera deportiva enviando los datos de la barrera al servicio</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/deportebarrera/actualizar/ea" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportebarrera/actualizar/ea"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/deportebarrera/actualizar/{id}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>optional</td>
+<td>identificador de la barrera a editar</td>
+</tr>
+</tbody>
+</table>
+<!-- END_fa78fcd08e83d4e4d5f8b535b9e61e86 -->
+<!-- START_28ea4da293d76d1cf7eab160ea83cc94 -->
+<h2>Funcion para eliminar una barrera esta funcion hace el llamado al servicio de eliminacion</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/deportebarrera/eliminar/suscipit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportebarrera/eliminar/suscipit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/deportebarrera/eliminar/{id}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>optional</td>
+<td>identificador de la barrera a eliminar</td>
+</tr>
+</tbody>
+</table>
+<!-- END_28ea4da293d76d1cf7eab160ea83cc94 -->
+<h1>Gestion de las posiciones deportivas</h1>
+<p>clase que permita la gestion posiciones deportivas  lista, crea , edita y elimina</p>
+<!-- START_58f3d000540abbd9d092110fe00de6c3 -->
+<h2>Funcion que retorna el listado de posiciones cargadas en el sistema</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/deporteposicion" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deporteposicion"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/deporteposicion</code></p>
+<!-- END_58f3d000540abbd9d092110fe00de6c3 -->
+<!-- START_e5e8e279975e6fca5bb8ac777a1ebc26 -->
+<h2>Formulario para crear una nueva posicion deportiva</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/deporteposicion/nuevo" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deporteposicion/nuevo"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/deporteposicion/nuevo</code></p>
+<!-- END_e5e8e279975e6fca5bb8ac777a1ebc26 -->
+<!-- START_8ed728c6d37da32164f09dc7d2b75ade -->
+<h2>Funcion para crear una posicion deportiva  por medio del servicio</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/deporteposicion/crear" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deporteposicion/crear"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/deporteposicion/crear</code></p>
+<!-- END_8ed728c6d37da32164f09dc7d2b75ade -->
+<!-- START_ebd7f18e2b159f3b9fed49dcca67369b -->
+<h2>Funcion para actualizar una posicion deportiva y enviarla al servicio</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/deporteposicion/actualizar/accusantium" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deporteposicion/actualizar/accusantium"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/deporteposicion/actualizar/{id}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>optional</td>
+<td>identificador de la de la posicion a editar</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ebd7f18e2b159f3b9fed49dcca67369b -->
+<!-- START_e934cbb726be6f83e8e165af3b449201 -->
+<h2>Funcion para elimianr una posicion deportiva</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/deporteposicion/eliminar/saepe" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deporteposicion/eliminar/saepe"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/deporteposicion/eliminar/{id}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>optional</td>
+<td>identificador de la de la posicion a eliminar</td>
+</tr>
+</tbody>
+</table>
+<!-- END_e934cbb726be6f83e8e165af3b449201 -->
+<h1>Gestion de los deportes</h1>
+<p>clase que permita la gestion de los diferentes  deportes  lista, crea , edita y elimina</p>
+<!-- START_eb4939ce05e7454a2a7f30e6fd0bbfb6 -->
+<h2>Funcion para mostrar el listado de deportes registrados en el sistema</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/deportes" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportes"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/deportes</code></p>
+<!-- END_eb4939ce05e7454a2a7f30e6fd0bbfb6 -->
+<!-- START_7885726c4ec74ac3777b5487d1fcb382 -->
+<h2>Formulario de creacion de un deporte</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/deportes/nuevo" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportes/nuevo"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/deportes/nuevo</code></p>
+<!-- END_7885726c4ec74ac3777b5487d1fcb382 -->
+<!-- START_98f4736b29ccbcbdf633774b32d09e7a -->
+<h2>Funcion para crear un deporte y enviar la creacion a los servicios</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/deportes/crear" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportes/crear"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/deportes/crear</code></p>
+<!-- END_98f4736b29ccbcbdf633774b32d09e7a -->
+<!-- START_ba00c84021240804c1c8b0dc664e23ea -->
+<h2>Funcion para editar un deporte y consumir su servicio</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/deportes/actualizar/suscipit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportes/actualizar/suscipit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/deportes/actualizar/{id}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>optional</td>
+<td>identificador del deporte a actualizar</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ba00c84021240804c1c8b0dc664e23ea -->
+<!-- START_9eb66d2b5e049bb0a88923dde421f478 -->
+<h2>Funcion para eliminar un deporte</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/deportes/eliminar/vitae" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/deportes/eliminar/vitae"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/deportes/eliminar/{id}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>optional</td>
+<td>identificador del deporte a eliminar</td>
+</tr>
+</tbody>
+</table>
+<!-- END_9eb66d2b5e049bb0a88923dde421f478 -->
+<h1>Gestion de puntos de encuentro</h1>
+<p>clase que permita la gestion de los diferentes puntos de encuentro lista, crea , edita y elimina</p>
+<!-- START_2af5601f326ec8bcfdbdfb82382357a8 -->
+<h2>Vista con el listado de puntos de encuentro en el sistema</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/puntos" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/puntos</code></p>
+<!-- END_2af5601f326ec8bcfdbdfb82382357a8 -->
+<!-- START_8bbd39fddf9a3f8d44820eab9bbcddc0 -->
+<h2>Vista con el listado de puntos de encuentro en el sistema en formato de tabla</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/puntos/listado" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos/listado"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/puntos/listado</code></p>
+<!-- END_8bbd39fddf9a3f8d44820eab9bbcddc0 -->
+<!-- START_82d33c03300eeb8ccbc74ea21532aae3 -->
+<h2>Vista con el listado de puntos de encuentro en el sistema en formato de cajas</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/puntos/listadocajas" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos/listadocajas"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/puntos/listadocajas</code></p>
+<!-- END_82d33c03300eeb8ccbc74ea21532aae3 -->
+<!-- START_6010c64699552bbe6de5ef22276f1ae9 -->
+<h2>Formulario para crear un nuevo punto de encuentro</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/puntos/nuevo" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos/nuevo"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/puntos/nuevo</code></p>
+<!-- END_6010c64699552bbe6de5ef22276f1ae9 -->
+<!-- START_4bc5234869ea72d12d266da409e7a9bf -->
+<h2>Funcion que llama al servicio de creacion de punto de encuentro</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/puntos/crear" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos/crear"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/puntos/crear</code></p>
+<!-- END_4bc5234869ea72d12d266da409e7a9bf -->
+<!-- START_52159fbeeb929bd2d56ffc5712dcab64 -->
+<h2>Formulario de edicion de un pinto de encuentro en especifico</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/puntos/editar/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":15}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos/editar/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 15
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/puntos/editar/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>identificador del punto de encuentro en el sistema</td>
+</tr>
+</tbody>
+</table>
+<!-- END_52159fbeeb929bd2d56ffc5712dcab64 -->
+<!-- START_594456a03e3cabe02a8b0a822a6624d1 -->
+<h2>Funcion para llamar al servicio de actualizacion de punto de encuentro</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/puntos/actualizar/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":10}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos/actualizar/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 10
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/puntos/actualizar/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>identificador del punto de encuentro en el sistema</td>
+</tr>
+</tbody>
+</table>
+<!-- END_594456a03e3cabe02a8b0a822a6624d1 -->
+<!-- START_34ff6212b1c7e2cd003712c4784b5522 -->
+<h2>Funcion para eliminar un punto de encuentro</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://sportodos.com/administrador/puntos/eliminar/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":14}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos/eliminar/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 14
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST administrador/puntos/eliminar/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>identificador del punto de encuentro en el sistema</td>
+</tr>
+</tbody>
+</table>
+<!-- END_34ff6212b1c7e2cd003712c4784b5522 -->
+<!-- START_18424f263ac2631b733f70d29b72c8a3 -->
+<h2>Vista con el detalle de un punto de encuentro</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/puntos/detalle/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"id":15}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos/detalle/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "id": 15
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/puntos/detalle/{id}</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>required</td>
+<td>identificador del punto de encuentro en el sistema</td>
+</tr>
+</tbody>
+</table>
+<!-- END_18424f263ac2631b733f70d29b72c8a3 -->
+<!-- START_95b1451066ddae4140e4802f3a9fbcc1 -->
+<h2>Funcion para eliminar una imagen dentro de un punto de encuentro</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/puntos/eliminarimagen" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/puntos/eliminarimagen"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/puntos/eliminarimagen</code></p>
+<p><code>POST administrador/puntos/eliminarimagen</code></p>
+<p><code>PUT administrador/puntos/eliminarimagen</code></p>
+<p><code>PATCH administrador/puntos/eliminarimagen</code></p>
+<p><code>DELETE administrador/puntos/eliminarimagen</code></p>
+<p><code>OPTIONS administrador/puntos/eliminarimagen</code></p>
+<!-- END_95b1451066ddae4140e4802f3a9fbcc1 -->
+<h1>Home sistema</h1>
+<p>clase que muestra el home del sistema</p>
+<!-- START_53be1e9e10a08458929a2e0ea70ddb86 -->
+<h2>Vista de las opciones de home en el sistema</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET /</code></p>
+<!-- END_53be1e9e10a08458929a2e0ea70ddb86 -->
+<!-- START_a292bd15dd37c29f908fab20d1bcaa2e -->
+<h2>Vista de las opciones de home en el sistema</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador</code></p>
+<!-- END_a292bd15dd37c29f908fab20d1bcaa2e -->
+<h1>Listado de Ciudades y Zonas</h1>
+<p>clase para traer el listado de ciudades y de zonas dentro de sportodos</p>
+<!-- START_643b4bc1e73bb77c5f62df9efa5375a2 -->
+<h2>Funcion que trae el listado de ciudades consumiendo los servicios</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/ciudades" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/ciudades"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/ciudades</code></p>
+<!-- END_643b4bc1e73bb77c5f62df9efa5375a2 -->
+<!-- START_4e71294dd1ad156c5c335d548607dee8 -->
+<h2>Funcion que trae el listado de zonas consumiendo los servicios</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/zonas" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/zonas"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/zonas</code></p>
+<!-- END_4e71294dd1ad156c5c335d548607dee8 -->
+<h1>Vista parametrizacion</h1>
+<p>esta seccion se utiliza para mostrar la vista con los botones de parametrizacion</p>
+<!-- START_a51d8e01a7146b10b76e8e483cec9440 -->
+<h2>Vista de parametizacion</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://sportodos.com/administrador/parametrizacion" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://sportodos.com/administrador/parametrizacion"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET administrador/parametrizacion</code></p>
+<!-- END_a51d8e01a7146b10b76e8e483cec9440 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

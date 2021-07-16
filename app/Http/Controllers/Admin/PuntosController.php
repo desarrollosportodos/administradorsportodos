@@ -7,81 +7,123 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Servicios\Togroow;
 
+/**
+ * @group Gestion de puntos de encuentro
+ * clase que permita la gestion de los diferentes puntos de encuentro lista, crea , edita y elimina
+ */
 class PuntosController extends Controller
 {
+   /**
+    * Vista con el listado de puntos de encuentro en el sistema
+    *
+    * @return void
+    */
    public function index()
    {
       $post = [];
       $post['redsocial'] = '49';
       $asideactual = 3;
-      return view('admin.puntos.home',compact('asideactual'));
+      return view('admin.puntos.home', compact('asideactual'));
    }
-
+   /**
+    * Vista con el listado de puntos de encuentro en el sistema en formato de tabla
+    *
+    * @return void
+    */
    public function listado()
    {
       $post = [];
       $post['redsocial'] = '49';
-      $listado = Togroow::request("sportodos/puntos/all",$post);
+      $listado = Togroow::request("sportodos/puntos/all", $post);
       $asideactual = 3;
       //return view('admin.puntos.listado', compact('listado','asideactual'));
    }
+   /**
+    * Vista con el listado de puntos de encuentro en el sistema en formato de cajas
+    *
+    * @return void
+    */
    public function listadocajas()
    {
       $post = [];
       $post['redsocial'] = '49';
-      $listado = Togroow::request("sportodos/puntos/all",$post);
+      $listado = Togroow::request("sportodos/puntos/all", $post);
       //$deportes = $this->getDeportes();
       $asideactual = 3;
-      return view('admin.puntos.cajas', compact('listado','asideactual'));
+      return view('admin.puntos.cajas', compact('listado', 'asideactual'));
    }
 
+   /**
+    * Formulario para crear un nuevo punto de encuentro
+    *
+    * @return void
+    */
    public function nuevo()
    {
       $deportes = $this->getDeportes();
       $paises = $this->getPaises();
       $servicios = $this->getServicios();
       $asideactual = 3;
-      return view('admin.puntos.crear', compact('deportes','paises','servicios','asideactual'));
+      return view('admin.puntos.crear', compact('deportes', 'paises', 'servicios', 'asideactual'));
    }
 
+   /**
+    * Funcion que llama al servicio de creacion de punto de encuentro
+    *
+    * @param Request $request
+    * @return void
+    */
    public function crear(Request $request)
    {
       $data = $request->all();
       $post = $data;
-      if($request->file("imagen")){
+      if ($request->file("imagen")) {
          $post['imagen'] = curl_file_create($_FILES['imagen']['tmp_name'], $_FILES['imagen']['type'], $_FILES['imagen']['name']);
       }
-      if($request->file("portada")){
+      if ($request->file("portada")) {
          $post['portada'] = curl_file_create($_FILES['portada']['tmp_name'], $_FILES['portada']['type'], $_FILES['portada']['name']);
       }
-      if(isset($data['imagenotras']) && count($data['imagenotras']) > 0 ){
+      if (isset($data['imagenotras']) && count($data['imagenotras']) > 0) {
          $post['imagenotras'] = [];
          foreach ($data['imagenotras'] as $key => $imagen) {
             $post['imagenotras'][$key] = curl_file_create($_FILES['imagenotras']['tmp_name'][$key], $_FILES['imagenotras']['type'][$key], $_FILES['imagenotras']['name'][$key]);
          }
       }
-      $res = Togroow::request("sportodos/puntos/crear",$post,1);
-      if(isset($res['id_punto'])){
-         return redirect('administrador/puntos/detalle/'.$res['id_punto'])->with("mensaje","Tu tipo de Recurso ha sido creado con exito.");
+      $res = Togroow::request("sportodos/puntos/crear", $post, 1);
+      if (isset($res['id_punto'])) {
+         return redirect('administrador/puntos/detalle/' . $res['id_punto'])->with("mensaje", "Tu tipo de Recurso ha sido creado con exito.");
       } else {
-         return redirect('administrador/puntos/')->with("mensaje","Tu punto no pudo ser creado");
+         return redirect('administrador/puntos/')->with("mensaje", "Tu punto no pudo ser creado");
       }
-      
    }
 
+   /**
+    * Formulario de edicion de un pinto de encuentro en especifico
+    *
+    * @param [type] $id identificador del punto de encuentro en el sistema
+    * @bodyParam  id int required identificador del punto de encuentro en el sistema
+    * @return void
+    */
    public function editar($id)
    {
-      $data = $this->getId($id); 
+      $data = $this->getId($id);
       $deportes = $this->getDeportes();
       $paises = $this->getPaises();
       $servicios = $this->getServicios();
       $asideactual = 3;
-      return view('admin.puntos.editar', compact('deportes','data','paises','servicios','asideactual'));
+      return view('admin.puntos.editar', compact('deportes', 'data', 'paises', 'servicios', 'asideactual'));
    }
 
+   /**
+    * Vista con el detalle de un punto de encuentro
+    *
+    * @param [type] $id identificador del punto de encuentro en el sistema
+    * @bodyParam  id int required identificador del punto de encuentro en el sistema
+    * @return void
+    */
    public function detalle($id)
    {
-      $data = $this->getIdamplio($id); 
+      $data = $this->getIdamplio($id);
       $deportes = $this->getDeportes();
       $paises = $this->getPaises();
       $servicios = $this->getServicios();
@@ -90,99 +132,154 @@ class PuntosController extends Controller
       /*echo "<pre>";
       print_r($data);
       echo "</pre>";*/
-      return view('admin.puntos.detalle', compact('deportes','data','paises','servicios','asideactual','espacios'));
+      return view('admin.puntos.detalle', compact('deportes', 'data', 'paises', 'servicios', 'asideactual', 'espacios'));
    }
 
-   public function actualizar(Request $request,$id)
+   /**
+    * Funcion para llamar al servicio de actualizacion de punto de encuentro
+    *
+    * @param Request $request
+    * @param [type] $id identificador del punto de encuentro en el sistema
+    * @bodyParam  id int required identificador del punto de encuentro en el sistema
+    * @return void
+    */
+   public function actualizar(Request $request, $id)
    {
       //$elemento = $this->getId($id);
       $data = $request->all();
       $post = $data;
-      if($request->file("imagen")){
+      if ($request->file("imagen")) {
          $post['imagen'] = curl_file_create($_FILES['imagen']['tmp_name'], $_FILES['imagen']['type'], $_FILES['imagen']['name']);
       }
-      if($request->file("portada")){
+      if ($request->file("portada")) {
          $post['portada'] = curl_file_create($_FILES['portada']['tmp_name'], $_FILES['portada']['type'], $_FILES['portada']['name']);
       }
-      if(isset($data['imagenotras']) && count($data['imagenotras']) > 0 ){
+      if (isset($data['imagenotras']) && count($data['imagenotras']) > 0) {
          $post['imagenotras'] = [];
          foreach ($data['imagenotras'] as $key => $imagen) {
             $post['imagenotras'][$key] = curl_file_create($_FILES['imagenotras']['tmp_name'][$key], $_FILES['imagenotras']['type'][$key], $_FILES['imagenotras']['name'][$key]);
          }
       }
-      Togroow::request("sportodos/puntos/".$id."/editar/",$post,3);
-      return redirect('administrador/puntos/detalle/'.$id)->with("mensaje","Tu Punto de encuentro ha sido Actualizado con exito.");
+      Togroow::request("sportodos/puntos/" . $id . "/editar/", $post, 3);
+      return redirect('administrador/puntos/detalle/' . $id)->with("mensaje", "Tu Punto de encuentro ha sido Actualizado con exito.");
    }
 
-   public function eliminar(Request $request,$id){
-      $elemento = $this->getId($id); 
-      if(isset($elemento['imagen']) ){
-         $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$elemento['imagen']);
+   /**
+    * Funcion para eliminar un punto de encuentro
+    *
+    * @param Request $request
+    * @param [type] $id identificador del punto de encuentro en el sistema
+    * @bodyParam  id int required identificador del punto de encuentro en el sistema
+    * @return void
+    */
+   public function eliminar(Request $request, $id)
+   {
+      $elemento = $this->getId($id);
+      if (isset($elemento['imagen'])) {
+         $image = str_replace("http://" . $_SERVER["HTTP_HOST"] . "/imagenes/", "", $elemento['imagen']);
          Storage::disk('public')->delete($image);
       }
       $data = $request->all();
 
-      Sportodos::request("puntos/eliminar",$data);
-      return redirect('administrador/puntos')->with("mensaje","Tu Recurso ha sido Eliminado con exito.");
+      Sportodos::request("puntos/eliminar", $data);
+      return redirect('administrador/puntos')->with("mensaje", "Tu Recurso ha sido Eliminado con exito.");
    }
-   public function eliminarimagen(Request $reques){
+
+   /**
+    * Funcion para eliminar una imagen dentro de un punto de encuentro
+    *
+    * @param Request $reques
+    * @return void
+    */
+   public function eliminarimagen(Request $reques)
+   {
       $data = $reques->all();
-      if(isset($data['imagen']) ){
-         $image = str_replace("http://".$_SERVER["HTTP_HOST"]."/imagenes/","",$data['imagen']);
+      if (isset($data['imagen'])) {
+         $image = str_replace("http://" . $_SERVER["HTTP_HOST"] . "/imagenes/", "", $data['imagen']);
          Storage::disk('public')->delete($image);
       }
       return response()->json([])->header('Access-Control-Allow-Origin', '*');
    }
-
-   public function getId($id){
+   /**
+    * Funcion para retornar la informacion de un puntro de encuentro
+    * esta indformacion es traida por medio de un servicio
+    *
+    * @param [type] $id
+    * @return void
+    */
+   public function getId($id)
+   {
       $post = [];
-      $data = Togroow::request("sportodos/puntos/".$id."/detalle",$post);
+      $data = Togroow::request("sportodos/puntos/" . $id . "/detalle", $post);
       return $data;
    }
-   public function getIdamplio($id){
+   /**
+    * Funcion para retornar la informacion de un puntro de encuentro
+    * esta indformacion es traida por medio de un servicio
+    *
+    * @param [type] $id
+    * @return void
+    */
+   public function getIdamplio($id)
+   {
 
       $post = [];
-      $data = Togroow::request("sportodos/puntos/".$id."/detalle",$post);
+      $data = Togroow::request("sportodos/puntos/" . $id . "/detalle", $post);
       return $data;
-
    }
 
-
+   /**
+    * Funcion para retornar la informacion de los deportes que se van a asignar a un punto de encuentro
+    * esta indformacion es traida por medio de un servicio
+    *
+    * @return void
+    */
    public function getDeportes()
    {
-        $post = [];
-        $post['redsocial'] = '49';
-        $data = Togroow::request("sportodos/deportes",$post);
-        $deportes = (object)$data;
-        return $deportes;
+      $post = [];
+      $post['redsocial'] = '49';
+      $data = Togroow::request("sportodos/deportes", $post);
+      $deportes = (object)$data;
+      return $deportes;
    }
-
+/**
+    * Funcion para retornar la informacion de los servicios que se van a asignar a un punto de encuentro
+    * esta indformacion es traida por medio de un servicio
+    *
+    * @return void
+    */
    public function getServicios()
    {
-        $post = [];
-        $post['redsocial'] = '49';
-        $servicios = Togroow::request("sportodos/servicios",$post);
-        return $servicios;
+      $post = [];
+      $post['redsocial'] = '49';
+      $servicios = Togroow::request("sportodos/servicios", $post);
+      return $servicios;
    }
-
+   /**
+    * Funcion para retornar la informacion espacios asignados a un punto de encuentro
+    * esta indformacion es traida por medio de un servicio
+    *
+    * @return void
+    */
    public function getEspacios($punto)
    {
-        $post = [];
-        $post['punto_id'] = $punto;
-        $espacios = Togroow::request("sportodos/espacios/",$post);
-        return $espacios;
+      $post = [];
+      $post['punto_id'] = $punto;
+      $espacios = Togroow::request("sportodos/espacios/", $post);
+      return $espacios;
    }
-
+   /**
+    * Funcion para retornar la informacion del pais que se va a asignar a un punto de encuentro
+    * esta indformacion es traida por medio de un servicio
+    *
+    * @return void
+    */
    public function getPaises()
    {
-        $post = [];
-        $post['redsocial'] = '49';
-        $data = Togroow::request("lugares/paises",$post);
-        $paises = $data;
-        return $paises;
+      $post = [];
+      $post['redsocial'] = '49';
+      $data = Togroow::request("lugares/paises", $post);
+      $paises = $data;
+      return $paises;
    }
-
-   
-
-
 }
