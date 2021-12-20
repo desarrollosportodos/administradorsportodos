@@ -7,7 +7,7 @@ class Togroow
 
     public static function request($metodo,$data,$tipo = null){
        
-        $url = "http://api.togroow.com/api/".$metodo;
+        $url = "https://api.sportodos.com/api/".$metodo;
         //$url = "http://api.togroow.local/api/".$metodo;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -39,7 +39,6 @@ class Togroow
                 curl_setopt($ch, CURLOPT_URL, $url);
             }
         }
-        
         $result = curl_exec($ch);
         $data = json_decode($result, JSON_UNESCAPED_UNICODE);
         return $data;

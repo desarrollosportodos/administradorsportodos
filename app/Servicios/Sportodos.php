@@ -5,7 +5,7 @@ class Sportodos
 {
 
     public static function request($metodo,$data){
-        $url = "http://api.sportodos.com";
+        $url = "https://api.sportodos.com";
        // $url = "http://servicios.sportodos.local";
         $user ="desarrollo01@togroow.com";
         $password = "123456";
