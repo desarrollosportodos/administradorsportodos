@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Servicios\Togroow;
+use App\Servicios\Apiservice;
 /**
  * @group Gestion de las barreras deportivas
  * clase que permita la gestion de las barreras deportivas  lista, crea , edita y elimina
@@ -20,7 +20,7 @@ class DeportebarreraController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      $listado =  Togroow::request("sportodos/deportebarrera", $post);
+      $listado =  Apiservice::request("sportodos/deportebarrera", $post);
       $tipos = $this->getTipos();
       return view('admin.deportebarrera.home', compact('listado', 'tipos'));
    }
@@ -45,7 +45,7 @@ class DeportebarreraController extends Controller
       $data = $request->all();
       $data['red'] = 49;
       $post = $data;
-      Togroow::request("sportodos/deportebarrera/crear", $post, 1);
+      Apiservice::request("sportodos/deportebarrera/crear", $post, 1);
       return redirect('administrador/deportebarrera')->with("mensaje", "Tu Barrera ha sido creado con exito.");
    }
 
@@ -61,7 +61,7 @@ class DeportebarreraController extends Controller
    {
       $data = $request->all();
       $post = $data;
-      Togroow::request("sportodos/deportebarrera/" . $id . "/editar", $post, 3);
+      Apiservice::request("sportodos/deportebarrera/" . $id . "/editar", $post, 3);
       return redirect('administrador/deportebarrera')->with("mensaje", "Tu tipo de Recurso ha sido Actualizado con exito.");
    }
 
@@ -77,7 +77,7 @@ class DeportebarreraController extends Controller
    {
       $data = $request->all();
       $post = $data;
-      Togroow::request("sportodos/deportebarrera/" . $id . "/eliminar", $post, 2);
+      Apiservice::request("sportodos/deportebarrera/" . $id . "/eliminar", $post, 2);
       return redirect('administrador/deportebarrera')->with("mensaje", "Tu tipo de Recurso ha sido Actualizado con exito.");
    }
 

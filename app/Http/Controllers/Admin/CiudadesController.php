@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Servicios\Togroow;
+use App\Servicios\Apiservice;
 
 /**
  *  @group Listado de Ciudades y Zonas
@@ -26,7 +26,7 @@ class CiudadesController extends Controller
         if (isset($data['pais'])) {
             $pais = $data['pais'];
         }
-        $data = Togroow::request("sportodos/lugares/paises/" . $pais . "/ciudades", $post);
+        $data = Apiservice::request("sportodos/lugares/paises/" . $pais . "/ciudades", $post);
         $listado = $data;
         return response()->json($listado)->header('Access-Control-Allow-Origin', '*');
     }
@@ -44,7 +44,7 @@ class CiudadesController extends Controller
         if (isset($data['ciudad'])) {
             $post['ciudad'] = $data['ciudad'];
         }
-        $data = Togroow::request("sportodos/lugares/ciudades/" . $data['ciudad'] . "/zonas", $post);
+        $data = Apiservice::request("sportodos/lugares/ciudades/" . $data['ciudad'] . "/zonas", $post);
         $listado = $data;
         return response()->json($listado)->header('Access-Control-Allow-Origin', '*');
     }

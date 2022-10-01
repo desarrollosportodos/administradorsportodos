@@ -34,6 +34,9 @@ Deportes
             $equipos = [];
             $equipos[0]="Si";
             $equipos[1]="No";
+            $activo = [];
+            $activo[1]="Si";
+            $activo[0]="No";
         ?>
         <table class="mb-0 table table-bordered">
             <thead>
@@ -44,6 +47,7 @@ Deportes
                     <th>Equipos</th>
                     <th>Minimo</th>
                     <th>Maximo</th>
+                    <th>Activo</th>
                     <th width="100"></th>
                 </tr>
             </thead>
@@ -78,6 +82,13 @@ Deportes
                         <td>
                             <div class="content-form">{{$item['maximo']}}</div>
                             <input type="text" name="maximo" value="{{$item['maximo']}}" class="form-control form-control-sm edit-form">
+                        </td>
+                        <td>
+                            <div class="content-form">{{ $activo[(int)$item['activo']]}}</div>
+                            <select name="activo" class="form-control form-control-sm edit-form">
+                                <option value="0">No</option>
+                                <option value="1" <?php if($item['activo'] == 1){ echo "selected"; } ?>>Si</option>
+                            </select>
                         </td>
                         <td class="text-center">
                             <div class="content-form">

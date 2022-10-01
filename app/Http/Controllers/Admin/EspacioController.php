@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Servicios\Togroow;
+use App\Servicios\Apiservice;
 
 /**
  * @group Gestion de Espacios deportivos
@@ -24,7 +24,7 @@ class EspacioController extends Controller
       $data = $request->all();
       $deportes = $this->getDeportes();
       $post = [];
-      $punto = Togroow::request("sportodos/puntos/" . $data['punto'] . "/detalle", $post);
+      $punto = Apiservice::request("sportodos/puntos/" . $data['punto'] . "/detalle", $post);
       return view('admin.espacio.crear', compact('deportes', 'punto'));
    }
 
@@ -43,7 +43,7 @@ class EspacioController extends Controller
       }
       $punto = $data['punto'];
 
-      $res = Togroow::request("sportodos/espacios/crear", $post, 1);
+      $res = Apiservice::request("sportodos/espacios/crear", $post, 1);
       return redirect('/administrador/puntos/detalle/'.$punto)->with("mensaje","Tu espacio ha sido creado con exito.");
    }
 
@@ -89,7 +89,7 @@ class EspacioController extends Controller
          $post['foto'] = curl_file_create($_FILES['imagen']['tmp_name'], $_FILES['imagen']['type'], $_FILES['imagen']['name']);
       }
       $punto = $data['punto'];
-      $res = Togroow::request("sportodos/espacios/" . $id . "/editar", $post, 3);
+      $res = Apiservice::request("sportodos/espacios/" . $id . "/editar", $post, 3);
       return redirect('/administrador/puntos/detalle/' . $punto)->with("mensaje", "Tu espacio ha sido editado con exito.");
    }
 
@@ -110,7 +110,7 @@ class EspacioController extends Controller
       }
       $data = $request->all();
 
-      Sportodos::request("espacio/eliminar", $data);
+      Apiservice::request("espacio/eliminar", $data);
       return redirect('administrador/espacio')->with("mensaje", "Tu Recurso ha sido Eliminado con exito.");
    }
 
@@ -124,7 +124,7 @@ class EspacioController extends Controller
    public function getId($id)
    {
       $post = [];
-      $data =  Togroow::request("sportodos/espacios/" . $id . "/detalle", $post);
+      $data =  Apiservice::request("sportodos/espacios/" . $id . "/detalle", $post);
       return $data;
    }
    /**
@@ -137,7 +137,7 @@ class EspacioController extends Controller
    public function getIdamplio($id)
    {
       $post = [];
-      $data =  Togroow::request("sportodos/espacios/" . $id . "/detalle", $post);
+      $data =  Apiservice::request("sportodos/espacios/" . $id . "/detalle", $post);
       return $data;
    }
 
@@ -150,7 +150,7 @@ class EspacioController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      $data = Togroow::request("sportodos/deportes", $post);
+      $data = Apiservice::request("sportodos/deportes", $post);
       $deportes = (object)$data;
       return $deportes;
    }

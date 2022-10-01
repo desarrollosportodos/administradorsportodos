@@ -1,0 +1,53 @@
+<div class="row">
+    @foreach ($listado as $numero => $item)
+        <div class="col-sm-6 col-md-4 col-lg-4">
+            <a class="card-espacio" href="{{ route('puntos-detalle',[ 'id' => $item['id'] ]) }}" >
+                <h2>{{$item['nombre']}}</h2>
+                <div class="row">
+                    <div class="col-5">
+                        <?php if(isset($item['foto'])){ ?>
+                            <img src="{{$item['foto']}}">
+                        <?php } ?>
+                    </div>
+                    <div class="col-7">
+                        <div class="descripcion"><?php echo substr(strip_tags($item['descripcion']),0,250)."...";  ?></div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div><strong>Deportes</strong></div>
+                    <div class="deportes">
+                        @foreach ($item['deportes'] as $deporte)
+                            <i class="icon {{$deporte['icono']}}"></i>
+                        @endforeach
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div><strong>Servicios</strong></div>
+                    <div class="deportes">
+                        @foreach ($item['servicios'] as $servicio)
+                            <i class="icon {{$servicio['icono']}}"></i>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="footer-card">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="text-left calificaciones">
+                                <strong>Calificación:</strong>
+                                <span> (0,0) </span>
+                                <i class="pe-7s-star"></i>
+                                <i class="pe-7s-star"></i>
+                                <i class="pe-7s-star"></i>
+                                <i class="pe-7s-star"></i>
+                                <i class="pe-7s-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </a>
+        </div>
+    @endforeach
+</div>

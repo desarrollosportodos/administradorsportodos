@@ -1,4 +1,3 @@
-entro a esta cosa
 <div class="row">
     @foreach ($listado as $numero => $item)
         <div class="col-sm-6 col-md-4 col-lg-4">

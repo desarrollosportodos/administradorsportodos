@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Servicios\Togroow;
+use App\Servicios\Apiservice;
 
 /**
  * @group Gestion de los deportes
@@ -20,7 +20,7 @@ class DeportesController extends Controller
    public function index()
    {
       $post = [];
-      $listado = Togroow::request("sportodos/deportes", [], 0);
+      $listado = Apiservice::request("sportodos/deportes", [], 0);
       //echo "<pre>";
       //print_r($listado);
       return view('admin.deportes.home', compact('listado'));
@@ -45,7 +45,7 @@ class DeportesController extends Controller
       $data = $request->all();
       $data['red'] = 49;
       $post = $data;
-      Togroow::request("sportodos/deportes/crear", $post, 1);
+      Apiservice::request("sportodos/deportes/crear", $post, 1);
       return redirect('administrador/deportes')->with("mensaje", "Tu deporte ha sido creado con exito.");
    }
    /**
@@ -61,7 +61,7 @@ class DeportesController extends Controller
    {
       $data = $request->all();
       $post = $data;
-      Togroow::request("sportodos/deportes/" . $id . "/editar", $post, 3);
+      Apiservice::request("sportodos/deportes/" . $id . "/editar", $post, 3);
       return redirect('administrador/deportes')->with("mensaje", "Tu deporte ha sido Actualizado con exito.");
    }
    /**
@@ -77,7 +77,7 @@ class DeportesController extends Controller
    {
       $data = $request->all();
       $post = [];
-      Togroow::request("sportodos/deportes/" . $id . "/eliminar", $post, 2);
+      Apiservice::request("sportodos/deportes/" . $id . "/eliminar", $post, 2);
       return redirect('administrador/deportes')->with("mensaje", "Tu deporte ha sido Eliminado con exito.");
    }
 }

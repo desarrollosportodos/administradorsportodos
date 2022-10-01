@@ -117,44 +117,45 @@
             
             <h3 class="subtitulo">Espacios Deportivos</h3>
             <a  data-toggle="modal" data-target="#modalUrl" class="btn-icon btn-icon-only btn btn-link btn-float-card" href="{{ route('espacio-nuevo',[ 'punto' => $data['id'] ]) }}"><i class="pe-7s-plus btn-icon-wrapper"></i></a>
-
+            <?php if(isset($espacios)){ ?>
             <div class="row">
-            @foreach ($espacios as $item)
-                <div class=" col-sm-6 col-lg-4">
-                    <div class="card-espaciodetalle">
-                        <div class=" botones-espacio">
-                            <a data-toggle="modal" data-target="#modalUrl"  href="{{ route('espacio-detalle',[ 'id' => $item['id'] ]) }}" ><i class="pe-7s-note2"></i></a>
-                            <a data-toggle="modal" data-target="#modalUrl"  href="{{ route('espacio-editar',[ 'id' => $item['id'] ]) }}" ><i class="pe-7s-pen"></i></a>
-                        </div>
-                        <h2>{{$item['nombre']}}</h2>
-                        <div class="imagen" style="background-image:url({{$item['foto']}});"></div>
-                        
-                        <div>
-                            <div class="deportes">
-                               
+                @foreach ($espacios as $item)
+                    <div class=" col-sm-6 col-lg-4">
+                        <div class="card-espaciodetalle">
+                            <div class=" botones-espacio">
+                                <a data-toggle="modal" data-target="#modalUrl"  href="{{ route('espacio-detalle',[ 'id' => $item['id'] ]) }}" ><i class="pe-7s-note2"></i></a>
+                                <a data-toggle="modal" data-target="#modalUrl"  href="{{ route('espacio-editar',[ 'id' => $item['id'] ]) }}" ><i class="pe-7s-pen"></i></a>
                             </div>
-                        </div>
-                        
-                        <div class="footer-card">
+                            <h2>{{$item['nombre']}}</h2>
+                            <div class="imagen" style="background-image:url({{$item['foto']}});"></div>
+                            
                             <div>
-                                <div >
-                                    <div class="text-left calificaciones">
-                                        <strong>Calificación:</strong>
-                                        <span> (0,0) </span>
-                                        <i class="pe-7s-star"></i>
-                                        <i class="pe-7s-star"></i>
-                                        <i class="pe-7s-star"></i>
-                                        <i class="pe-7s-star"></i>
-                                        <i class="pe-7s-star"></i>
-                                    </div>
+                                <div class="deportes">
+                                
                                 </div>
                             </div>
                             
-                        </div>
-                    </div> 
-                </div>
-            @endforeach
+                            <div class="footer-card">
+                                <div>
+                                    <div >
+                                        <div class="text-left calificaciones">
+                                            <strong>Calificación:</strong>
+                                            <span> (0,0) </span>
+                                            <i class="pe-7s-star"></i>
+                                            <i class="pe-7s-star"></i>
+                                            <i class="pe-7s-star"></i>
+                                            <i class="pe-7s-star"></i>
+                                            <i class="pe-7s-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div> 
+                    </div>
+                @endforeach
             </div>
+            <?php } ?>
         </div>
     </div>
     <br>

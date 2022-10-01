@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportodos</title>
+    <style>
+        .fondo-body{
+            background: url(fondo.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            position: absolute;
+            min-height: 100%;
+            width: 100%;
+            top:0;
+            left:0;
+            text-align: center;
+            overflow: hidden;
+            z-index: -2;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .logo{
+            width: 200px;
+            background: #FFF;
+            border-radius: 1em;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .jugadores{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            max-width: 100%;
+            z-index: -1;
+        }
+
+        .numeral{
+            color: #FFF;
+            font-size: 30px;
+            font-family:Arial, Helvetica, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .frase{
+            color: #FFF;
+            font-size: 30px;
+            font-family:Helvetica, sans-serif;
+            width: 400px;
+            display: inline-block;
+            font-weight: 100;
+            margin-top: 20;
+        }
+        .enlaces{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background: #FFF;
+            padding: 5px;
+            padding-left: 30px;
+            border-radius:  5em 0 0 0;
+        }
+        .enlaces a{
+            display:inline-block;
+            font-size: 16px;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="fondo-body">
+        <div class="text-center"><img src="logogrande.png" alt="" class="logo"></div>
+
+        <div  class="numeral">#EntraEnElJuego</div>
+         <div class="frase"><strong>Dónde, cuándo y con quién</strong> hacer deportes en tu ciudad</div>
+         <img src="jugadores.png" class="jugadores" alt="">
+         <div class="enlaces">
+            <a href="./terminos">Terminos y Condiciones</a>
+         </div>
+    </div>
+</body>
+</html>
+

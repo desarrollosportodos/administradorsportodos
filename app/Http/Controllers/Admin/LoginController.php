@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Servicios\Togroow;
+use App\Servicios\Apiservice;
 use Redirect;
 use Session;
 /**
@@ -40,11 +40,10 @@ class LoginController extends Controller
         $datos['email'] = $post['email'];
         $datos['password'] = $post['password'];
         //print_r($datos);
-        $data = Togroow::request("usuarios/login",$datos,1);
+        $data = Apiservice::request("usuarios/login",$datos,1);
         /*echo "<pre>";
         print_r($data);*/
         if(isset($data['access_token'])){
-           
             Session::put('usuario',(object)$data['usuario']);
             Session::put('access_token',$data['access_token']);
             return  redirect('/administrador');

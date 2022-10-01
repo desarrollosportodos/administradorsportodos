@@ -1,4 +1,3 @@
-<?php //print_r($listado) ?>
 <div class="card">
     <div class="card-body">
         <table id="listtable" class="mb-0 table table-bordered">

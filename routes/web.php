@@ -11,12 +11,9 @@
 |
 */
 
-
-
 Route::get('administrador/login', 'Admin\LoginController@index')->name('login');
 Route::any('administrador/login2', 'Admin\LoginController@login')->name('login2');
 Route::get('','Admin\HomeController@index')->name('home')->middleware("admin");
-
 Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['admin'] ], function(){ 
     Route::get('logout', 'LoginController@logout')->name('logout');
 
@@ -70,16 +67,38 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::get('deportebarrera/editar/{id}', 'DeportebarreraController@editar')->name('deportebarrera-editar');
     Route::post('deportebarrera/actualizar/{id}', 'DeportebarreraController@actualizar')->name('deportebarrera-actualizar');
     Route::post('deportebarrera/eliminar/{id}', 'DeportebarreraController@eliminar')->name('deportebarrera-eliminar');
+
+    Route::get('categoriainiciativas', 'CategoriainiciativaController@index')->name('categoriainiciativas');
+    Route::get('categoriainiciativas/nuevo', 'CategoriainiciativaController@nuevo')->name('categoriainiciativas-nuevo');
+    Route::post('categoriainiciativas/crear', 'CategoriainiciativaController@crear')->name('categoriainiciativas-crear');
+    Route::get('categoriainiciativas/editar/{id}', 'CategoriainiciativaController@editar')->name('categoriainiciativas-editar');
+    Route::post('categoriainiciativas/actualizar/{id}', 'CategoriainiciativaController@actualizar')->name('categoriainiciativas-actualizar');
+    Route::post('categoriainiciativas/eliminar/{id}', 'CategoriainiciativaController@eliminar')->name('categoriainiciativas-eliminar');
+
+    Route::get('iniciativas', 'IniciativaController@index')->name('iniciativas');
+    Route::get('iniciativas/nuevo', 'IniciativaController@nuevo')->name('iniciativas-nuevo');
+    Route::post('iniciativas/crear', 'IniciativaController@crear')->name('iniciativas-crear');
+    Route::get('iniciativas/editar/{id}', 'IniciativaController@editar')->name('iniciativas-editar');
+    Route::post('iniciativas/actualizar/{id}', 'IniciativaController@actualizar')->name('iniciativas-actualizar');
+    Route::post('iniciativas/eliminar/{id}', 'IniciativaController@eliminar')->name('iniciativas-eliminar');
     
 
     Route::get('ciudades', 'CiudadesController@index')->name('listdociudades');
     Route::get('zonas', 'CiudadesController@zonas')->name('listdozonas');
+
+    Route::get('usuarios', 'UsuariosController@index')->name('usuarios');
+    Route::get('usuarios/nuevo', 'UsuariosController@nuevo')->name('usuarios-nuevo');
+    Route::post('usuarios/crear', 'UsuariosController@crear')->name('usuarios-crear');
+    Route::get('usuarios/editar/{id}', 'UsuariosController@editar')->name('usuarios-editar');
+    Route::post('usuarios/actualizar/{id}', 'UsuariosController@actualizar')->name('usuarios-actualizar');
+    Route::post('usuarios/eliminar/{id}', 'UsuariosController@eliminar')->name('usuarios-eliminar');
 
 }); 
 
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
     Artisan::call('config:cache');
+    Artisan::call('config:clear');
     Artisan::call('view:clear');
     return "Cache is cleared";
 });

@@ -25301,3 +25301,7 @@ a.card-button:not([href]):not([tabindex]) h2 , a.card-button:not([href]):not([ta
 .btn-redondo-info:hover{
     color:#2FCD7F;
 }
+.thumbnail{
+    max-width: 100%;
+    max-height: 60px;
+}

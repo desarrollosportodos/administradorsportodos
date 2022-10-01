@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Servicios\Togroow;
+use App\Servicios\Apiservice;
 /**
  * @group Gestion de Servicios
  * clase que permita la gestion de los diferentes servicios lista, crea , edita y elimina
@@ -19,7 +19,7 @@ class ServiciosController extends Controller
    public function index(){
         $post = [];
         $post['redsocial'] = '49';
-        $listado = Togroow::request("sportodos/servicios/listado",$post);
+        $listado = Apiservice::request("sportodos/servicios/listado",$post);
         return view('admin.servicios.home',compact('listado'));
    }
 
@@ -41,7 +41,7 @@ class ServiciosController extends Controller
       $data = $request->all();
       $data['red'] = 49;
       $post = $data;
-      Togroow::request("sportodos/servicios/crear",$post,1);
+      Apiservice::request("sportodos/servicios/crear",$post,1);
       return redirect('administrador/servicios')->with("mensaje","Tu tipo de Recurso ha sido creado con exito.");
    }
 
@@ -56,7 +56,7 @@ class ServiciosController extends Controller
    public function actualizar(Request $request,$id){
       $data = $request->all();
       $post = $data;
-      Togroow::request("sportodos/servicios/".$id."/editar",$post,3);
+      Apiservice::request("sportodos/servicios/".$id."/editar",$post,3);
       return redirect('administrador/servicios')->with("mensaje","Tu tipo de Recurso ha sido Actualizado con exito.");
    }
 
@@ -71,7 +71,7 @@ class ServiciosController extends Controller
    public function eliminar(Request $request,$id){
       $data = $request->all();
       $post = $data;
-      Togroow::request("sportodos/servicios/".$id."/eliminar",$post,2);
+      Apiservice::request("sportodos/servicios/".$id."/eliminar",$post,2);
       return redirect('administrador/servicios')->with("mensaje","Tu tipo de Recurso ha sido Actualizado con exito.");
    }
 

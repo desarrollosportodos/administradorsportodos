@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Servicios\Togroow;
+use App\Servicios\Apiservice;
 
 /**
  * @group Gestion de puntos de encuentro
@@ -34,7 +34,7 @@ class PuntosController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      $listado = Togroow::request("sportodos/puntos/all", $post);
+      $listado = Apiservice::request("sportodos/puntos/all", $post);
       $asideactual = 3;
       //return view('admin.puntos.listado', compact('listado','asideactual'));
    }
@@ -47,7 +47,7 @@ class PuntosController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      $listado = Togroow::request("sportodos/puntos/all", $post);
+      $listado = Apiservice::request("sportodos/puntos/all", $post);
       //$deportes = $this->getDeportes();
       $asideactual = 3;
       return view('admin.puntos.cajas', compact('listado', 'asideactual'));
@@ -89,7 +89,7 @@ class PuntosController extends Controller
             $post['imagenotras'][$key] = curl_file_create($_FILES['imagenotras']['tmp_name'][$key], $_FILES['imagenotras']['type'][$key], $_FILES['imagenotras']['name'][$key]);
          }
       }
-      $res = Togroow::request("sportodos/puntos/crear", $post, 1);
+      $res = Apiservice::request("sportodos/puntos/crear", $post, 1);
       if (isset($res['id_punto'])) {
          return redirect('administrador/puntos/detalle/' . $res['id_punto'])->with("mensaje", "Tu tipo de Recurso ha sido creado con exito.");
       } else {
@@ -123,7 +123,7 @@ class PuntosController extends Controller
     */
    public function detalle($id)
    {
-      $data = $this->getIdamplio($id);
+      $data = $this->getIdamplio($id); 
       $deportes = $this->getDeportes();
       $paises = $this->getPaises();
       $servicios = $this->getServicios();
@@ -132,7 +132,7 @@ class PuntosController extends Controller
       /*echo "<pre>";
       print_r($data);
       echo "</pre>";*/
-      return view('admin.puntos.detalle', compact('deportes', 'data', 'paises', 'servicios', 'asideactual', 'espacios'));
+      //return view('admin.puntos.detalle', compact('deportes', 'data', 'paises', 'servicios', 'asideactual', 'espacios'));
    }
 
    /**
@@ -152,6 +152,7 @@ class PuntosController extends Controller
          $post['imagen'] = curl_file_create($_FILES['imagen']['tmp_name'], $_FILES['imagen']['type'], $_FILES['imagen']['name']);
       }
       if ($request->file("portada")) {
+   
          $post['portada'] = curl_file_create($_FILES['portada']['tmp_name'], $_FILES['portada']['type'], $_FILES['portada']['name']);
       }
       if (isset($data['imagenotras']) && count($data['imagenotras']) > 0) {
@@ -160,7 +161,13 @@ class PuntosController extends Controller
             $post['imagenotras'][$key] = curl_file_create($_FILES['imagenotras']['tmp_name'][$key], $_FILES['imagenotras']['type'][$key], $_FILES['imagenotras']['name'][$key]);
          }
       }
-      Togroow::request("sportodos/puntos/" . $id . "/editar/", $post, 3);
+      /*echo "<pre>";
+      print_r($post);
+      echo "</pre>";*/
+      $data = Apiservice::request("sportodos/puntos/".$id."/editar", $post, 3);
+      /*echo "<pre>";
+      print_r($data);
+      echo "</pre>";*/
       return redirect('administrador/puntos/detalle/' . $id)->with("mensaje", "Tu Punto de encuentro ha sido Actualizado con exito.");
    }
 
@@ -181,7 +188,7 @@ class PuntosController extends Controller
       }
       $data = $request->all();
 
-      Sportodos::request("puntos/eliminar", $data);
+      Apiservice::request("puntos/eliminar", $data);
       return redirect('administrador/puntos')->with("mensaje", "Tu Recurso ha sido Eliminado con exito.");
    }
 
@@ -210,7 +217,7 @@ class PuntosController extends Controller
    public function getId($id)
    {
       $post = [];
-      $data = Togroow::request("sportodos/puntos/" . $id . "/detalle", $post);
+      $data = Apiservice::request("sportodos/puntos/" . $id . "/detalle", $post);
       return $data;
    }
    /**
@@ -224,7 +231,7 @@ class PuntosController extends Controller
    {
 
       $post = [];
-      $data = Togroow::request("sportodos/puntos/" . $id . "/detalle", $post);
+      $data = Apiservice::request("sportodos/puntos/" . $id . "/detalle", $post);
       return $data;
    }
 
@@ -238,7 +245,7 @@ class PuntosController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      $data = Togroow::request("sportodos/deportes", $post);
+      $data = Apiservice::request("sportodos/deportes", $post);
       $deportes = (object)$data;
       return $deportes;
    }
@@ -252,7 +259,7 @@ class PuntosController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      $servicios = Togroow::request("sportodos/servicios", $post);
+      $servicios = Apiservice::request("sportodos/servicios", $post);
       return $servicios;
    }
    /**
@@ -265,7 +272,7 @@ class PuntosController extends Controller
    {
       $post = [];
       $post['punto_id'] = $punto;
-      $espacios = Togroow::request("sportodos/espacios/", $post);
+      $espacios = Apiservice::request("sportodos/espacios/", $post);
       return $espacios;
    }
    /**
@@ -278,7 +285,7 @@ class PuntosController extends Controller
    {
       $post = [];
       $post['redsocial'] = '49';
-      $data = Togroow::request("lugares/paises", $post);
+      $data = Apiservice::request("lugares/paises", $post);
       $paises = $data;
       return $paises;
    }

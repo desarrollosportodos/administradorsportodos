@@ -40,6 +40,12 @@
                         Puntos de Encuentro
                     </a>
                 </li>
+                <li class="<?php if( isset($asideactual) && $asideactual == 7 ) { echo "mm-active";  }?> ">
+                    <a href="{{ route("iniciativas") }}">
+                        <i class="metismenu-icon pe-7s-like"></i>
+                        Iniciativas
+                    </a>
+                </li>
                 <li  class="<?php if( isset($asideactual) && $asideactual == 4 ) { echo "mm-active";  }?> ">
                     <a href="">
                         <i class="metismenu-icon pe-7s-box1"></i>
@@ -50,11 +56,12 @@
                         <li><a href="{{ route("deporteposicion") }}">Posiciones Deportes</a></li>
                         <li><a href="{{ route("servicios") }}">Servicios</a></li>
                         <li><a href="{{ route("deportebarrera") }}">Barreras Deportes</a></li>
+                        <li><a href="{{ route("categoriainiciativas") }}">Categorias de Iniciativas</a></li>
                         <li><a>Tablas de Sistema</a></li>
                     </ul>    
                 </li>
                 <li class="<?php if( isset($asideactual) && $asideactual == 5 ) { echo "mm-active";  }?> ">
-                    <a>
+                    <a href="{{ route("usuarios") }}">
                         <i class="metismenu-icon pe-7s-users"></i>
                         Usuarios
                     </a>
