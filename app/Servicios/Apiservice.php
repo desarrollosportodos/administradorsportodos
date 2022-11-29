@@ -40,7 +40,12 @@ class Apiservice
         }
         
         try {
-            $response = $client->request($metodo,$url,["headers" =>$header,'form_params' => $data]);
+            if($metodo == "GET"){
+                $response = $client->request($metodo,$url."?".http_build_query($data),["headers" =>$header]);
+            } else{
+                $response = $client->request($metodo,$url,["headers" =>$header,'form_params' => $data]);
+            }
+            
             if ($response->getBody()) {
                 $res =  $response->getBody();
                 //echo $res;

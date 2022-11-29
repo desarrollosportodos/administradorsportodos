@@ -132,7 +132,7 @@ class PuntosController extends Controller
       /*echo "<pre>";
       print_r($data);
       echo "</pre>";*/
-      //return view('admin.puntos.detalle', compact('deportes', 'data', 'paises', 'servicios', 'asideactual', 'espacios'));
+      return view('admin.puntos.detalle', compact('deportes', 'data', 'paises', 'servicios', 'asideactual', 'espacios'));
    }
 
    /**
@@ -272,7 +272,7 @@ class PuntosController extends Controller
    {
       $post = [];
       $post['punto_id'] = $punto;
-      $espacios = Apiservice::request("sportodos/espacios/", $post);
+      $espacios = Apiservice::request("sportodos/espacios/",$post);
       return $espacios;
    }
    /**

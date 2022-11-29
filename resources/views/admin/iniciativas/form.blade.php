@@ -98,6 +98,12 @@
                             <textarea name="resultados" id="resultados" class="tiny" cols="30" rows="10"> {{old('resultados', $data['resultados'] ?? '')}}</textarea>
                         </div>
                     </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="">Link de Donación</label>
+                            <input type="text" name="link_pago" class="form-control" value="{{old('link_pago', $data['link_pago'] ?? '')}}" >
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="tab-pane show" id="multimedia" role="tabpanel">
