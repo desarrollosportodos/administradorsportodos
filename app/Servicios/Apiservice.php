@@ -38,7 +38,6 @@ class Apiservice
             $metodo = "GET";
             //$res=  $form->get($url)->json();
         }
-        
         try {
             if($metodo == "GET"){
                 $response = $client->request($metodo,$url."?".http_build_query($data),["headers" =>$header]);

@@ -35,16 +35,26 @@
                     </a>
                 </li>
                 <li class="<?php if( isset($asideactual) && $asideactual == 3 ) { echo "mm-active";  }?> ">
-                    <a href="{{ route("puntos") }}">
+                    <a  href="#" >
                         <i class="metismenu-icon pe-7s-map-2"></i>
                         Puntos de Encuentro
                     </a>
+                    <ul>
+                        <li><a href="{{ route("puntos") }}">Listado</a></li>
+                        <li><a href="{{ route("cargapuntos") }}">Cargar</a></li>
+                        
+                    </ul>  
                 </li>
                 <li class="<?php if( isset($asideactual) && $asideactual == 7 ) { echo "mm-active";  }?> ">
-                    <a href="{{ route("iniciativas") }}">
+                    <a   href="#" >
                         <i class="metismenu-icon pe-7s-like"></i>
                         Iniciativas
                     </a>
+                    <ul>
+                        <li><a href="{{ route("iniciativas") }}">Listado</a></li>
+                        <li><a href="{{ route("iniciativasolicitud") }}">Solicitudes</a></li>
+                        
+                    </ul>    
                 </li>
                 <li  class="<?php if( isset($asideactual) && $asideactual == 4 ) { echo "mm-active";  }?> ">
                     <a href="">

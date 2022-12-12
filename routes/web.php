@@ -82,6 +82,8 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::post('iniciativas/actualizar/{id}', 'IniciativaController@actualizar')->name('iniciativas-actualizar');
     Route::post('iniciativas/eliminar/{id}', 'IniciativaController@eliminar')->name('iniciativas-eliminar');
     
+    Route::get('iniciativasolicitud', 'IniciativasolicitudController@index')->name('iniciativasolicitud');
+    Route::get('iniciativasolicitud/{id}', 'IniciativasolicitudController@detalle')->name('iniciativasolicitud-detalle');
 
     Route::get('ciudades', 'CiudadesController@index')->name('listdociudades');
     Route::get('zonas', 'CiudadesController@zonas')->name('listdozonas');
@@ -93,6 +95,10 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::post('usuarios/actualizar/{id}', 'UsuariosController@actualizar')->name('usuarios-actualizar');
     Route::post('usuarios/eliminar/{id}', 'UsuariosController@eliminar')->name('usuarios-eliminar');
 
+
+    Route::get('cargapuntos', 'CargapuntosController@index')->name('cargapuntos');
+    Route::get('cargapuntos/nuevo', 'CargapuntosController@nuevo')->name('cargapuntos-nuevo');
+    Route::post('cargapuntos/crear', 'CargapuntosController@crear')->name('cargapuntos-crear');
 }); 
 
 Route::get('/clear-cache', function() {
