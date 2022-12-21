@@ -23,30 +23,66 @@ class PuntosController extends Controller
       $post = [];
       $post['redsocial'] = '49';
       $asideactual = 3;
-      return view('admin.puntos.home', compact('asideactual'));
+      $deportes = $this->getDeportes();
+      $paises = $this->getPaises();
+      $servicios = $this->getServicios();
+      return view('admin.puntos.home', compact('asideactual','deportes','servicios','paises'));
    }
    /**
     * Vista con el listado de puntos de encuentro en el sistema en formato de tabla
     *
     * @return void
     */
-   public function listado()
+   public function listado(Request $request)
    {
+      $data = $request->all();
       $post = [];
       $post['redsocial'] = '49';
+      if(isset($data['nombre'])){
+         $post['name'] = $data['nombre'];
+      }
+      if(isset($data['ciudad_id'])){
+         $post['city'] = $data['ciudad_id'];
+      }
+      if(isset($data['zona_id'])){
+         $post['zone'] = $data['zona_id'];
+      }
+      if(isset($data['servicio'])){
+         $post['service'] = $data['servicio'];
+      }
+      if(isset($data['deporte'])){
+         $post['sport'] = $data['deporte'];
+      }
+     
       $listado = Apiservice::request("sportodos/puntos/all", $post);
       $asideactual = 3;
-      //return view('admin.puntos.listado', compact('listado','asideactual'));
+      return view('admin.puntos.listado', compact('listado','asideactual'));
    }
    /**
     * Vista con el listado de puntos de encuentro en el sistema en formato de cajas
     *
     * @return void
     */
-   public function listadocajas()
+   public function listadocajas(Request $request)
    {
+      $data = $request->all();
       $post = [];
       $post['redsocial'] = '49';
+      if(isset($data['nombre'])){
+         $post['name'] = $data['nombre'];
+      }
+      if(isset($data['ciudad_id'])){
+         $post['city'] = $data['ciudad_id'];
+      }
+      if(isset($data['zona_id'])){
+         $post['zone'] = $data['zona_id'];
+      }
+      if(isset($data['servicio'])){
+         $post['service'] = $data['servicio'];
+      }
+      if(isset($data['deporte'])){
+         $post['sport'] = $data['deporte'];
+      }
       $listado = Apiservice::request("sportodos/puntos/all", $post);
       //$deportes = $this->getDeportes();
       $asideactual = 3;

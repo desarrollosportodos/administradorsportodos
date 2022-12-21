@@ -46,7 +46,7 @@
                     </ul>  
                 </li>
                 <li class="<?php if( isset($asideactual) && $asideactual == 7 ) { echo "mm-active";  }?> ">
-                    <a   href="#" >
+                    <a href="#">
                         <i class="metismenu-icon pe-7s-like"></i>
                         Iniciativas
                     </a>

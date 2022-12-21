@@ -30,7 +30,7 @@ Tipos de Recursos o Espacios
 </div>
 <div class="card">
     <div class="card-body">
-        <table class="mb-0 table table-bordered">
+        <table  id="listtable" class="mb-0 table table-bordered">
             <thead>
                 <tr>
                     <th>No.</th>

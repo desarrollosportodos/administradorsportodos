@@ -141,3 +141,5 @@ tinymce.init({
   external_filemanager_path:"/assets/tinymce/plugins/filemanager/"
 });
 
+$('#listtable').DataTable();
+

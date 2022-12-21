@@ -62,9 +62,6 @@ Iniciativas
                 </table>
             </div>
         </div>
-        <script>
-             $('#listtable').DataTable();
-        </script>
     </div>
 @endsection
 

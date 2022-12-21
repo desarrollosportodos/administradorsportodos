@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
-                    <strong>Contacto</strong>
+                    <strong>Contacto 1</strong>
                     <div>{{  $data['contacto']  }}</div>
                     </div>
                 </div>
@@ -54,6 +54,30 @@
                     <div class="form-group">
                     <strong>telefono</strong>
                     <div>{{  $data['telefono']  }}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                    <strong>Correo</strong>
+                    <div>{{  $data['correo']  }}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                    <strong>Contacto 2</strong>
+                    <div>{{  $data['contacto2']  }}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                    <strong>telefono</strong>
+                    <div>{{  $data['telefono2']  }}</div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                    <strong>Correo</strong>
+                    <div>{{  $data['correo2']  }}</div>
                     </div>
                 </div>
                 <div class="col-sm-4">

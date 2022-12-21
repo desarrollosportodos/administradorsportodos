@@ -38,7 +38,7 @@ Deportes
             $activo[1]="Si";
             $activo[0]="No";
         ?>
-        <table class="mb-0 table table-bordered">
+        <table  id="listtable" class="mb-0 table table-bordered">
             <thead>
                 <tr>
                     <th>No.</th>

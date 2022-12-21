@@ -12,7 +12,7 @@
             </thead>
             
             <tbody>
-                /*@foreach ($listado as $numero => $item)
+                @foreach ($listado as $numero => $item)
                     @csrf
                     <tr>
                         <th>
@@ -43,6 +43,3 @@
         </table>
     </div>
 </div>
-<script>
-     $('#listtable').DataTable();
-</script>
