@@ -36,6 +36,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $post = $request->all();
+        print_r($post);
         $datos = [];
         $datos['email'] = $post['email'];
         $datos['password'] = $post['password'];
