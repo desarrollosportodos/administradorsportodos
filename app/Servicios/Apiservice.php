@@ -1,7 +1,8 @@
 <?php
 namespace App\Servicios;
 use GuzzleHttp\Client;
-use Session;
+use GuzzleHttp\RequestOptions;
+use Illuminate\Support\Facades\Session;
 
 class Apiservice
 {
@@ -73,7 +74,7 @@ class Apiservice
             } 
         }
     }
-
+    
     public static function formatFile($file,$name){
         $imagenBase64 = base64_encode(file_get_contents($file->getRealPath()));
         return [
@@ -82,7 +83,5 @@ class Apiservice
             'filename' => $file->getClientOriginalName() // Nombre del archivo
         ];
     }
-    
-
 }
 
