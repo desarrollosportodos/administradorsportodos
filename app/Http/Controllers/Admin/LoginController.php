@@ -41,8 +41,8 @@ class LoginController extends Controller
         $datos['password'] = $post['password'];
         //print_r($datos);
         $data = Apiservice::request("usuarios/login",$datos,1);
-        /*echo "<pre>";
-        print_r($data);*/
+        echo "<pre>";
+        print_r($data);
         if(isset($data['access_token'])){
             Session::put('usuario',(object)$data['usuario']);
             Session::put('access_token',$data['access_token']);
@@ -54,7 +54,7 @@ class LoginController extends Controller
             } else if(isset($data['message'])){
                 $error = $data['message'];
             }
-           return redirect('/administrador/login')->with("mensaje",$error);
+           //return redirect('/administrador/login')->with("mensaje",$error);
         }
         
     }
