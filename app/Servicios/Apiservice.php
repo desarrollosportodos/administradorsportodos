@@ -44,7 +44,7 @@ class Apiservice
                 $response = $client->request($metodo,$url."?".http_build_query($data),["headers" =>$header]);
             } else{
                 echo $metodo;
-                $response = $client->request($metodo,$url,["headers" =>$header,'body' => json_encode($data)]);
+                $response = $client->request($metodo,$url,["headers" =>$header,'json' => json_encode($data)]);
             }
             
             if ($response->getBody()) {
