@@ -17,7 +17,7 @@ class Apiservice
         /*echo "<pre>";
         print_r($archivos);
         echo "</pre>";*/
-        //$data = json_encode($data);
+        $data = json_encode($data);
         $client = new Client();
         $header = [];
         $header['Accept'] = 'application/json';
