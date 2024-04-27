@@ -13,7 +13,7 @@ class Apiservice
         } else {
             $url = "http://api.sportodos.com/api/".$metodo;
         }
-        //echo $url;
+        echo $url;
         /*echo "<pre>";
         print_r($archivos);
         echo "</pre>";*/
