@@ -13,8 +13,8 @@ class Apiservice
         } else {
             $url = "http://api.sportodos.com/api/".$metodo;
         }
-        echo $url;
-        print_r($data);
+        /*echo $url;
+        print_r($data);*/
         /*echo "<pre>";
         print_r($archivos);
         echo "</pre>";*/
@@ -48,7 +48,7 @@ class Apiservice
             
             if ($response->getBody()) {
                 $res =  $response->getBody();
-                echo $res;
+                var_dump($res);
                 $array = json_decode($res,TRUE);
             }
             
