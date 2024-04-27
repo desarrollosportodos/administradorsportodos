@@ -48,7 +48,7 @@ class Apiservice
             
             if ($response->getBody()) {
                 $res =  $response->getBody();
-                //echo $res;
+                echo $res;
                 $array = json_decode($res,TRUE);
             }
             
