@@ -47,8 +47,6 @@ class Apiservice
                         "headers" =>$header,
                         RequestOptions::MULTIPART => $multipart,
                     ];
-                    echo "<pre>";
-                    print_r($option);
                     $response = $client->request($metodo,$url,$option);
                 } else {
                     $response = $client->request($metodo,$url,["headers" =>$header,'form_params' => $data]);
@@ -57,6 +55,7 @@ class Apiservice
             }  
             if ($response->getBody()) {
                 $res =  $response->getBody();
+                var_dump($res);
                 $array = json_decode($res);
             }
             return $array; 
