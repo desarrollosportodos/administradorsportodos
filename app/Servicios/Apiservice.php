@@ -3,74 +3,62 @@ namespace App\Servicios;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Http;
 
 class Apiservice
 {
 
     public static function request($metodo,$data = [],$tipo = null,$multipart=null){
-        $adminstatus = env("ADMIN_ESTADO");
-        if($adminstatus == 0){
-            $url = "http://api.sportodos.local/api/".$metodo;
-        } else {
-            $url = "http://api.sportodos.com/api/".$metodo;
-        }
+        
 
-        $client = new Client();
-        $header = [];
-        $header['Accept'] = 'application/json';
-        $header['Content-Type'] = 'application/x-www-form-urlencoded';
-        if(Session::get('access_token')){
-            $header['Authorization'] = "Bearer ".Session::get('access_token')."";
-        }
-        if(isset($tipo) && $tipo == 1){
-            $metodo = "POST";
-        } else if(isset($tipo) && $tipo == 3){
-            $metodo = "PUT";
-        } else if(isset($tipo) && $tipo == 2){
-            $metodo = "DELETE";
-        } else{
-            $metodo = "GET";
-        }
         try {
-            if($metodo == "GET"){
-                $response = $client->request($metodo,$url."?".http_build_query($data),["headers" =>$header]);
-            } else{
-                if($multipart != null){
-                    $header['Content-Type'] = 'multipart/form-data';
-                    foreach ($data as $name => $param) {
-                       $df = [];
-                       $df['name'] = $name;
-                       $df['contents'] = $param; 
-                        array_push($multipart,$df);
-                    }
-                    $option = [
-                        "headers" =>$header,
-                        RequestOptions::MULTIPART => $multipart,
-                    ];
-                    $response = $client->request($metodo,$url,$option);
-                } else {
-                    $response = $client->request($metodo,$url,["headers" =>$header,'form_params' => $data]);
-                }
-                
-            }  
-            if ($response->getBody()) {
-                $res =  $response->getBody();
-                var_dump($res);
-                $array = json_decode($res);
+            $adminstatus = env("ADMIN_ESTADO");
+            if($adminstatus == 0){
+                $url = "http://localhost:8080/api/".$metodo;
+            } else {
+                $url = "https://api.sportodos.com/api/".$metodo;
             }
-            return $array; 
-        } catch (\Exception $e) { 
-            if(method_exists($e, 'getResponse')){
-                $response = $e->getResponse();
-                if(method_exists($e, 'getBody')){
-                    $responseBodyAsString = $response->getBody()->getContents();
-                    return json_decode($responseBodyAsString,true);  
-                } else {
-                    echo "Error: " . $e->getMessage(); 
-                }
-            }  else {
-                echo "Error: " . $e->getMessage(); 
-            } 
+            echo $url;
+            $token = '';
+            if(Session::get('access_token')){
+                $token = Session::get('access_token');
+            }
+
+            $response = null;
+
+            switch ($tipo) {
+                case '1':
+                    echo "<pre>";
+                    print_r($data);
+                    $response = Http::withHeaders([
+                        'Authorization' => 'Bearer ' . $token,
+                    ])->post($url, $data);
+                    break;
+                case '3':
+                    $response = Http::withHeaders([
+                        'Authorization' => 'Bearer ' . $token,
+                    ])->put($url, $data);
+                    break;
+                case '2':
+                    $response = Http::withHeaders([
+                        'Authorization' => 'Bearer ' . $token,
+                    ])->delete($url);
+                    break;
+                default:
+                    $response = Http::withHeaders([
+                        'Authorization' => 'Bearer ' . $token,
+                    ])->get($url."?".http_build_query($data));
+                    break;
+            }
+
+            // Maneja la respuesta de la URL externa si es necesario
+            $statusCode = $response->status();
+            $content = $response->body();
+            echo $content;
+            //return response()->json($content);
+        } catch (\Exception $e) {
+            // Maneja cualquier error que pueda ocurrir durante la solicitud
+            return response()->json(['error' => $e->getMessage()], 500);
         }
     }
     
