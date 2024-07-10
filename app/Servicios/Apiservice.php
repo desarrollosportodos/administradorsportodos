@@ -53,7 +53,7 @@ class Apiservice
             $statusCode = $response->status();
             $content = $response->body();
             echo $content;
-            return json_decode(response()->json($content),true);
+            return json_decode($content,true);
         } catch (\Exception $e) {
             // Maneja cualquier error que pueda ocurrir durante la solicitud
             return response()->json(['error' => $e->getMessage()], 500);
