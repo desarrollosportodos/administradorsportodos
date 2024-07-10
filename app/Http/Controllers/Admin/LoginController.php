@@ -42,6 +42,7 @@ class LoginController extends Controller
         $datos['password'] = $post['password'];
         //print_r($datos);
         $data = Apiservice::request("usuarios/login",$datos,1);
+        
         echo "<pre>";
         print_r($data);
         echo "</pre>";
