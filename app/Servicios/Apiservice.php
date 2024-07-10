@@ -18,7 +18,7 @@ class Apiservice
             } else {
                 $url = "https://api.sportodos.com/api/".$metodo;
             }
-            echo $url;
+            //echo $url;
             $token = '';
             if(Session::get('access_token')){
                 $token = Session::get('access_token');
