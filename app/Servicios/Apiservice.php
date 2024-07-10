@@ -26,8 +26,8 @@ class Apiservice
             $response = null;
             switch ($tipo) {
                 case '1':
-                    echo "<pre>";
-                    print_r($data);
+                    /*echo "<pre>";
+                    print_r($data);*/
                     $response = Http::withHeaders([
                         'Authorization' => 'Bearer ' . $token,
                     ])->post($url, $data);
