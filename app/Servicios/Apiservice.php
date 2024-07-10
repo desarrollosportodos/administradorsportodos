@@ -23,9 +23,7 @@ class Apiservice
             if(Session::get('access_token')){
                 $token = Session::get('access_token');
             }
-
             $response = null;
-
             switch ($tipo) {
                 case '1':
                     echo "<pre>";
