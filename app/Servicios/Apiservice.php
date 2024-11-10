@@ -14,11 +14,10 @@ class Apiservice
         try {
             $adminstatus = env("ADMIN_ESTADO");
             if($adminstatus == 0){
-                $url = "http://localhost:8080/api/".$metodo;
+                $url = "http://localhost:8000/api/".$metodo;
             } else {
                 $url = "https://api.sportodos.com/api/".$metodo;
             }
-            //echo $url;
             $token = '';
             if(Session::get('access_token')){
                 $token = Session::get('access_token');
@@ -26,8 +25,8 @@ class Apiservice
             $response = null;
             switch ($tipo) {
                 case '1':
-                    /*echo "<pre>";
-                    print_r($data);*/
+                    echo "<pre>";
+                    print_r($data);
                     $response = Http::withHeaders([
                         'Authorization' => 'Bearer ' . $token,
                     ])->post($url, $data);
