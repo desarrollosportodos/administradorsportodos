@@ -67,6 +67,9 @@
                         <li><a href="{{ route("servicios") }}">Servicios</a></li>
                         <li><a href="{{ route("deportebarrera") }}">Barreras Deportes</a></li>
                         <li><a href="{{ route("categoriainiciativas") }}">Categorias de Iniciativas</a></li>
+                        <li><a href="{{ route("admin.categories.index") }}">Categorias Productos</a></li>
+                        <li><a href="{{ route("admin.subcategories.index") }}">Sub Categorias Productos</a></li>
+                        <li><a href="{{ route("admin.products.index") }}">Productos</a></li>
                         <li><a>Tablas de Sistema</a></li>
                     </ul>    
                 </li>

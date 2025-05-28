@@ -99,6 +99,33 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::get('cargapuntos', 'CargapuntosController@index')->name('cargapuntos');
     Route::get('cargapuntos/nuevo', 'CargapuntosController@nuevo')->name('cargapuntos-nuevo');
     Route::post('cargapuntos/crear', 'CargapuntosController@crear')->name('cargapuntos-crear');
+
+    Route::resource('categories', CategoryController::class)->names([
+        'index' => 'admin.categories.index',
+        'create' => 'admin.categories.create',
+        'store' => 'admin.categories.store',
+        'edit' => 'admin.categories.edit',
+        'update' => 'admin.categories.update',
+        'destroy' => 'admin.categories.destroy',
+    ]);
+
+     Route::resource('subcategories', SubcategoryController::class)->names([
+        'index' => 'admin.subcategories.index',
+        'create' => 'admin.subcategories.create',
+        'store' => 'admin.subcategories.store',
+        'edit' => 'admin.subcategories.edit',
+        'update' => 'admin.subcategories.update',
+        'destroy' => 'admin.subcategories.destroy',
+    ]);
+
+    Route::resource('products', ProductController::class)->names([
+            'index' => 'admin.products.index',
+            'create' => 'admin.products.create',
+            'store' => 'admin.products.store',
+            'edit' => 'admin.products.edit',
+            'update' => 'admin.products.update',
+            'destroy' => 'admin.products.destroy',
+        ]);
 }); 
 
 Route::get('/clear-cache', function() {
