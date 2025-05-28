@@ -51,7 +51,7 @@ class Apiservice
             // Maneja la respuesta de la URL externa si es necesario
             $statusCode = $response->status();
             $content = $response->body();
-            echo $content;
+            //echo $content;
             return json_decode($content,true);
         } catch (\Exception $e) {
             echo $e->getMessage();
