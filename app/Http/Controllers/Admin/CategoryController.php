@@ -22,7 +22,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         Apiservice::request('market/categories', $request->except('_token'), 1);
-        //return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.categories.index');
     }
 
     public function edit($id)
