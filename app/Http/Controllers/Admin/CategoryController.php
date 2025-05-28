@@ -34,7 +34,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         Apiservice::request("market/categories/{$id}",$request->except('_token'), 3);
-        //return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.categories.index');
     }
 
     public function destroy($id)
