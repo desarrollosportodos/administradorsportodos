@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Servicios\ApiService;
+use App\Servicios\Apiservice;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = ApiService::request('market/categories');
+        $categories = Apiservice::request('market/categories');
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -21,25 +21,25 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        ApiService::request('market/categories', $request->except('_token'), 1);
+        Apiservice::request('market/categories', $request->except('_token'), 1);
         //return redirect()->route('admin.categories.index');
     }
 
     public function edit($id)
     {
-        $category = ApiService::request("market/categories/{$id}");
+        $category = Apiservice::request("market/categories/{$id}");
         return view('admin.categories.edit', compact('category'));
     }
 
     public function update(Request $request, $id)
     {
-        ApiService::request("market/categories/{$id}",$request->except('_token'), 3);
+        Apiservice::request("market/categories/{$id}",$request->except('_token'), 3);
         //return redirect()->route('admin.categories.index');
     }
 
     public function destroy($id)
     {
-        ApiService::request("market/categories/{$id}", [], 2);
+        Apiservice::request("market/categories/{$id}", [], 2);
         return redirect()->route('admin.categories.index');
     }
 }
