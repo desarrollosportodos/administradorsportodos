@@ -11,7 +11,6 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Apiservice::request('market/categories');
-        print_r($categories);
         return view('admin.categories.index', compact('categories'));
     }
 
