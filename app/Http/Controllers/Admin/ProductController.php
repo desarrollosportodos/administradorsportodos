@@ -27,9 +27,11 @@ class ProductController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $path = $image->store('product_images', 'public');
+                $fullPath = asset('imagenes/' . $path); // Genera la URL completa
+
                 Apiservice::request('market/product-images', [
                     'product_id' => $product['id'],
-                    'image_path' => $path
+                    'image_path' => $fullPath
                 ], 1);
             }
         }
@@ -46,14 +48,15 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        Apiservice::request("market/products/{$id}", $request->all(),3);
+        Apiservice::request("market/products/{$id}", $request->all(), 3);
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $path = $image->store('product_images', 'public');
+                 $fullPath = asset('imagenes/' . $path); // Genera la URL completa
                 Apiservice::request('market/product-images', [
                     'product_id' => $id,
-                    'image_path' => $path
+                    'image_path' => $fullPath
                 ], 1);
             }
         }
@@ -63,8 +66,7 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        Apiservice::request("market/products/{$id}", [],2);
+        Apiservice::request("market/products/{$id}", [], 2);
         return redirect()->route('admin.products.index');
     }
 }
-
