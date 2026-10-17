@@ -171,6 +171,49 @@ class PuntosController extends Controller
       return view('admin.puntos.detalle', compact('deportes', 'data', 'paises', 'servicios', 'asideactual', 'espacios'));
    }
 
+   /** Listado de propuestas de nuevos espacios pendientes de revisión. */
+   public function solicitudes(Request $request)
+   {
+      $params = [];
+      if ($request->filled('estado')) {
+         $params['estado'] = $request->get('estado');
+      }
+      $response = Apiservice::request('sportodos/punto-solicitudes', $params);
+      $listado = is_array($response) && isset($response['data']) ? $response['data'] : (is_array($response) ? $response : []);
+      $asideactual = 3;
+      return view('admin.puntos.solicitudes', compact('listado', 'asideactual'));
+   }
+
+   /** Detalle de una propuesta con las acciones de aprobar o rechazar. */
+   public function solicitudDetalle($id)
+   {
+      $data = Apiservice::request('sportodos/punto-solicitudes/' . $id);
+      $asideactual = 3;
+      return view('admin.puntos.solicitud-detalle', compact('data', 'asideactual'));
+   }
+
+   public function aprobarSolicitud(Request $request, $id)
+   {
+      $response = Apiservice::request('sportodos/punto-solicitudes/' . $id . '/aprobar', [
+         'nota_revision' => $request->get('nota_revision', ''),
+      ], 1);
+      if (isset($response['id_punto'])) {
+         return redirect()->route('puntos-solicitudes')->with('mensaje', 'Solicitud aprobada: el espacio ya fue publicado.');
+      }
+      return redirect()->back()->with('error', $response['message'] ?? $response['error'] ?? 'No fue posible aprobar la solicitud.');
+   }
+
+   public function rechazarSolicitud(Request $request, $id)
+   {
+      $response = Apiservice::request('sportodos/punto-solicitudes/' . $id . '/rechazar', [
+         'nota_revision' => $request->get('nota_revision', ''),
+      ], 1);
+      if (isset($response['mensaje'])) {
+         return redirect()->route('puntos-solicitudes')->with('mensaje', 'Solicitud rechazada.');
+      }
+      return redirect()->back()->with('error', $response['message'] ?? $response['error'] ?? 'No fue posible rechazar la solicitud.');
+   }
+
    /**
     * Funcion para llamar al servicio de actualizacion de punto de encuentro
     *

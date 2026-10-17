@@ -23,6 +23,7 @@
         <div class="card-body">
             <div class="card-header">
                 <h1 class="titulo-principal">{{  $data['nombre']  }}</h1>
+                @if(($data['estado'] ?? 1) == 2)<span class="badge badge-success">Aprobada</span>@elseif(($data['estado'] ?? 1) == 0)<span class="badge badge-danger">Rechazada</span>@else<span class="badge badge-warning">Pendiente de revisión</span>@endif
             </div>
             <br>
             <div class="row">
@@ -99,6 +100,25 @@
                     </div>
                 </div>
             </div>
+            @if(!empty($data['datos']))
+                <hr><h4>Información ampliada de la propuesta</h4>
+                <div class="row">
+                    @foreach($data['datos'] as $key => $value)
+                        @if(!is_array($value) && !is_bool($value) && $value !== '')
+                            <div class="col-sm-6 mb-2"><strong>{{ ucfirst(str_replace(['_', '-'], ' ', $key)) }}:</strong> {{ $value }}</div>
+                        @endif
+                    @endforeach
+                </div>
+            @endif
+            @if(($data['estado'] ?? 1) == 1)
+                <hr>
+                <div class="d-flex" style="gap:10px;">
+                    <form method="POST" action="{{ route('iniciativasolicitud-aprobar', ['id' => $data['id']]) }}">@csrf<button class="btn btn-success" onclick="return confirm('¿Aprobar y publicar esta iniciativa?')"><i class="fa fa-check mr-1"></i> Aprobar y publicar</button></form>
+                    <form method="POST" action="{{ route('iniciativasolicitud-rechazar', ['id' => $data['id']]) }}">@csrf<button class="btn btn-outline-danger" onclick="return confirm('¿Rechazar esta solicitud?')"><i class="fa fa-times mr-1"></i> Rechazar</button></form>
+                </div>
+            @elseif(!empty($data['iniciativa_creada_id']))
+                <a class="btn btn-primary" href="{{ route('iniciativasolicitud-detalle', ['id' => $data['id']]) }}">Iniciativa publicada</a>
+            @endif
         </div>
     </div>
    

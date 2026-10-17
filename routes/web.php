@@ -20,6 +20,11 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::get('', 'HomeController@index')->name('home-administracion');
     Route::get('parametrizacion', 'ParametrizacionController@index')->name('parametrizacion-administracion');
 
+    Route::get('landing-pages', 'LandingPageController@index')->name('landing-pages');
+    Route::post('landing-pages/crear', 'LandingPageController@crear')->name('landing-pages-crear');
+    Route::post('landing-pages/{id}/actualizar', 'LandingPageController@actualizar')->name('landing-pages-actualizar');
+    Route::post('landing-pages/{id}/eliminar', 'LandingPageController@eliminar')->name('landing-pages-eliminar');
+
 
     Route::get('puntos', 'PuntosController@index')->name('puntos');
     Route::get('puntos/listado', 'PuntosController@listado')->name('puntoslistado');
@@ -30,6 +35,10 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::post('puntos/actualizar/{id}', 'PuntosController@actualizar')->name('puntos-actualizar');
     Route::post('puntos/eliminar/{id}', 'PuntosController@eliminar')->name('puntos-eliminar');
     Route::get('puntos/detalle/{id}', 'PuntosController@detalle')->name('puntos-detalle');
+    Route::get('puntos/solicitudes', 'PuntosController@solicitudes')->name('puntos-solicitudes');
+    Route::get('puntos/solicitudes/{id}', 'PuntosController@solicitudDetalle')->name('puntos-solicitud-detalle');
+    Route::post('puntos/solicitudes/{id}/aprobar', 'PuntosController@aprobarSolicitud')->name('puntos-solicitud-aprobar');
+    Route::post('puntos/solicitudes/{id}/rechazar', 'PuntosController@rechazarSolicitud')->name('puntos-solicitud-rechazar');
     Route::any('puntos/eliminarimagen', 'PuntosController@eliminarimagen')->name('puntos-eliminarimagen');
 
 
@@ -84,6 +93,8 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     
     Route::get('iniciativasolicitud', 'IniciativasolicitudController@index')->name('iniciativasolicitud');
     Route::get('iniciativasolicitud/{id}', 'IniciativasolicitudController@detalle')->name('iniciativasolicitud-detalle');
+    Route::post('iniciativasolicitud/{id}/aprobar', 'IniciativasolicitudController@aprobar')->name('iniciativasolicitud-aprobar');
+    Route::post('iniciativasolicitud/{id}/rechazar', 'IniciativasolicitudController@rechazar')->name('iniciativasolicitud-rechazar');
 
     Route::get('ciudades', 'CiudadesController@index')->name('listdociudades');
     Route::get('zonas', 'CiudadesController@zonas')->name('listdozonas');

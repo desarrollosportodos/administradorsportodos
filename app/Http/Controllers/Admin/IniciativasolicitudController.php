@@ -45,6 +45,28 @@ class IniciativasolicitudController extends Controller
         return view('admin.iniciativasolicitud.detalle', compact('data','asideactual'));
    }
 
+   public function aprobar(Request $request, $id)
+   {
+      $response = Apiservice::request('sportodos/iniciativas/solicitudes/' . $id . '/aprobar', [
+         'nota_revision' => $request->get('nota_revision', ''),
+      ], 1);
+      if (isset($response['id_iniciativa'])) {
+         return redirect()->route('iniciativasolicitud')->with('mensaje', 'Solicitud aprobada y publicada como iniciativa.');
+      }
+      return redirect()->back()->with('error', $response['message'] ?? $response['error'] ?? 'No fue posible aprobar la solicitud.');
+   }
+
+   public function rechazar(Request $request, $id)
+   {
+      $response = Apiservice::request('sportodos/iniciativas/solicitudes/' . $id . '/rechazar', [
+         'nota_revision' => $request->get('nota_revision', ''),
+      ], 1);
+      if (isset($response['mensaje'])) {
+         return redirect()->route('iniciativasolicitud')->with('mensaje', 'Solicitud rechazada.');
+      }
+      return redirect()->back()->with('error', $response['message'] ?? $response['error'] ?? 'No fue posible rechazar la solicitud.');
+   }
+
    /**
     * Funcion para llamar al servicio de actualizacion de punto de encuentro
     *

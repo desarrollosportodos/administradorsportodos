@@ -28,6 +28,18 @@
         @include('admin.categoriainiciativa.form')
     </form>
 </div>
+@if(session('mensaje')) <div class="alert alert-success">{{ session('mensaje') }}</div> @endif
+@if(session('error')) <div class="alert alert-danger">{{ session('error') }}</div> @endif
+
+{{-- Los formularios no deben estar dentro de la tabla: el navegador puede moverlos
+     y dejar el botón de guardar sin una acción asociada. --}}
+<div class="d-none">
+    @foreach ($listado as $item)
+        <form id="actualizar-categoria-{{ $item['id'] }}" action="{{ route('categoriainiciativas-actualizar',[ 'id' => $item['id'] ]) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+        </form>
+    @endforeach
+</div>
 <div class="card">
     <div class="card-body">
         <table  id="listtable" class="mb-0 table table-bordered">
@@ -35,27 +47,30 @@
                 <tr>
                     <th>No.</th>
                     <th>Nombre</th>
+                    <th>Descripción corta</th>
                     <td>Imagen</td>
                     <th width="100"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($listado as $numero => $item)
-                <form action="{{ route('categoriainiciativas-actualizar',[ 'id' => $item['id'] ]) }}" method="POST" enctype="multipart/form-data">
-                    @csrf
                     <tr>
                         <th>
                             {{$numero+1}}
                         </th>
                         <td>
                             <div class="content-form">{{$item['name']}}</div>
-                            <input type="text" name="nombre" value="{{$item['name']}}" class="form-control form-control-sm edit-form">
+                            <input type="text" name="nombre" value="{{$item['name']}}" class="form-control form-control-sm edit-form" form="actualizar-categoria-{{ $item['id'] }}">
+                        </td>
+                        <td>
+                            <div class="content-form">{{ $item['desc'] ?? 'Sin descripción' }}</div>
+                            <textarea name="descripcion" rows="2" maxlength="160" class="form-control form-control-sm edit-form" form="actualizar-categoria-{{ $item['id'] }}">{{ $item['desc'] ?? '' }}</textarea>
                         </td>
                         <td>
                             <div class="content-form">
                                 <img src="{{$item['pic']}}" class="thumbnail" alt="">
                             </div>
-                            <input type="file" name="imagen"  class="form-control form-control-sm edit-form">
+                            <input type="file" name="imagen"  class="form-control form-control-sm edit-form" form="actualizar-categoria-{{ $item['id'] }}">
                         </td>
                         <td class="text-center">
                             <div class="content-form">
@@ -63,12 +78,11 @@
                                 <span data-toggle="modal" data-target="#modaleleiminar{{ $item['id']}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></span>
                             </div>
                             <div class="edit-form">
-                                <button type="submit" class="btn btn-sm btn-success"><i class="fas fa-save"></i></button>
+                                <button type="submit" form="actualizar-categoria-{{ $item['id'] }}" class="btn btn-sm btn-success"><i class="fas fa-save"></i></button>
                                 <span class="btn btn-sm btn-danger cancel-edit-element"><i class="fas fa-ban"></i></span>
                             </div>
                         </td>
                     </tr>
-                </form>
                 @endforeach
             </tbody>
         </table>

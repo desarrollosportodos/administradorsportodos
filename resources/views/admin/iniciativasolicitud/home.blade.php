@@ -19,6 +19,9 @@ Iniciativas
         </div>
     </div>
 
+    @if(session('mensaje')) <div class="alert alert-success">{{ session('mensaje') }}</div> @endif
+    @if(session('error')) <div class="alert alert-danger">{{ session('error') }}</div> @endif
+
     <div id="listado">
         <div class="card">
             <div class="card-body">
@@ -29,6 +32,7 @@ Iniciativas
                             <th>Nombre</th>
                             <th>Solucion</th>
                             <th>Categoria</th>
+                            <th>Estado</th>
                             <th width="100"></th>
                         </tr>
                     </thead>
@@ -47,9 +51,10 @@ Iniciativas
                                     {{ $item['solucion'] }}
                                  </td>
                                  <td>
-                                    {{
-                                        $item['categoria']; 
-                                    }}
+                                    {{ $item['categoria'] ?? 'Sin categoría' }}
+                                 </td>
+                                 <td>
+                                    @if(($item['estado'] ?? 1) == 2)<span class="badge badge-success">Aprobada</span>@elseif(($item['estado'] ?? 1) == 0)<span class="badge badge-danger">Rechazada</span>@else<span class="badge badge-warning">Pendiente</span>@endif
                                  </td>
                                <td>
                                 <a class="btn btn-primary " href="{{ route('iniciativasolicitud-detalle',[ 'id' => $item['id'] ]) }}"><i class="pe-7s-pen btn-icon-wrapper"></i></a>

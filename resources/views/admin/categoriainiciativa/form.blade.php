@@ -16,6 +16,11 @@
                 </div>
             </div>
         </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción corta</label>
+            <textarea name="descripcion" id="descripcion" class="form-control" rows="2" maxlength="160" placeholder="Describe brevemente el propósito de esta categoría"></textarea>
+            <small class="form-text text-muted">Aparecerá debajo del nombre en las tarjetas y en el detalle de la categoría.</small>
+        </div>
         <div class="text-right">
             <button type="button" class="btn btn-secondary btn-cancel">Cancelar</button>
             <button type="submit" class="btn btn-success">Guardar</button>

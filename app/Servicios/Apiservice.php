@@ -23,28 +23,43 @@ class Apiservice
                 $token = Session::get('access_token');
             }
             $response = null;
+            $hasFile = collect($data)->contains(function ($value) {
+                return $value instanceof \CURLFile;
+            });
+            $http = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $token,
+            ]);
+            if ($hasFile) {
+                foreach ($data as $key => $value) {
+                    if (is_array($value)) {
+                        foreach ($value as $index => $item) {
+                            $data[$key.'['.$index.']'] = $item;
+                        }
+                        unset($data[$key]);
+                        continue;
+                    }
+                    if ($value instanceof \CURLFile) {
+                        $contents = file_get_contents($value->getFilename());
+                        if ($contents === false) {
+                            throw new \RuntimeException('No fue posible leer el archivo adjunto.');
+                        }
+                        $http = $http->attach($key, $contents, $value->getPostFilename());
+                        unset($data[$key]);
+                    }
+                }
+            }
             switch ($tipo) {
                 case '1':
-                    echo "<pre>";
-                    print_r($data);
-                    $response = Http::withHeaders([
-                        'Authorization' => 'Bearer ' . $token,
-                    ])->post($url, $data);
+                    $response = $http->post($url, $data);
                     break;
                 case '3':
-                    $response = Http::withHeaders([
-                        'Authorization' => 'Bearer ' . $token,
-                    ])->put($url, $data);
+                    $response = $http->put($url, $data);
                     break;
                 case '2':
-                    $response = Http::withHeaders([
-                        'Authorization' => 'Bearer ' . $token,
-                    ])->delete($url);
+                    $response = $http->delete($url);
                     break;
                 default:
-                    $response = Http::withHeaders([
-                        'Authorization' => 'Bearer ' . $token,
-                    ])->get($url."?".http_build_query($data));
+                    $response = $http->get($url."?".http_build_query($data));
                     break;
             }
 
@@ -54,9 +69,7 @@ class Apiservice
             //echo $content;
             return json_decode($content,true);
         } catch (\Exception $e) {
-            echo $e->getMessage();
-            // Maneja cualquier error que pueda ocurrir durante la solicitud
-            return response()->json(['error' => $e->getMessage()], 500);
+            return ['error' => $e->getMessage(), '_status' => 500];
         }
     }
     

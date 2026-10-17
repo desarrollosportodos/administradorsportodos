@@ -41,6 +41,7 @@
                     </a>
                     <ul>
                         <li><a href="{{ route("puntos") }}">Listado</a></li>
+                        <li><a href="{{ route("puntos-solicitudes") }}">Solicitudes por revisar</a></li>
                         <li><a href="{{ route("cargapuntos") }}">Cargar</a></li>
                         
                     </ul>  
@@ -70,6 +71,7 @@
                         <li><a href="{{ route("admin.categories.index") }}">Categorias Productos</a></li>
                         <li><a href="{{ route("admin.subcategories.index") }}">Sub Categorias Productos</a></li>
                         <li><a href="{{ route("admin.products.index") }}">Productos</a></li>
+                        <li><a href="{{ route("landing-pages") }}">Landing pages</a></li>
                         <li><a>Tablas de Sistema</a></li>
                     </ul>    
                 </li>
