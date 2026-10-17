@@ -62,6 +62,10 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::get('servicios/editar/{id}', 'ServiciosController@editar')->name('servicios-editar');
     Route::post('servicios/actualizar/{id}', 'ServiciosController@actualizar')->name('servicios-actualizar');
     Route::post('servicios/eliminar/{id}', 'ServiciosController@eliminar')->name('servicios-eliminar');
+    Route::get('serviciosolicitud', 'ServiciosolicitudController@index')->name('serviciosolicitud');
+    Route::get('serviciosolicitud/{id}', 'ServiciosolicitudController@detalle')->name('serviciosolicitud-detalle');
+    Route::post('serviciosolicitud/{id}/aprobar', 'ServiciosolicitudController@aprobar')->name('serviciosolicitud-aprobar');
+    Route::post('serviciosolicitud/{id}/rechazar', 'ServiciosolicitudController@rechazar')->name('serviciosolicitud-rechazar');
     
     Route::get('deporteposicion', 'DeporteposicionController@index')->name('deporteposicion');
     Route::get('deporteposicion/nuevo', 'DeporteposicionController@nuevo')->name('deporteposicion-nuevo');
