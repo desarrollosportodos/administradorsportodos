@@ -23,6 +23,13 @@
     <div class="col-md-3 form-group"><label class="font-weight-bold">Color de fondo</label><div class="d-flex align-items-center"><input type="color" name="secondary_color" class="mr-2" value="{{ $item['secondary_color'] ?? '#f5f7fb' }}" style="width:48px;height:38px;padding:2px"><code>{{ $item['secondary_color'] ?? '#f5f7fb' }}</code></div></div>
     <div class="col-md-3 form-group"><label class="font-weight-bold d-block">Estado</label><label><input type="hidden" name="active" value="0"><input type="checkbox" name="active" value="1" {{ ($item['active'] ?? true) ? 'checked' : '' }}> Publicada y visible para los usuarios</label></div>
 </div>
+<div class="landing-section-title">Experiencia de acceso</div>
+<div class="row">
+    <div class="col-md-6 form-group"><label class="font-weight-bold">Título del login</label><input name="auth_title" maxlength="120" class="form-control" value="{{ $item['auth_title'] ?? '' }}" placeholder="Bienvenido a la comunidad 360"></div>
+    <div class="col-md-6 form-group"><label class="font-weight-bold">Subtítulo</label><input name="auth_subtitle" maxlength="180" class="form-control" value="{{ $item['auth_subtitle'] ?? '' }}" placeholder="Conecta, juega y disfruta"></div>
+    <div class="col-md-8 form-group"><label class="font-weight-bold">Información de bienvenida</label><textarea name="auth_description" maxlength="500" rows="3" class="form-control" placeholder="Encuentra torneos, espacios y personas de tu comunidad.">{{ $item['auth_description'] ?? '' }}</textarea></div>
+    <div class="col-md-4 form-group"><label class="font-weight-bold">Fondo del login</label><label for="{{ $formId }}-auth-background" class="landing-logo-drop d-flex align-items-center mb-0"><span class="landing-logo-empty mr-3 auth-preview-empty"><i class="pe-7s-photo"></i></span><img class="landing-logo-preview mr-3 d-none auth-preview-image" alt="Vista previa del fondo"><span><strong class="d-block">Cargar fondo</strong><small class="text-muted">Imagen · máx. 8 MB</small></span><input id="{{ $formId }}-auth-background" type="file" name="auth_background" accept="image/png,image/jpeg,image/webp" class="d-none landing-auth-background-input"></label></div>
+</div>
 <div class="landing-section-title">Módulos disponibles</div>
 <div>
     @foreach($modules as $key => $module)
@@ -31,4 +38,5 @@
 </div>
 <script>
 document.querySelectorAll('.landing-logo-input').forEach(function(input){input.addEventListener('change',function(){var label=input.closest('label');var image=label.querySelector('.preview-image');var empty=label.querySelector('.preview-empty');if(input.files&&input.files[0]){image.src=URL.createObjectURL(input.files[0]);image.classList.remove('d-none');empty.classList.add('d-none');}});});
+document.querySelectorAll('.landing-auth-background-input').forEach(function(input){input.addEventListener('change',function(){var label=input.closest('label');var image=label.querySelector('.auth-preview-image');var empty=label.querySelector('.auth-preview-empty');if(input.files&&input.files[0]){image.src=URL.createObjectURL(input.files[0]);image.classList.remove('d-none');empty.classList.add('d-none');}});});
 </script>

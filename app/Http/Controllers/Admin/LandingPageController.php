@@ -24,6 +24,10 @@ class LandingPageController extends Controller
             $file = $request->file('logo');
             $data['logo'] = curl_file_create($file->getRealPath(), $file->getMimeType(), $file->getClientOriginalName());
         }
+        if ($request->hasFile('auth_background')) {
+            $file = $request->file('auth_background');
+            $data['auth_background'] = curl_file_create($file->getRealPath(), $file->getMimeType(), $file->getClientOriginalName());
+        }
         unset($data['logo_url']);
         $response = Apiservice::request('landing-pages', $data, 1);
         if (isset($response['error']) || isset($response['message']) && !isset($response['id'])) {
@@ -42,8 +46,14 @@ class LandingPageController extends Controller
             $data['logo'] = curl_file_create($file->getRealPath(), $file->getMimeType(), $file->getClientOriginalName());
             $data['_method'] = 'PUT';
         }
+        $hasAuthBackground = $request->hasFile('auth_background');
+        if ($hasAuthBackground) {
+            $file = $request->file('auth_background');
+            $data['auth_background'] = curl_file_create($file->getRealPath(), $file->getMimeType(), $file->getClientOriginalName());
+            $data['_method'] = 'PUT';
+        }
         unset($data['logo_url']);
-        $response = Apiservice::request('landing-pages/'.$id, $data, $hasLogo ? 1 : 3);
+        $response = Apiservice::request('landing-pages/'.$id, $data, ($hasLogo || $hasAuthBackground) ? 1 : 3);
         if (isset($response['error']) || isset($response['message']) && !isset($response['id'])) {
             return redirect()->route('landing-pages')->with('error', $response['error'] ?? $response['message']);
         }
