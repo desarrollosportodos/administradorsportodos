@@ -11,12 +11,13 @@
     $formId = 'landing-'.($item['id'] ?? 'new');
 @endphp
 <style>
-    .landing-form-card{border:0;border-radius:18px;box-shadow:0 8px 26px rgba(33,45,80,.08);overflow:hidden}
-    .landing-form-card .card-body{padding:26px}
-    .landing-section-title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#8490a8;font-weight:700;margin:22px 0 12px}
+    .landing-form-card{border:0;border-radius:22px;box-shadow:0 12px 32px rgba(33,45,80,.08);overflow:hidden;background:#fff}
+    .landing-form-card .card-body{padding:30px}
+    .landing-section-title{display:flex;align-items:center;gap:10px;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#244b91;font-weight:800;margin:28px 0 16px}
+    .landing-section-title:before{content:"";display:block;width:5px;height:22px;border-radius:8px;background:linear-gradient(#09c978,#ff762b)}
     .landing-section-title:first-child{margin-top:0}
-    .landing-logo-drop{border:2px dashed #d7deeb;border-radius:14px;padding:14px;background:#fafbfe;cursor:pointer;transition:.2s;min-height:72px}
-    .landing-logo-drop:hover{border-color:#4b6cb7;background:#f3f6ff}
+    .landing-form-card .form-group{margin-bottom:20px}.landing-form-card label.font-weight-bold{display:block;margin-bottom:8px;color:#253654;font-size:12px;letter-spacing:.01em}.landing-form-card .form-control{height:43px;border:1px solid #dce4ef;border-radius:10px;box-shadow:none;color:#1a2a49}.landing-form-card textarea.form-control{height:auto;min-height:90px;resize:vertical}.landing-form-card .form-control:focus{border-color:#5b82c4;box-shadow:0 0 0 3px rgba(91,130,196,.12)}.landing-form-card .input-group-text{border:1px solid #dce4ef;border-right:0;border-radius:10px 0 0 10px;background:#f5f8fc;color:#70809b}.landing-form-card .input-group .form-control{border-radius:0 10px 10px 0}.landing-form-card small.text-muted{display:block;margin-top:7px;color:#8b97aa!important;font-size:11px}
+    .landing-logo-drop{border:1px dashed #cdd8e8;border-radius:14px;padding:12px;background:#f9fbfd;cursor:pointer;transition:.2s;min-height:72px}.landing-logo-drop:hover{border-color:#4b6cb7;background:#f3f6ff;transform:translateY(-1px)}
     .landing-logo-empty{width:52px;height:52px;border-radius:12px;background:#eef2f8;color:#8490a8;display:flex;align-items:center;justify-content:center;font-size:24px;flex:0 0 auto}
     .landing-logo-preview{width:52px;height:52px;object-fit:contain;border-radius:12px;background:#fff;border:1px solid #e6eaf2;padding:5px;flex:0 0 auto}
     .landing-module{display:inline-flex;align-items:center;gap:8px;border:1px solid #e1e6ef;border-radius:11px;padding:10px 13px;margin:0 8px 8px 0;background:#fff;cursor:pointer;font-size:13px;color:#536078;transition:.2s}
