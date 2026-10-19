@@ -10,6 +10,19 @@
     ];
     $formId = 'landing-'.($item['id'] ?? 'new');
 @endphp
+<style>
+    .landing-form-card{border:0;border-radius:18px;box-shadow:0 8px 26px rgba(33,45,80,.08);overflow:hidden}
+    .landing-form-card .card-body{padding:26px}
+    .landing-section-title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#8490a8;font-weight:700;margin:22px 0 12px}
+    .landing-section-title:first-child{margin-top:0}
+    .landing-logo-drop{border:2px dashed #d7deeb;border-radius:14px;padding:14px;background:#fafbfe;cursor:pointer;transition:.2s;min-height:72px}
+    .landing-logo-drop:hover{border-color:#4b6cb7;background:#f3f6ff}
+    .landing-logo-empty{width:52px;height:52px;border-radius:12px;background:#eef2f8;color:#8490a8;display:flex;align-items:center;justify-content:center;font-size:24px;flex:0 0 auto}
+    .landing-logo-preview{width:52px;height:52px;object-fit:contain;border-radius:12px;background:#fff;border:1px solid #e6eaf2;padding:5px;flex:0 0 auto}
+    .landing-module{display:inline-flex;align-items:center;gap:8px;border:1px solid #e1e6ef;border-radius:11px;padding:10px 13px;margin:0 8px 8px 0;background:#fff;cursor:pointer;font-size:13px;color:#536078;transition:.2s}
+    .landing-module:has(input:checked){background:#edf3ff;border-color:#4b6cb7;color:#24458f;box-shadow:0 4px 12px rgba(75,108,183,.15)}
+    .landing-module input{accent-color:#4b6cb7}
+</style>
 <div class="landing-section-title">Identidad</div>
 <div class="row">
     <div class="col-md-4 form-group"><label class="font-weight-bold">Nombre</label><input required name="name" class="form-control" value="{{ $item['name'] ?? '' }}" placeholder="Comunidad 360"></div>

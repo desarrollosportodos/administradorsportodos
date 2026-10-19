@@ -21,6 +21,8 @@ Route::group(['prefix' => 'administrador','namespace'=>'Admin','middleware'=>['a
     Route::get('parametrizacion', 'ParametrizacionController@index')->name('parametrizacion-administracion');
 
     Route::get('landing-pages', 'LandingPageController@index')->name('landing-pages');
+    Route::get('landing-pages/crear', 'LandingPageController@crearVista')->name('landing-pages-crear-vista');
+    Route::get('landing-pages/{id}/editar', 'LandingPageController@editarVista')->name('landing-pages-editar-vista');
     Route::post('landing-pages/crear', 'LandingPageController@crear')->name('landing-pages-crear');
     Route::post('landing-pages/{id}/actualizar', 'LandingPageController@actualizar')->name('landing-pages-actualizar');
     Route::post('landing-pages/{id}/eliminar', 'LandingPageController@eliminar')->name('landing-pages-eliminar');

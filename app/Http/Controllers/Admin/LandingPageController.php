@@ -13,7 +13,24 @@ class LandingPageController extends Controller
         $response = Apiservice::request('landing-pages');
         $listado = is_array($response) && array_is_list($response) ? $response : [];
         $error = is_array($response) ? ($response['error'] ?? $response['message'] ?? null) : null;
-        return view('admin.landing-pages.home', compact('listado', 'error'));
+        return view('admin.landing-pages.listado', compact('listado', 'error'));
+    }
+
+    public function crearVista()
+    {
+        return view('admin.landing-pages.crear');
+    }
+
+    public function editarVista($id)
+    {
+        $response = Apiservice::request('landing-pages');
+        $listado = is_array($response) && array_is_list($response) ? $response : [];
+        $item = collect($listado)->firstWhere('id', (int) $id);
+        if (!$item) {
+            return redirect()->route('landing-pages')->with('error', 'La landing page no fue encontrada.');
+        }
+
+        return view('admin.landing-pages.editar', compact('item'));
     }
 
     public function crear(Request $request)
