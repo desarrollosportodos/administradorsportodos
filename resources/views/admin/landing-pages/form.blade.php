@@ -9,6 +9,8 @@
         'participate' => ['Participa', 'pe-7s-joy'], 'memberships' => ['Membresías', 'pe-7s-wallet'], 'services' => ['Servicios', 'pe-7s-portfolio'],
     ];
     $formId = 'landing-'.($item['id'] ?? 'new');
+    $currentLogo = $item['logo_url'] ?? null;
+    $currentAuthBackground = $item['auth_background_url'] ?? null;
 @endphp
 <style>
     .landing-form-card{border:0;border-radius:22px;box-shadow:0 12px 32px rgba(33,45,80,.08);overflow:hidden;background:#fff}
@@ -28,7 +30,7 @@
 <div class="row">
     <div class="col-md-4 form-group"><label class="font-weight-bold">Nombre</label><input required name="name" class="form-control" value="{{ $item['name'] ?? '' }}" placeholder="Comunidad 360"></div>
     <div class="col-md-4 form-group"><label class="font-weight-bold">Ruta pública</label><div class="input-group"><div class="input-group-prepend"><span class="input-group-text">/</span></div><input required name="slug" pattern="[A-Za-z0-9_-]+" class="form-control" placeholder="360" value="{{ $item['slug'] ?? '' }}"></div><small class="text-muted">Solo letras, números, guion y guion bajo.</small></div>
-    <div class="col-md-4 form-group"><label class="font-weight-bold">Logo</label><label for="{{ $formId }}-logo" class="landing-logo-drop d-flex align-items-center mb-0"><span class="landing-logo-empty mr-3 preview-empty"><i class="pe-7s-camera"></i></span><img class="landing-logo-preview mr-3 d-none preview-image" alt="Vista previa"><span><strong class="d-block">Cargar imagen</strong><small class="text-muted">PNG, JPG o WEBP · máx. 4 MB</small></span><input id="{{ $formId }}-logo" type="file" name="logo" accept="image/png,image/jpeg,image/webp" class="d-none landing-logo-input"></label></div>
+    <div class="col-md-4 form-group"><label class="font-weight-bold">Logo</label><label for="{{ $formId }}-logo" class="landing-logo-drop d-flex align-items-center mb-0"><span class="landing-logo-empty mr-3 preview-empty {{ $currentLogo ? 'd-none' : '' }}"><i class="pe-7s-camera"></i></span><img src="{{ $currentLogo ?: '' }}" class="landing-logo-preview mr-3 preview-image {{ $currentLogo ? '' : 'd-none' }}" alt="Logo actual"><span><strong class="d-block">{{ $currentLogo ? 'Reemplazar imagen' : 'Cargar imagen' }}</strong><small class="text-muted">PNG, JPG o WEBP · máx. 4 MB</small></span><input id="{{ $formId }}-logo" type="file" name="logo" accept="image/png,image/jpeg,image/webp" class="d-none landing-logo-input"></label></div>
 </div>
 <div class="landing-section-title">Apariencia</div>
 <div class="row">
@@ -43,7 +45,7 @@
     <div class="col-md-6 form-group"><label class="font-weight-bold">Título del login</label><input name="auth_title" maxlength="120" class="form-control" value="{{ $item['auth_title'] ?? '' }}" placeholder="Bienvenido a la comunidad 360"></div>
     <div class="col-md-6 form-group"><label class="font-weight-bold">Subtítulo</label><input name="auth_subtitle" maxlength="180" class="form-control" value="{{ $item['auth_subtitle'] ?? '' }}" placeholder="Conecta, juega y disfruta"></div>
     <div class="col-md-8 form-group"><label class="font-weight-bold">Información de bienvenida</label><textarea name="auth_description" maxlength="500" rows="3" class="form-control" placeholder="Encuentra torneos, espacios y personas de tu comunidad.">{{ $item['auth_description'] ?? '' }}</textarea></div>
-    <div class="col-md-4 form-group"><label class="font-weight-bold">Fondo del login</label><label for="{{ $formId }}-auth-background" class="landing-logo-drop d-flex align-items-center mb-0"><span class="landing-logo-empty mr-3 auth-preview-empty"><i class="pe-7s-photo"></i></span><img class="landing-logo-preview mr-3 d-none auth-preview-image" alt="Vista previa del fondo"><span><strong class="d-block">Cargar fondo</strong><small class="text-muted">Imagen · máx. 8 MB</small></span><input id="{{ $formId }}-auth-background" type="file" name="auth_background" accept="image/png,image/jpeg,image/webp" class="d-none landing-auth-background-input"></label></div>
+    <div class="col-md-4 form-group"><label class="font-weight-bold">Fondo del login</label><label for="{{ $formId }}-auth-background" class="landing-logo-drop d-flex align-items-center mb-0"><span class="landing-logo-empty mr-3 auth-preview-empty {{ $currentAuthBackground ? 'd-none' : '' }}"><i class="pe-7s-photo"></i></span><img src="{{ $currentAuthBackground ?: '' }}" class="landing-logo-preview mr-3 auth-preview-image {{ $currentAuthBackground ? '' : 'd-none' }}" alt="Fondo actual"><span><strong class="d-block">{{ $currentAuthBackground ? 'Reemplazar fondo' : 'Cargar fondo' }}</strong><small class="text-muted">Imagen · máx. 8 MB</small></span><input id="{{ $formId }}-auth-background" type="file" name="auth_background" accept="image/png,image/jpeg,image/webp" class="d-none landing-auth-background-input"></label></div>
 </div>
 <div class="landing-section-title">Módulos disponibles</div>
 <div>
